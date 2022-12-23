@@ -3,4 +3,5 @@ deb-installer.desktop	usr/share/applications
 deb-installer.png		usr/share/icons/hicolor/48x48/apps
 deb-installer.png		usr/share/pixmaps
 docs/*			        usr/share/doc/deb-installer
+polkit/*				usr/share/polkit-1/actions/
 translations/*.qm	    usr/share/deb-installer/locale
