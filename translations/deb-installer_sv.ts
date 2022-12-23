@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="sv_SE">
+<TS version="2.1" language="sv">
 <context>
     <name>Installer</name>
     <message>
         <location filename="../installer.cpp" line="73"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta bort</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="75"/>
         <location filename="../installer.cpp" line="89"/>
         <source>Install</source>
-        <translation type="unfinished"></translation>
+        <translation>Installera</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="77"/>
@@ -32,7 +32,7 @@
     <message>
         <location filename="../installer.cpp" line="102"/>
         <source>Press any key to close</source>
-        <translation type="unfinished"></translation>
+        <translation>Tryck på valfri tangent för att stänga</translation>
     </message>
 </context>
 <context>
@@ -45,7 +45,7 @@
     <message>
         <location filename="../main.cpp" line="51"/>
         <source>file</source>
-        <translation type="unfinished"></translation>
+        <translation>fil</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="51"/>
@@ -72,7 +72,7 @@
         <location filename="../main.cpp" line="82"/>
         <location filename="../main.cpp" line="89"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fel</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="77"/>
@@ -87,7 +87,7 @@
     <message>
         <location filename="../main.cpp" line="89"/>
         <source>You must run this program as normal user.</source>
-        <translation type="unfinished"></translation>
+        <translation>Du måste köra det här programmet som vanlig användare.</translation>
     </message>
 </context>
 </TS>

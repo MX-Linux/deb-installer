@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.1" language="ja">
 <context>
     <name>Installer</name>
     <message>
         <location filename="../installer.cpp" line="73"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>削除</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="75"/>
         <location filename="../installer.cpp" line="89"/>
         <source>Install</source>
-        <translation type="unfinished"></translation>
+        <translation>インストール</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="77"/>
@@ -32,7 +32,7 @@
     <message>
         <location filename="../installer.cpp" line="102"/>
         <source>Press any key to close</source>
-        <translation type="unfinished"></translation>
+        <translation>任意のキーを押せば閉じます</translation>
     </message>
 </context>
 <context>
@@ -72,7 +72,7 @@
         <location filename="../main.cpp" line="82"/>
         <location filename="../main.cpp" line="89"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>エラー</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="77"/>
@@ -87,7 +87,7 @@
     <message>
         <location filename="../main.cpp" line="89"/>
         <source>You must run this program as normal user.</source>
-        <translation type="unfinished"></translation>
+        <translation>このプログラムは標準ユーザーで実行して下さい。</translation>
     </message>
 </context>
 </TS>

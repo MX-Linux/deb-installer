@@ -15,11 +15,11 @@ Changes:
  .
    * initial release
 Checksums-Sha1:
- 9134a5404bb4783febf8845bc2c0c0626fa9019a 10057 deb-installer_0.22.12_i386.buildinfo
- b2682ff56929e89832e4d1be760dd4619399b655 40208 deb-installer_0.22.12_i386.deb
+ 9a2fed288c532018a2a0b70357d978ca06231604 10057 deb-installer_0.22.12_i386.buildinfo
+ 33ec10ee6bddb146b7971f19386e046cc8b66056 46376 deb-installer_0.22.12_i386.deb
 Checksums-Sha256:
- 170a6582fddea3c8c1e9a05cbd8d3ef3b736d9ab22a2170c8d50e043c36328a6 10057 deb-installer_0.22.12_i386.buildinfo
- c2f1d5da2b69fd0c8564d3d0d30164da7281241823b3deda7fc1f7eac2281455 40208 deb-installer_0.22.12_i386.deb
+ 6ab7cf5513485be9b2391715facd090cc0843f0c626941a10f9b468ca2bdfdb0 10057 deb-installer_0.22.12_i386.buildinfo
+ e302be18616a355aaaf88ea0778c54d720a8042a0b0d7781ac0390dd782c70a7 46376 deb-installer_0.22.12_i386.deb
 Files:
- 9f783be98e0136d399d66ec7a6f6c559 10057 admin optional deb-installer_0.22.12_i386.buildinfo
- 8c09a042a0b066fa692367f576ac53c2 40208 admin optional deb-installer_0.22.12_i386.deb
+ d27943f16850f01bc8a6778bf9139e95 10057 admin optional deb-installer_0.22.12_i386.buildinfo
+ e4f46ee41aad36e590669e1138cce715 46376 admin optional deb-installer_0.22.12_i386.deb
