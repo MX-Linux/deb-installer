@@ -8,7 +8,5 @@ Standards-Version: 3.9.8
 Package: deb-installer
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Replaces: gdebi
-Conflicts: gdebi
 Description: deb-installer
- This programs installs Debian packages. 
+ Installs downloaded deb packages 
