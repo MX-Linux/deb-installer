@@ -1,0 +1,15 @@
+[Desktop Entry]
+Encoding=UTF-8
+# The desktop entry name will be displayed within the menu.
+Name=Deb Installer
+# # The desktop entry comment will be shown within the menu.
+Comment=Install downloaded deb packages
+Exec=deb-installer
+Terminal=false
+Type=Application
+Icon=deb-installer
+Categories=GNOME;GTK;System;
+NoDisplay=false
+MimeType=application/vnd.debian.binary-package;
+StartupNotify=true
+Keywords=package;apt;dpkg;install
