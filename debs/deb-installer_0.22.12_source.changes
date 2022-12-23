@@ -1,0 +1,40 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Wed, 22 Dec 2022 12:22:11 -0500
+Source: deb-installer
+Architecture: source
+Version: 0.22.12
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Changes:
+ deb-installer (0.22.12) mx; urgency=medium
+ .
+   * initial release
+Checksums-Sha1:
+ cee8c43f1d64a1a299554a224b5eab71ea66d2c5 1138 deb-installer_0.22.12.dsc
+ 20941b01e4ab0d1ed2d81a110d4a30efa4aa4137 20308 deb-installer_0.22.12.tar.xz
+ 9c957f74f6d46372877bc67567f3441a08bd181f 10770 deb-installer_0.22.12_amd64.buildinfo
+Checksums-Sha256:
+ 19f07a3938e08b11193ea123fa57caaa51e0656b8189d5fecc7b046e72a1722a 1138 deb-installer_0.22.12.dsc
+ 4f5484b8523890802417848cb99d26c4e0dcab8ba823f71bb027a6b125928a66 20308 deb-installer_0.22.12.tar.xz
+ b830882d4cbb148a5794694fd477ea8650ed9696d9d4f42aa76ba95036b64755 10770 deb-installer_0.22.12_amd64.buildinfo
+Files:
+ 7b48fb916a22e2626cde306c9dc40d62 1138 admin optional deb-installer_0.22.12.dsc
+ 67a3e4c0538d3a3067aec2c3a7203dd8 20308 admin optional deb-installer_0.22.12.tar.xz
+ 0d6abb7752ca442191d4b55c7076a507 10770 admin optional deb-installer_0.22.12_amd64.buildinfo
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmOl5BITHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumL3LB/9jATmTYQU5f2po3V0shvIxdrZfUTpy
+TXp5zZ/jWm53StNiaE7pd6A8JLHn+6rJoLFL0OG+L8XIJcZzEuPuhJTMgHG76Uhg
+2zLelQbAbsWNHZL4cfmPoUtChZNeMOp6HtN2sMtCRSu9xmBh91rxnsotWZ8mndFo
+VXRtWePobKXR1DuqPFLU19DQj1KmQLrfWxItsSEsPtlz+RSvHANqDnEYzQB7wKJO
+6ysrmnG4tHjEtvOPcHjURMgW1UQuHfmYMzIO9XNvCrJXnn1GmkZWE64jCGeHgdVF
+ZD+BTVjBvn+EP/fVxMp6+daE16mdWHIiZ3f/rS0a/3SnCYGQpbOU14pO
+=STA5
+-----END PGP SIGNATURE-----

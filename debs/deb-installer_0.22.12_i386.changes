@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Wed, 22 Dec 2022 12:22:11 -0500
+Source: deb-installer
+Binary: deb-installer
+Architecture: i386
+Version: 0.22.12
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ deb-installer - deb-installer
+Changes:
+ deb-installer (0.22.12) mx; urgency=medium
+ .
+   * initial release
+Checksums-Sha1:
+ 2b9a05a4e5a7f954c95c9a2529053427fe737214 10057 deb-installer_0.22.12_i386.buildinfo
+ 924512af44b31c2727bb49bc946b1084fb9f7369 21140 deb-installer_0.22.12_i386.deb
+Checksums-Sha256:
+ 381eb4f9ed622547eb850f06c91e6654cca0a162b4e22e6c3ae2634197fcf42d 10057 deb-installer_0.22.12_i386.buildinfo
+ 1ec6799da08e5f23c2a5683597abada57fc386182afd94ce832ee148a7e243dd 21140 deb-installer_0.22.12_i386.deb
+Files:
+ efe650e11822d9a58ff97314ec7996c7 10057 admin optional deb-installer_0.22.12_i386.buildinfo
+ b18c549002a4f5a22cc564ef9c210f2b 21140 admin optional deb-installer_0.22.12_i386.deb
