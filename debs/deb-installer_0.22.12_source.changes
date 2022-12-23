@@ -15,26 +15,26 @@ Changes:
  .
    * initial release
 Checksums-Sha1:
- cee8c43f1d64a1a299554a224b5eab71ea66d2c5 1138 deb-installer_0.22.12.dsc
- 20941b01e4ab0d1ed2d81a110d4a30efa4aa4137 20308 deb-installer_0.22.12.tar.xz
- 9c957f74f6d46372877bc67567f3441a08bd181f 10770 deb-installer_0.22.12_amd64.buildinfo
+ 39c51da6af6fe443d89c0032b7edc29be39fa4ab 1138 deb-installer_0.22.12.dsc
+ d535550fc89ade48610243d60b9646a19af7e3cd 20308 deb-installer_0.22.12.tar.xz
+ 4146282dccce87a21c32aff80f972563a0e2f9da 10770 deb-installer_0.22.12_amd64.buildinfo
 Checksums-Sha256:
- 19f07a3938e08b11193ea123fa57caaa51e0656b8189d5fecc7b046e72a1722a 1138 deb-installer_0.22.12.dsc
- 4f5484b8523890802417848cb99d26c4e0dcab8ba823f71bb027a6b125928a66 20308 deb-installer_0.22.12.tar.xz
- b830882d4cbb148a5794694fd477ea8650ed9696d9d4f42aa76ba95036b64755 10770 deb-installer_0.22.12_amd64.buildinfo
+ f20175a2fe347a98a197bdf39659f09e22c56023aaafd12f9b26436b26467ae2 1138 deb-installer_0.22.12.dsc
+ 5282ccfa5f7a0ffc97fae09fbf4be18ea2128f6d212431e1fd4c72553ef07cc1 20308 deb-installer_0.22.12.tar.xz
+ edc502a5dd67a2ebe1001a189a74464a02ab9ec381ec1d3c6f404c3b01f95a0d 10770 deb-installer_0.22.12_amd64.buildinfo
 Files:
- 7b48fb916a22e2626cde306c9dc40d62 1138 admin optional deb-installer_0.22.12.dsc
- 67a3e4c0538d3a3067aec2c3a7203dd8 20308 admin optional deb-installer_0.22.12.tar.xz
- 0d6abb7752ca442191d4b55c7076a507 10770 admin optional deb-installer_0.22.12_amd64.buildinfo
+ a5432d4483848ce36d3dbaff757ad27d 1138 admin optional deb-installer_0.22.12.dsc
+ 1f98120bc09ba2d8ee9c15eb70ff42f7 20308 admin optional deb-installer_0.22.12.tar.xz
+ 711b79975f10ef58b2b4a09fcc3b5fb1 10770 admin optional deb-installer_0.22.12_amd64.buildinfo
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmOl5BITHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumL3LB/9jATmTYQU5f2po3V0shvIxdrZfUTpy
-TXp5zZ/jWm53StNiaE7pd6A8JLHn+6rJoLFL0OG+L8XIJcZzEuPuhJTMgHG76Uhg
-2zLelQbAbsWNHZL4cfmPoUtChZNeMOp6HtN2sMtCRSu9xmBh91rxnsotWZ8mndFo
-VXRtWePobKXR1DuqPFLU19DQj1KmQLrfWxItsSEsPtlz+RSvHANqDnEYzQB7wKJO
-6ysrmnG4tHjEtvOPcHjURMgW1UQuHfmYMzIO9XNvCrJXnn1GmkZWE64jCGeHgdVF
-ZD+BTVjBvn+EP/fVxMp6+daE16mdWHIiZ3f/rS0a/3SnCYGQpbOU14pO
-=STA5
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmOl90QTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumEnaCADEvO3xOeVHlnqFC513ZWBV4iPboICS
+VOua6C4uViSaGS+t0SimeSHUPqj+3lPRydTIYZegU2/Zx/j7DEG00XPIODgXcCpP
+UfHZJOAoqHPfcQpU0VFqLpAkQgRob2hJ5UmW/U87xecT+DF07Ck4tBStF8fJWCIr
+NGvtPZbsbPj5oCFQCPxtQWw6sQDZlnlUZ0yH6YvnA2zrB02fH0bbdzbPfOO3A4xt
+a6ybYR2BzFkX/uT5t5w90UDYIfq2TP6Ky/LZ6PgeS7TjCo2GBl/enCCGJlS2HhT0
+az8M0IdK0Lc88JcrngKd609C/hty2Rqjf4vdWrxDaiGKhl8nLpKnbJmS
+=wLTW
 -----END PGP SIGNATURE-----
