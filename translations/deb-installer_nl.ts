@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="nl_NL">
+<TS version="2.1" language="nl">
 <context>
     <name>Installer</name>
     <message>
         <location filename="../installer.cpp" line="73"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijder</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="75"/>
         <location filename="../installer.cpp" line="89"/>
         <source>Install</source>
-        <translation type="unfinished"></translation>
+        <translation>Installeer</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="77"/>
@@ -32,7 +32,7 @@
     <message>
         <location filename="../installer.cpp" line="102"/>
         <source>Press any key to close</source>
-        <translation type="unfinished"></translation>
+        <translation>Druk een toets om te sluiten</translation>
     </message>
 </context>
 <context>
@@ -45,7 +45,7 @@
     <message>
         <location filename="../main.cpp" line="51"/>
         <source>file</source>
-        <translation type="unfinished"></translation>
+        <translation>bestand</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="51"/>
@@ -72,7 +72,7 @@
         <location filename="../main.cpp" line="82"/>
         <location filename="../main.cpp" line="89"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="77"/>
@@ -87,7 +87,7 @@
     <message>
         <location filename="../main.cpp" line="89"/>
         <source>You must run this program as normal user.</source>
-        <translation type="unfinished"></translation>
+        <translation>U moet dit programma als normale gebruiker uitvoeren.</translation>
     </message>
 </context>
 </TS>

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ro_RO">
+<TS version="2.1" language="ro">
 <context>
     <name>Installer</name>
     <message>
         <location filename="../installer.cpp" line="73"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Îndepărtează</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="75"/>
         <location filename="../installer.cpp" line="89"/>
         <source>Install</source>
-        <translation type="unfinished"></translation>
+        <translation>Instalare</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="77"/>
@@ -72,7 +72,7 @@
         <location filename="../main.cpp" line="82"/>
         <location filename="../main.cpp" line="89"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Eroare</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="77"/>

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="es_ES">
+<TS version="2.1" language="es">
 <context>
     <name>Installer</name>
     <message>
         <location filename="../installer.cpp" line="73"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Remover</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="75"/>
         <location filename="../installer.cpp" line="89"/>
         <source>Install</source>
-        <translation type="unfinished"></translation>
+        <translation>Instalar</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="77"/>
@@ -32,7 +32,7 @@
     <message>
         <location filename="../installer.cpp" line="102"/>
         <source>Press any key to close</source>
-        <translation type="unfinished"></translation>
+        <translation>Pulse cualquier tecla para cerrar</translation>
     </message>
 </context>
 <context>
@@ -45,7 +45,7 @@
     <message>
         <location filename="../main.cpp" line="51"/>
         <source>file</source>
-        <translation type="unfinished"></translation>
+        <translation>archivo</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="51"/>
@@ -72,7 +72,7 @@
         <location filename="../main.cpp" line="82"/>
         <location filename="../main.cpp" line="89"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="77"/>
@@ -87,7 +87,7 @@
     <message>
         <location filename="../main.cpp" line="89"/>
         <source>You must run this program as normal user.</source>
-        <translation type="unfinished"></translation>
+        <translation>Debe ejecutar este programa como un usuario normal.</translation>
     </message>
 </context>
 </TS>
