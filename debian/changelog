@@ -1,0 +1,5 @@
+deb-installer (0.17.12) mx; urgency=medium
+
+  * initial release
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 20 Dec 2017 15:22:57 -0500

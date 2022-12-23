@@ -1,0 +1,14 @@
+Source: deb-installer
+Section: admin
+Priority: optional
+Maintainer: Adrian <adrian@mxlinux.org>
+Build-Depends: debhelper (>=10), qtbase5-dev, qttools5-dev-tools
+Standards-Version: 3.9.8
+
+Package: deb-installer
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Replaces: gdebi
+Conflicts: gdebi
+Description: deb-installer
+ This programs installs Debian packages. 
