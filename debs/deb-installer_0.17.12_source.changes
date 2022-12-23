@@ -1,0 +1,40 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Wed, 20 Dec 2017 15:22:57 -0500
+Source: deb-installer
+Architecture: source
+Version: 0.17.12
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Changes:
+ deb-installer (0.17.12) mx; urgency=medium
+ .
+   * initial release
+Checksums-Sha1:
+ a235a250ccb586a31d406dabe6c6e1f573d626d4 1138 deb-installer_0.17.12.dsc
+ fee1c40afd1a7f7b74c22119cc208c81ef43ae8f 12304 deb-installer_0.17.12.tar.xz
+ 8d88605ac0cee0fb96764b174b7e071e28423083 10770 deb-installer_0.17.12_amd64.buildinfo
+Checksums-Sha256:
+ b50ed00be1be29761acd09be01e763346fe7752379b5d4d123c7d04740b8d52e 1138 deb-installer_0.17.12.dsc
+ e25cf9917a235a37b1fb3cf854a6ea3823ae4e45658fcfb69e13b48ef6a28e6b 12304 deb-installer_0.17.12.tar.xz
+ 9949ae75a2cc798939a7dcce16033cc1d8c98afa46f4ffe7acf2e9653c13826f 10770 deb-installer_0.17.12_amd64.buildinfo
+Files:
+ 12a763782385ab4c07f52a7fa07c69b0 1138 admin optional deb-installer_0.17.12.dsc
+ 21c1c401b499988b272e16dd647a212d 12304 admin optional deb-installer_0.17.12.tar.xz
+ b1f2dd72735a9aa5b2fb1ee5a6fdaf97 10770 admin optional deb-installer_0.17.12_amd64.buildinfo
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmOl4fMTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumC0LCAC6FhHxjIfiCTD+UW2l2tciH+TcY4Tq
+7rQqIj1NGDSUIu5+eE9Qbcf/lPHRgO8bHGaCM1bw1EmFjHb2kHhfCKE+mWBAmCcK
+lMu/rtOa/rxPyks50ytPC+yU3JY554GrYSbbW4Rs8mOh5EahhYHaDO4F0a38KLMw
+F6r4G1KWws7FmA/3QhyDpUsEIX94S2grzxFOlmcxxxdml+yjq5B+UhYsEkGvktPv
+N58MsmxaPrJXU3KZSpxixQpULglzPnSxXuYrVNiq1gPFMQX9dAtEjnL7f/ux49RF
+hTi/Y+G6NZMaBNVdG+KyzT3buFIQq6T1Y212wFu5OMnCtJPjMCyy6F2M
+=2uew
+-----END PGP SIGNATURE-----
