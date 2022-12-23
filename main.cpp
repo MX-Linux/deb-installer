@@ -25,6 +25,7 @@
 #include <QDebug>
 #include <QDir>
 #include <QFile>
+#include <QFileDialog>
 #include <QIcon>
 #include <QLibraryInfo>
 #include <QLocale>
@@ -66,6 +67,11 @@ int main(int argc, char *argv[])
         QApplication::installTranslator(&appTran);
 
     if (getuid() != 0) {
+        if (parser.positionalArguments().isEmpty()) {
+            QString file = QFileDialog::getOpenFileName(nullptr, QObject::tr("Select a .deb file to install"),
+                                                        QDir::currentPath(), QObject::tr("Deb Files (*.deb)"));
+            parser.process({"deb-installer", file});
+        }
         if (parser.positionalArguments().isEmpty() || !parser.positionalArguments().at(0).endsWith(".deb")) {
             QApplication::beep();
             QMessageBox::critical(nullptr, QObject::tr("Error"), QObject::tr("No .deb files were provided."));
