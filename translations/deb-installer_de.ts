@@ -10,7 +10,7 @@
     </message>
     <message>
         <location filename="../installer.cpp" line="75"/>
-        <location filename="../installer.cpp" line="87"/>
+        <location filename="../installer.cpp" line="89"/>
         <source>Install</source>
         <translation type="unfinished"></translation>
     </message>
@@ -25,7 +25,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="100"/>
+        <location filename="../installer.cpp" line="87"/>
+        <source>The %1 package will be reinstalled.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../installer.cpp" line="102"/>
         <source>Press any key to close</source>
         <translation type="unfinished"></translation>
     </message>
