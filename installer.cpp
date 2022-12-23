@@ -95,7 +95,7 @@ bool Installer::confirmAction(const QString &name)
 
 void Installer::install(const QString &file_name)
 {
-    cmd.run("x-terminal-emulator -e bash -c \"echo 'Installing selected package, please authenticate';echo;sudo apt "
+    cmd.run("x-terminal-emulator -e bash -c \"echo 'Installing selected package, please authenticate';echo;pkexec apt "
             "reinstall '"
             + file_name + "'; echo; read -n1 -srp '" + tr("Press any key to close") + "'\"");
 }
