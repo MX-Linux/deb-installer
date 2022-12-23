@@ -33,44 +33,54 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="47"/>
+        <location filename="../main.cpp" line="48"/>
         <source>Program for installing Debian binary packages (deb files)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="50"/>
+        <location filename="../main.cpp" line="51"/>
         <source>file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="50"/>
+        <location filename="../main.cpp" line="51"/>
         <source>Name of .deb file to install</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="51"/>
+        <location filename="../main.cpp" line="52"/>
         <source>[file]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.cpp" line="71"/>
-        <location filename="../main.cpp" line="76"/>
-        <location filename="../main.cpp" line="83"/>
-        <source>Error</source>
+        <source>Select a .deb file to install</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="71"/>
-        <source>No .deb files were provided.</source>
+        <location filename="../main.cpp" line="72"/>
+        <source>Deb Files (*.deb)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.cpp" line="77"/>
-        <source>Could not find %1 file</source>
+        <location filename="../main.cpp" line="82"/>
+        <location filename="../main.cpp" line="89"/>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="77"/>
+        <source>No .deb files were provided.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.cpp" line="83"/>
+        <source>Could not find %1 file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="89"/>
         <source>You must run this program as normal user.</source>
         <translation type="unfinished"></translation>
     </message>
