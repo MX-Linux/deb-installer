@@ -83,6 +83,8 @@ bool Installer::confirmAction(const QString &name)
 
     if (!detailed_installed_names.isEmpty() || !detailed_removed_names.isEmpty())
         msgBox.setDetailedText(detailed_to_install + "\n" + detailed_removed_names);
+    else
+        msgBox.setDetailedText(tr("The %1 package will be reinstalled.").arg(QFileInfo(file_name).fileName()));
 
     msgBox.addButton(tr("Install"), QMessageBox::AcceptRole);
     msgBox.addButton(QMessageBox::Cancel);
