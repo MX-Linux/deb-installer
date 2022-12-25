@@ -1,8 +1,16 @@
 [Desktop Entry]
 Encoding=UTF-8
+Name[es]=Instalador de Deb
+Name[es_ES]=Instalador de Deb
+Name[pt]=Instalador deb
+Name[sv]=Deb Installerare
 Name=Deb Installer
+Comment[es]=Instalar los paquetes deb descargados
+Comment[es_ES]=Instalar los paquetes deb descargados
+Comment[pt]=Instalar pacotes deb descarregados
+Comment[sv]=Installera nedladdade deb paket
 Comment=Install downloaded deb packages
-Exec=deb-installer
+Exec=deb-installer %F
 Terminal=false
 Type=Application
 Icon=deb-installer
@@ -10,4 +18,8 @@ Categories=GNOME;GTK;System;
 NoDisplay=false
 MimeType=application/vnd.debian.binary-package;
 StartupNotify=true
+Keywords[es]=paquete;apt;dpkg;instalar
+Keywords[es_ES]=paquete;apt;dpkg;instalar
+Keywords[pt]=pacote;apt;dpkg;instalar
+Keywords[sv]=package;apt;dpkg;install
 Keywords=package;apt;dpkg;install
