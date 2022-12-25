@@ -4,28 +4,28 @@
 <context>
     <name>Installer</name>
     <message>
-        <location filename="../installer.cpp" line="83"/>
+        <location filename="../installer.cpp" line="84"/>
         <source>Remove</source>
         <translation>Supprimer</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="85"/>
-        <location filename="../installer.cpp" line="105"/>
+        <location filename="../installer.cpp" line="86"/>
+        <location filename="../installer.cpp" line="114"/>
         <source>Install</source>
         <translation>Installer</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="87"/>
-        <source>The following packages will be installed. Click Show Details for list of changes.</source>
+        <location filename="../installer.cpp" line="89"/>
+        <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="94"/>
+        <location filename="../installer.cpp" line="97"/>
         <source>File: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="103"/>
+        <location filename="../installer.cpp" line="112"/>
         <source>Will install the following:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -42,7 +42,7 @@
         <translation type="vanished">Le paquet %1 sera réinstallé.</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="118"/>
+        <location filename="../installer.cpp" line="128"/>
         <source>Press any key to close</source>
         <translation>Appuyez sur une touche pour fermer</translation>
     </message>
