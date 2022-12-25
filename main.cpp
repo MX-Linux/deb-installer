@@ -78,12 +78,13 @@ int main(int argc, char *argv[])
             QMessageBox::critical(nullptr, QObject::tr("Error"), QObject::tr("No .deb files were provided."));
             return EXIT_FAILURE;
         }
-        if (!QFile::exists(parser.positionalArguments().at(0))) {
-            QApplication::beep();
-            QMessageBox::critical(nullptr, QObject::tr("Error"),
-                                  QObject::tr("Could not find %1 file").arg(parser.positionalArguments().at(0)));
-            return EXIT_FAILURE;
-        }
+        for (const auto &file : parser.positionalArguments())
+            if (!QFile::exists(file) || !file.endsWith(".deb")) {
+                QApplication::beep();
+                QMessageBox::critical(nullptr, QObject::tr("Error"),
+                                      QObject::tr("File %1 is not a .deb file.").arg(file));
+                return EXIT_FAILURE;
+            }
         Installer installer(parser);
     } else {
         QApplication::beep();
