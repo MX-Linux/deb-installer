@@ -26,6 +26,7 @@
 #include <QFileDialog>
 #include <QGridLayout>
 #include <QMessageBox>
+#include <QTextEdit>
 
 #include "cmd.h"
 
@@ -99,6 +100,12 @@ bool Installer::confirmAction(const QStringList &names)
     }
     msgBox.setDetailedText(detailed_text);
 
+    // find Detailed Info box and set height
+    const auto height = 300;
+    auto textBoxes = msgBox.findChildren<QTextEdit *>();
+    if (!textBoxes.isEmpty())
+        textBoxes.at(0)->setFixedHeight(height);
+
     if (!detailed_installed_names.isEmpty() || !detailed_removed_names.isEmpty())
         msgBox.setInformativeText(detailed_to_install + "\n" + detailed_removed_names);
     else
@@ -107,7 +114,8 @@ bool Installer::confirmAction(const QStringList &names)
     msgBox.addButton(tr("Install"), QMessageBox::AcceptRole);
     msgBox.addButton(QMessageBox::Cancel);
 
-    auto *horizontalSpacer = new QSpacerItem(600, 0, QSizePolicy::Minimum, QSizePolicy::Expanding);
+    const auto width = 600;
+    auto *horizontalSpacer = new QSpacerItem(width, 0, QSizePolicy::Minimum, QSizePolicy::Expanding);
     auto *layout = qobject_cast<QGridLayout *>(msgBox.layout());
     layout->addItem(horizontalSpacer, 0, 1);
     return msgBox.exec() == QMessageBox::AcceptRole;
