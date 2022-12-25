@@ -38,7 +38,7 @@ public:
 public slots:
 
 private slots:
-    QStringList canonicolize(const QStringList &file_names);
+    static QStringList canonicolize(const QStringList &file_names);
     bool confirmAction(const QStringList &file_names);
     void install(const QStringList &file_names);
 

@@ -39,6 +39,7 @@ Installer::Installer(const QCommandLineParser &arg_parser)
 QStringList Installer::canonicolize(const QStringList &file_names)
 {
     QStringList new_list;
+    new_list.reserve(file_names.size());
     for (auto const &name : file_names)
         new_list << "\"" + QFileInfo(name).canonicalFilePath() + "\"";
     return new_list;
@@ -91,7 +92,7 @@ bool Installer::confirmAction(const QStringList &names)
     QString detailed_text;
     for (const auto &file_name : names) {
         detailed_text += tr("File: %1").arg(file_name) + "\n\n";
-        detailed_text += cmd.getCmdOut("dpkg -I \"" + file_name + "\"| sed -n '/Package:/,$p'");
+        detailed_text += cmd.getCmdOut("dpkg -I " + file_name + "| sed -n '/Package:/,$p'");
         detailed_text += "\n\n";
     }
     msgBox.setDetailedText(detailed_text);
