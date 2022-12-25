@@ -4,33 +4,33 @@
 <context>
     <name>Installer</name>
     <message>
-        <location filename="../installer.cpp" line="73"/>
+        <location filename="../installer.cpp" line="83"/>
         <source>Remove</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="75"/>
-        <location filename="../installer.cpp" line="89"/>
+        <location filename="../installer.cpp" line="85"/>
+        <location filename="../installer.cpp" line="105"/>
         <source>Install</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="77"/>
-        <source>The following package will be installed. Click Show Details for list of changes.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../installer.cpp" line="81"/>
-        <source>File: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../installer.cpp" line="87"/>
-        <source>The %1 package will be reinstalled.</source>
+        <source>The following packages will be installed. Click Show Details for list of changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="102"/>
+        <location filename="../installer.cpp" line="94"/>
+        <source>File: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../installer.cpp" line="103"/>
+        <source>Will install the following:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../installer.cpp" line="118"/>
         <source>Press any key to close</source>
         <translation type="unfinished"></translation>
     </message>
@@ -44,48 +44,48 @@
     </message>
     <message>
         <location filename="../main.cpp" line="51"/>
-        <source>file</source>
+        <source>files...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.cpp" line="51"/>
-        <source>Name of .deb file to install</source>
+        <source>Name of .deb files to install</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.cpp" line="52"/>
-        <source>[file]</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="71"/>
-        <source>Select a .deb file to install</source>
+        <source>[file...]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.cpp" line="72"/>
+        <source>Select .deb files to install</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="73"/>
         <source>Deb Files (*.deb)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="77"/>
-        <location filename="../main.cpp" line="82"/>
-        <location filename="../main.cpp" line="89"/>
+        <location filename="../main.cpp" line="78"/>
+        <location filename="../main.cpp" line="84"/>
+        <location filename="../main.cpp" line="91"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="77"/>
+        <location filename="../main.cpp" line="78"/>
         <source>No .deb files were provided.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="83"/>
-        <source>Could not find %1 file</source>
+        <location filename="../main.cpp" line="85"/>
+        <source>File %1 is not a .deb file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="89"/>
+        <location filename="../main.cpp" line="91"/>
         <source>You must run this program as normal user.</source>
         <translation type="unfinished"></translation>
     </message>

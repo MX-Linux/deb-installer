@@ -12,20 +12,20 @@ Build-Depends: debhelper (>= 10), qtbase5-dev, qttools5-dev-tools
 Package-List:
  deb-installer deb admin optional arch=any
 Checksums-Sha1:
- 9d9d071b5f45a6adbcdcce70805bce9e36052489 47416 deb-installer_0.22.12.tar.xz
+ 5713aee9cbcd0b74e724baca95182f727c39484f 48232 deb-installer_0.22.12.tar.xz
 Checksums-Sha256:
- fc7e62a3486b505397cfe6cbb2f4554a269ea7dad095e1ce595834c2e9d63147 47416 deb-installer_0.22.12.tar.xz
+ bba4bd74963c0dead376749352c23613a70daad2f6afa2f17e319b43781b0eb9 48232 deb-installer_0.22.12.tar.xz
 Files:
- aaa73f0e70ad915ab7659486a375cd49 47416 deb-installer_0.22.12.tar.xz
+ 06c2b091d08cb24d4b89177cb41b644b 48232 deb-installer_0.22.12.tar.xz
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmOmNlETHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumL3cB/9Bg5MzJKggAw7jrCazNFeF8gxyuyxM
-W8Cj7K8cMyP5DtSDl3eoqay8mxBr/lePPReVNCmFLdzAn22z4N6zxNZXoTMbGP5H
-nB790pkNWk0NG3Qcy5VOxdokGGqR4YF9rkC67sPEFGolfnu3+qN/pSDscv4715ZI
-W9lhWzcH10mt8cGoR82+ZMq6Z4q/APEbruIBXXVDjvmGeRtyrbO4aZEDY1uKxVnG
-pSWaad1ha3d5s5RC/23VMu7n3jxgeQiK4XvGQ5+xmX5vh4UhOmFYH9DKPkuNZHbw
-qXQdAW0t6KR7iFmT+Xx1arsqAH8FjySo4NFC0Q3Y7PjgWL/rAwAP98CA
-=FMbh
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmOnvUoTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumBXOB/46PsszY53YgRCcW5Qql1KYdNe5I6io
+QmbWJksFa80ASXRDCgk1/MR2qd4SXTQaeKy4/j7egMU0PblQWxE1zPYynf4y3J8i
+xUtOiJXZkapwxLApokriu6J7IlD27HHaENo/DWN0W5h2E4NXcTxnYQJSr2ZQqM23
+11wChZUwQ2tQQr+/TiNIhwkB3Q29s7iUCcXRPfSr9LjrQw/NkjXPm9mXgT0uU2eB
+t/rUCOnLoM/math1g9BgKOfpmtbNntUkPRI10sbyX9Kjx5EDNmuEGvPKn+tq8ClH
+b2Fu2OSUkkA0OqbvTFT7uUIyse0OsJf+H8IQD+v+0oT+LIMBvYJxlXLu
+=jwMI
 -----END PGP SIGNATURE-----
