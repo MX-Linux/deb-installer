@@ -84,7 +84,9 @@ bool Installer::confirmAction(const QStringList &names)
     if (!detailed_to_install.isEmpty())
         detailed_to_install.prepend(tr("Install") + "\n");
 
-    msg = "<b>" + tr("The following packages will be installed. Click Show Details for list of changes.") + "</b>";
+    msg = "<b>"
+          + tr("The following packages will be installed. Click 'Show Details...' for information about the packages.")
+          + "</b>";
 
     QMessageBox msgBox;
     msgBox.setText(msg);
