@@ -103,12 +103,10 @@ bool Installer::confirmAction(const QStringList &names)
     // find Detailed Info box and set heigth, set box height between 100 - 400 depending on length of content
     const auto min = 100;
     const auto max = 400;
-    const auto textBoxes = msgBox.findChildren<QTextEdit *>();
-    if (!textBoxes.isEmpty()) {
-        const auto recommended = qMax(msgBox.detailedText().length() / 2, min); // half of length is just guesswork
-        const auto height = qMin(recommended, max);
-        textBoxes.at(0)->setFixedHeight(height);
-    }
+    const auto detailedInfo = msgBox.findChild<QTextEdit *>();
+    const auto recommended = qMax(msgBox.detailedText().length() / 2, min); // half of length is just guesswork
+    const auto height = qMin(recommended, max);
+    detailedInfo->setFixedHeight(height);
 
     if (!detailed_installed_names.isEmpty() || !detailed_removed_names.isEmpty())
         msgBox.setInformativeText(detailed_to_install + "\n" + detailed_removed_names);
