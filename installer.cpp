@@ -32,12 +32,12 @@
 
 Installer::Installer(const QCommandLineParser &arg_parser)
 {
-    QStringList file_names = canonicolize(arg_parser.positionalArguments());
+    QStringList file_names = canonicalize(arg_parser.positionalArguments());
     if (confirmAction(file_names))
         install(file_names);
 }
 
-QStringList Installer::canonicolize(const QStringList &file_names)
+QStringList Installer::canonicalize(const QStringList &file_names)
 {
     QStringList new_list;
     new_list.reserve(file_names.size());
