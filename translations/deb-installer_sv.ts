@@ -98,7 +98,8 @@
     <message>
         <location filename="../main.cpp" line="78"/>
         <location filename="../main.cpp" line="84"/>
-        <location filename="../main.cpp" line="91"/>
+        <location filename="../main.cpp" line="88"/>
+        <location filename="../main.cpp" line="95"/>
         <source>Error</source>
         <translation>Fel</translation>
     </message>
@@ -108,7 +109,12 @@
         <translation>Inga .deb filer fanns.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="85"/>
+        <location filename="../main.cpp" line="84"/>
+        <source>File %1 not found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="89"/>
         <source>File %1 is not a .deb file.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -117,7 +123,7 @@
         <translation type="vanished">Kunde inte hitta %1 fil</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="91"/>
+        <location filename="../main.cpp" line="95"/>
         <source>You must run this program as normal user.</source>
         <translation>Du måste köra det här programmet som vanlig användare.</translation>
     </message>
