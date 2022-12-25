@@ -10,7 +10,7 @@
     </message>
     <message>
         <location filename="../installer.cpp" line="86"/>
-        <location filename="../installer.cpp" line="114"/>
+        <location filename="../installer.cpp" line="118"/>
         <source>Install</source>
         <translation>Instal·la</translation>
     </message>
@@ -25,12 +25,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="112"/>
+        <location filename="../installer.cpp" line="116"/>
         <source>Will install the following:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="128"/>
+        <location filename="../installer.cpp" line="132"/>
         <source>Press any key to close</source>
         <translation>Premeu qualsevol tecla per tancar</translation>
     </message>
