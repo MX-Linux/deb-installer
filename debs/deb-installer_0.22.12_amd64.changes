@@ -18,29 +18,29 @@ Changes:
  .
    * initial release
 Checksums-Sha1:
- 044fab9dcc14739cb4a98bdd26191d863b7dccba 1138 deb-installer_0.22.12.dsc
- 563874d84591b28b15028b46c6ff2472150bad30 48448 deb-installer_0.22.12.tar.xz
- cd405bb08d9c75609bf76b3408e8850b49ffb3f1 10770 deb-installer_0.22.12_amd64.buildinfo
- b80c1543fde2f1eb1355e34785d81c8f6d626368 47224 deb-installer_0.22.12_amd64.deb
+ 8741391b24e5b3e68f31359405dd00594fb97db2 1138 deb-installer_0.22.12.dsc
+ 20fa43977f5d690bf6d586dec9ab29bff6ed1aaf 48536 deb-installer_0.22.12.tar.xz
+ 42775871ca776ac730211502bf47e88f4a05cd7a 10770 deb-installer_0.22.12_amd64.buildinfo
+ 81829155251b1f8e9d6a8e30e51afcfd47ebd945 47352 deb-installer_0.22.12_amd64.deb
 Checksums-Sha256:
- 2825dd69c78543f86fd910492b5ea11f8d01bb013f039b9257cda3e974274ba1 1138 deb-installer_0.22.12.dsc
- 739fbb213cd87931449a2b835a69488a268dfb54f350f91b61e3349acb2c4e16 48448 deb-installer_0.22.12.tar.xz
- 4f81c00f93f685827b1331a6c68dffe98d59b68aad59fe53bfe82c877307f3d2 10770 deb-installer_0.22.12_amd64.buildinfo
- d8be3136a2e9170ef7df3b62942d8ffdf3fc3d83cbaae35fc667a92ab41f7b0d 47224 deb-installer_0.22.12_amd64.deb
+ 0fe6370375519789ee47b56564e118f0ff716cfd70c7f3a2cbde612a62a29fa5 1138 deb-installer_0.22.12.dsc
+ 29c7ef6a6216d089c93d8fd0317d93b1226b507ea84e36254a0a0864e041efe3 48536 deb-installer_0.22.12.tar.xz
+ 7e9e03b35ec550ced053802bdc064cbda78f3347ff7cbe8ea8a103bcb1eb2d9d 10770 deb-installer_0.22.12_amd64.buildinfo
+ fde835e7bf930ec805e1a32a2339982e19f487e60df8d86421697fafba759327 47352 deb-installer_0.22.12_amd64.deb
 Files:
- c89757cc56ff740e74c6c28bf326eb33 1138 admin optional deb-installer_0.22.12.dsc
- 06e4512dbd11d5d36f935022f4191763 48448 admin optional deb-installer_0.22.12.tar.xz
- 65ddb02e446dca21df514346e09ff782 10770 admin optional deb-installer_0.22.12_amd64.buildinfo
- 149797905d5623be6d15a9b6ca3f40dc 47224 admin optional deb-installer_0.22.12_amd64.deb
+ 1b3617a022ce02b3d029e62303a6dabb 1138 admin optional deb-installer_0.22.12.dsc
+ eb27c8c8376da16ca0e8f266541427b0 48536 admin optional deb-installer_0.22.12.tar.xz
+ ae457f2a7a892d0eda095d013197ec69 10770 admin optional deb-installer_0.22.12_amd64.buildinfo
+ b36b2ca0643e5a57ed258e409078fbfc 47352 admin optional deb-installer_0.22.12_amd64.deb
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmOn7ZcTHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumLG1CADCwRMTVI5TsODRGI45rfl/fli7p6Nt
-itHRHdRHckaW3MKSdLnK60LRCavqyDfHwKmlo9uvpu5DhRtoad7/T6B2tp/29LJz
-KplsZRvw/5SE9Lh2eDmaozJYu0ZhM9qLT4+gksuivG1GKwsS/PF4doDZizTHTAbM
-8YrT7Ez5KBs62vXPfJS+MD1wUvquyuDmxyR0+Z21oM7fCfSq/HGcyJJsSRZAeDt1
-Pc1PxTI9ZND5orYUe1jBLTvO0fulr9bMyvc2MSTTC6RmBq33cyxv3+4ebzaVVK21
-6QF2R5iDh4S1QqwLQgOZh9YAcWwM7574SZ6gIvdnmncio8v1NQwe7cY1
-=z8N7
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmOoktMTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumMfkB/9YwbOh6uc4uOleXftkDsq5bEDvYsaG
++1GjEkwUjGmC4uqrY74Mg5N625sZ1DrhqCFpTH2vmPhBHtBK5k6WKE1qwLnvDx40
+Qjs9u9miCVsoDWegxS4pyoReYEEeVH4+4exvnJMCRY9/O4v+ra9MAaDtcevoAKlN
+HZuqb5FcpTIpPuIBfQBkJi8FMzfhaigIqudmrfx61MAze/d5DuSeIOr/x5NHZwJ9
+al73JtiYh/GryjEYeYLqes1cHOLI3IzQiGc4Wn9RPJh8TjZ4HeDyzChWd7SYdh5v
+Z9t2sZ07q+PGouHUQqFOScmlLVZBD5WjXQAMA1rJhE0v8njAFX4jirHI
+=C1t9
 -----END PGP SIGNATURE-----
