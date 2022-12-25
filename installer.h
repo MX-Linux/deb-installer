@@ -32,7 +32,7 @@ class Installer : QObject
     Q_OBJECT
 
 public:
-    Installer(const QCommandLineParser &arg_parser = {});
+    Installer(const QCommandLineParser &arg_parser = {}, QObject *parent = nullptr);
     ~Installer();
 
 public slots:
@@ -44,7 +44,6 @@ private slots:
 
 private:
     Cmd cmd;
-    QProcess proc;
 };
 
 #endif
