@@ -54,5 +54,3 @@ TRANSLATIONS += translations/deb-installer_ca.ts \
                 translations/deb-installer_ro.ts \
                 translations/deb-installer_sv.ts
 
-RESOURCES +=
-

@@ -15,17 +15,17 @@
     <message>
         <location filename="../installer.cpp" line="77"/>
         <source>The following package will be installed. Click Show Details for list of changes.</source>
-        <translation type="unfinished"/>
+        <translation>Será instalado o seguinte pacote. Clique em Mostrar Detalhes para ver a lista de alterações.</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="81"/>
         <source>File: </source>
-        <translation type="unfinished"/>
+        <translation>Ficheiro:</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="87"/>
         <source>The %1 package will be reinstalled.</source>
-        <translation type="unfinished"/>
+        <translation>O pacote %1 será reinstalado.</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="102"/>
@@ -38,7 +38,7 @@
     <message>
         <location filename="../main.cpp" line="48"/>
         <source>Program for installing Debian binary packages (deb files)</source>
-        <translation type="unfinished"/>
+        <translation>Programa para a instalação de pacotes binários Debian (ficheiros deb)</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="51"/>
@@ -48,22 +48,22 @@
     <message>
         <location filename="../main.cpp" line="51"/>
         <source>Name of .deb file to install</source>
-        <translation type="unfinished"/>
+        <translation>Nome do ficheiro .deb a instalar</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="52"/>
         <source>[file]</source>
-        <translation type="unfinished"/>
+        <translation>[file]</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="71"/>
         <source>Select a .deb file to install</source>
-        <translation type="unfinished"/>
+        <translation>Selecione um ficheiro .deb para instalar</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="72"/>
         <source>Deb Files (*.deb)</source>
-        <translation type="unfinished"/>
+        <translation>Ficheiros deb (*.deb)</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="77"/>
@@ -75,12 +75,12 @@
     <message>
         <location filename="../main.cpp" line="77"/>
         <source>No .deb files were provided.</source>
-        <translation type="unfinished"/>
+        <translation>Não foram fornecidos ficheiros .deb.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="83"/>
         <source>Could not find %1 file</source>
-        <translation type="unfinished"/>
+        <translation>Não foi encontrado o ficheiro %1</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="89"/>
