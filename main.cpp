@@ -39,8 +39,8 @@
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-    QApplication::setOrganizationName(QStringLiteral("MX-Linux"));
-    QApplication::setApplicationDisplayName(QStringLiteral("Deb Installer"));
+    QApplication::setOrganizationName("MX-Linux");
+    QApplication::setApplicationDisplayName("Deb Installer");
     QApplication::setWindowIcon(QIcon::fromTheme(QApplication::applicationName()));
     QApplication::setApplicationVersion(VERSION);
 
@@ -53,8 +53,7 @@ int main(int argc, char *argv[])
     parser.process(app);
 
     QTranslator qtTran;
-    if (qtTran.load(QLocale::system(), QStringLiteral("qt"), QStringLiteral("_"),
-                    QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
+    if (qtTran.load(QLocale::system(), "qt", "_", QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
         QApplication::installTranslator(&qtTran);
 
     QTranslator qtBaseTran;
@@ -78,7 +77,8 @@ int main(int argc, char *argv[])
             QMessageBox::critical(nullptr, QObject::tr("Error"), QObject::tr("No .deb files were provided."));
             return EXIT_FAILURE;
         }
-        for (const auto &file : parser.positionalArguments())
+        const auto args = parser.positionalArguments();
+        for (const auto &file : args)
             if (!QFile::exists(file)) {
                 QApplication::beep();
                 QMessageBox::critical(nullptr, QObject::tr("Error"), QObject::tr("File %1 not found").arg(file));

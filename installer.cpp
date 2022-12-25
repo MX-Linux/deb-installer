@@ -30,7 +30,8 @@
 
 #include "cmd.h"
 
-Installer::Installer(const QCommandLineParser &arg_parser)
+Installer::Installer(const QCommandLineParser &arg_parser, QObject *parent)
+    : QObject(parent)
 {
     QStringList file_names = canonicalize(arg_parser.positionalArguments());
     if (confirmAction(file_names))
@@ -57,26 +58,26 @@ bool Installer::confirmAction(const QStringList &names)
     QString names_str = names.join(" ");
     QStringList detailed_installed_names;
 
-    const QString frontend = QStringLiteral("DEBIAN_FRONTEND=$(dpkg -l debconf-kde-helper 2>/dev/null | grep -sq ^i "
-                                            "&& echo kde || echo gnome) LANG=C ");
-    const QString aptget = QStringLiteral("apt-get -s -V -o=Dpkg::Use-Pty=0 ");
+    const QString frontend
+        = "DEBIAN_FRONTEND=$(dpkg -l debconf-kde-helper 2>/dev/null | grep -sq ^i && echo kde || echo gnome) LANG=C ";
+    const QString aptget = "apt-get -s -V -o=Dpkg::Use-Pty=0 ";
 
     detailed_names = cmd.getCmdOut(
         frontend + aptget + "install " + names_str
         + R"lit(|grep 'Inst\|Remv'| awk '{V=""; P="";}; $3 ~ /^\[/ { V=$3 }; $3 ~ /^\(/ { P=$3 ")"}; $4 ~ /^\(/ {P=" => " $4 ")"}; {print $2 ";" V  P ";" $1}')lit");
     if (!detailed_names.isEmpty())
-        detailed_installed_names = detailed_names.split(QStringLiteral("\n"));
+        detailed_installed_names = detailed_names.split("\n");
     detailed_installed_names.sort();
     QStringListIterator iterator(detailed_installed_names);
     QString value;
     while (iterator.hasNext()) {
         value = iterator.next();
         if (value.contains(QLatin1String("Remv"))) {
-            value = value.section(QStringLiteral(";"), 0, 0) + " " + value.section(QStringLiteral(";"), 1, 1);
+            value = value.section(";", 0, 0) + " " + value.section(";", 1, 1);
             detailed_removed_names += value + "\n";
         }
         if (value.contains(QLatin1String("Inst"))) {
-            value = value.section(QStringLiteral(";"), 0, 0) + " " + value.section(QStringLiteral(";"), 1, 1);
+            value = value.section(";", 0, 0) + " " + value.section(";", 1, 1);
             detailed_to_install += value + "\n";
         }
     }
