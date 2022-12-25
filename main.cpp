@@ -79,7 +79,11 @@ int main(int argc, char *argv[])
             return EXIT_FAILURE;
         }
         for (const auto &file : parser.positionalArguments())
-            if (!QFile::exists(file) || !file.endsWith(".deb")) {
+            if (!QFile::exists(file)) {
+                QApplication::beep();
+                QMessageBox::critical(nullptr, QObject::tr("Error"), QObject::tr("File %1 not found").arg(file));
+                return EXIT_FAILURE;
+            } else if (!file.endsWith(".deb")) {
                 QApplication::beep();
                 QMessageBox::critical(nullptr, QObject::tr("Error"),
                                       QObject::tr("File %1 is not a .deb file.").arg(file));
