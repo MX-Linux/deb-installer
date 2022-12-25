@@ -48,8 +48,8 @@ int main(int argc, char *argv[])
     parser.setApplicationDescription(QObject::tr("Program for installing Debian binary packages (deb files)"));
     parser.addHelpOption();
     parser.addVersionOption();
-    parser.addPositionalArgument(QObject::tr("file"), QObject::tr("Name of .deb file to install"),
-                                 QObject::tr("[file]"));
+    parser.addPositionalArgument(QObject::tr("files..."), QObject::tr("Name of .deb files to install"),
+                                 QObject::tr("[file...]"));
     parser.process(app);
 
     QTranslator qtTran;
@@ -68,11 +68,12 @@ int main(int argc, char *argv[])
 
     if (getuid() != 0) {
         if (parser.positionalArguments().isEmpty()) {
-            QString file = QFileDialog::getOpenFileName(nullptr, QObject::tr("Select a .deb file to install"),
-                                                        QDir::currentPath(), QObject::tr("Deb Files (*.deb)"));
-            parser.process({"deb-installer", file});
+            QStringList args = {"deb-installer"};
+            args << QFileDialog::getOpenFileNames(nullptr, QObject::tr("Select .deb files to install"),
+                                                  QDir::currentPath(), QObject::tr("Deb Files (*.deb)"));
+            parser.process(args);
         }
-        if (parser.positionalArguments().isEmpty() || !parser.positionalArguments().at(0).endsWith(".deb")) {
+        if (parser.positionalArguments().isEmpty()) {
             QApplication::beep();
             QMessageBox::critical(nullptr, QObject::tr("Error"), QObject::tr("No .deb files were provided."));
             return EXIT_FAILURE;
