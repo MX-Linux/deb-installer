@@ -31,19 +31,28 @@
 
 Installer::Installer(const QCommandLineParser &arg_parser)
 {
-    file_name = QFileInfo(arg_parser.positionalArguments().at(0)).canonicalFilePath();
-    if (confirmAction(file_name))
-        install(file_name);
+    QStringList file_names = canonicolize(arg_parser.positionalArguments());
+    if (confirmAction(file_names))
+        install(file_names);
+}
+
+QStringList Installer::canonicolize(const QStringList &file_names)
+{
+    QStringList new_list;
+    for (auto const &name : file_names)
+        new_list << "\"" + QFileInfo(name).canonicalFilePath() + "\"";
+    return new_list;
 }
 
 Installer::~Installer() = default;
 
-bool Installer::confirmAction(const QString &name)
+bool Installer::confirmAction(const QStringList &names)
 {
     QString detailed_names;
     QString detailed_removed_names;
     QString detailed_to_install;
     QString msg;
+    QString names_str = names.join(" ");
     QStringList detailed_installed_names;
 
     const QString frontend = QStringLiteral("DEBIAN_FRONTEND=$(dpkg -l debconf-kde-helper 2>/dev/null | grep -sq ^i "
@@ -51,7 +60,7 @@ bool Installer::confirmAction(const QString &name)
     const QString aptget = QStringLiteral("apt-get -s -V -o=Dpkg::Use-Pty=0 ");
 
     detailed_names = cmd.getCmdOut(
-        frontend + aptget + "install \"" + name + "\""
+        frontend + aptget + "install " + names_str
         + R"lit(|grep 'Inst\|Remv'| awk '{V=""; P="";}; $3 ~ /^\[/ { V=$3 }; $3 ~ /^\(/ { P=$3 ")"}; $4 ~ /^\(/ {P=" => " $4 ")"}; {print $2 ";" V  P ";" $1}')lit");
     if (!detailed_names.isEmpty())
         detailed_installed_names = detailed_names.split(QStringLiteral("\n"));
@@ -62,11 +71,11 @@ bool Installer::confirmAction(const QString &name)
         value = iterator.next();
         if (value.contains(QLatin1String("Remv"))) {
             value = value.section(QStringLiteral(";"), 0, 0) + " " + value.section(QStringLiteral(";"), 1, 1);
-            detailed_removed_names = detailed_removed_names + value + "\n";
+            detailed_removed_names += value + "\n";
         }
         if (value.contains(QLatin1String("Inst"))) {
             value = value.section(QStringLiteral(";"), 0, 0) + " " + value.section(QStringLiteral(";"), 1, 1);
-            detailed_to_install = detailed_to_install + value + "\n";
+            detailed_to_install += value + "\n";
         }
     }
     if (!detailed_removed_names.isEmpty())
@@ -74,17 +83,23 @@ bool Installer::confirmAction(const QString &name)
     if (!detailed_to_install.isEmpty())
         detailed_to_install.prepend(tr("Install") + "\n");
 
-    msg = "<b>" + tr("The following package will be installed. Click Show Details for list of changes.") + "</b>";
+    msg = "<b>" + tr("The following packages will be installed. Click Show Details for list of changes.") + "</b>";
 
     QMessageBox msgBox;
     msgBox.setText(msg);
-    msgBox.setInformativeText("\n" + tr("File: ") + name + "\n\n"
-                              + cmd.getCmdOut("dpkg -I \"" + file_name + "\"| sed -n '/Package:/,$p'"));
+
+    QString detailed_text;
+    for (const auto &file_name : names) {
+        detailed_text += tr("File: %1").arg(file_name) + "\n\n";
+        detailed_text += cmd.getCmdOut("dpkg -I \"" + file_name + "\"| sed -n '/Package:/,$p'");
+        detailed_text += "\n\n";
+    }
+    msgBox.setDetailedText(detailed_text);
 
     if (!detailed_installed_names.isEmpty() || !detailed_removed_names.isEmpty())
-        msgBox.setDetailedText(detailed_to_install + "\n" + detailed_removed_names);
+        msgBox.setInformativeText(detailed_to_install + "\n" + detailed_removed_names);
     else
-        msgBox.setDetailedText(tr("The %1 package will be reinstalled.").arg(QFileInfo(file_name).fileName()));
+        msgBox.setInformativeText(tr("Will install the following:") + "\n" + names.join("\n"));
 
     msgBox.addButton(tr("Install"), QMessageBox::AcceptRole);
     msgBox.addButton(QMessageBox::Cancel);
@@ -95,9 +110,9 @@ bool Installer::confirmAction(const QString &name)
     return msgBox.exec() == QMessageBox::AcceptRole;
 }
 
-void Installer::install(const QString &file_name)
+void Installer::install(const QStringList &file_names)
 {
-    cmd.run("x-terminal-emulator -e bash -c \"echo 'Installing selected package, please authenticate';echo;pkexec apt "
-            "reinstall '"
-            + file_name + "'; echo; read -n1 -srp '" + tr("Press any key to close") + "'\"");
+    cmd.run("x-terminal-emulator -e bash -c 'echo Installing selected package please authenticate; echo; pkexec apt "
+            "reinstall "
+            + file_names.join(" ") + "; echo; read -n1 -srp \"" + tr("Press any key to close") + "\"'");
 }

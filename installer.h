@@ -38,13 +38,13 @@ public:
 public slots:
 
 private slots:
-    bool confirmAction(const QString &file_name);
-    void install(const QString &file_name);
+    QStringList canonicolize(const QStringList &file_names);
+    bool confirmAction(const QStringList &file_names);
+    void install(const QStringList &file_names);
 
 private:
     Cmd cmd;
     QProcess proc;
-    QString file_name;
 };
 
 #endif
