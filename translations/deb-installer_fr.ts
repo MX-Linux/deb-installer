@@ -86,7 +86,8 @@
     <message>
         <location filename="../main.cpp" line="78"/>
         <location filename="../main.cpp" line="84"/>
-        <location filename="../main.cpp" line="91"/>
+        <location filename="../main.cpp" line="88"/>
+        <location filename="../main.cpp" line="95"/>
         <source>Error</source>
         <translation>Erreur</translation>
     </message>
@@ -96,12 +97,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="85"/>
+        <location filename="../main.cpp" line="84"/>
+        <source>File %1 not found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="89"/>
         <source>File %1 is not a .deb file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="91"/>
+        <location filename="../main.cpp" line="95"/>
         <source>You must run this program as normal user.</source>
         <translation>Vous devez lancer cette application en tant qu&apos;utilisateur normal.</translation>
     </message>
