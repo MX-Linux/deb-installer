@@ -30,18 +30,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The following package will be installed. Click Show Details for list of changes.</source>
-        <translation type="vanished">Följande paket kommer att installeras. Klicka på Visa Detaljer för lista på ändringarna.</translation>
-    </message>
-    <message>
-        <source>File: </source>
-        <translation type="vanished">Fil:</translation>
-    </message>
-    <message>
-        <source>The %1 package will be reinstalled.</source>
-        <translation type="vanished">%1 paketet kommer att ominstalleras.</translation>
-    </message>
-    <message>
         <location filename="../installer.cpp" line="131"/>
         <source>Press any key to close</source>
         <translation>Tryck på valfri tangent för att stänga</translation>
@@ -53,22 +41,6 @@
         <location filename="../main.cpp" line="46"/>
         <source>Program for installing Debian binary packages (deb files)</source>
         <translation>Program för att installera Debian binära paket (deb filer)</translation>
-    </message>
-    <message>
-        <source>file</source>
-        <translation type="vanished">fil</translation>
-    </message>
-    <message>
-        <source>Name of .deb file to install</source>
-        <translation type="vanished">Namn på .deb fil att installera</translation>
-    </message>
-    <message>
-        <source>[file]</source>
-        <translation type="vanished">[fil]</translation>
-    </message>
-    <message>
-        <source>Select a .deb file to install</source>
-        <translation type="vanished">Välj en .deb fil att installera</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="49"/>
@@ -117,10 +89,6 @@
         <location filename="../main.cpp" line="87"/>
         <source>File %1 is not a .deb file.</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Could not find %1 file</source>
-        <translation type="vanished">Kunde inte hitta %1 fil</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="93"/>

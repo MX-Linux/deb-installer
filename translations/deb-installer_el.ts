@@ -43,10 +43,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>file</source>
-        <translation type="vanished">αρχείο</translation>
-    </message>
-    <message>
         <location filename="../main.cpp" line="49"/>
         <source>files...</source>
         <translation type="unfinished"></translation>
