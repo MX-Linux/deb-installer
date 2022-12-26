@@ -10,6 +10,6 @@ Type=Application
 Icon=deb-installer
 Categories=GNOME;GTK;System;
 NoDisplay=false
-MimeType=application/vnd.debian.binary-package;
+MimeType=application/x-deb;application/vnd.debian.binary-package;
 StartupNotify=true
 Keywords=package;apt;dpkg;install
