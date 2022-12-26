@@ -30,18 +30,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The following package will be installed. Click Show Details for list of changes.</source>
-        <translation type="vanished">Le paquet suivant sera installé. Cliquez sur Afficher les détails pour obtenir la liste des modifications.</translation>
-    </message>
-    <message>
-        <source>File: </source>
-        <translation type="vanished">Fichier :</translation>
-    </message>
-    <message>
-        <source>The %1 package will be reinstalled.</source>
-        <translation type="vanished">Le paquet %1 sera réinstallé.</translation>
-    </message>
-    <message>
         <location filename="../installer.cpp" line="131"/>
         <source>Press any key to close</source>
         <translation>Appuyez sur une touche pour fermer</translation>
@@ -53,10 +41,6 @@
         <location filename="../main.cpp" line="46"/>
         <source>Program for installing Debian binary packages (deb files)</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>file</source>
-        <translation type="vanished">fichier</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="49"/>
