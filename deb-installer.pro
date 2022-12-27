@@ -41,16 +41,68 @@ HEADERS  += \
 
 FORMS    +=
 
-TRANSLATIONS += translations/deb-installer_ca.ts \
-                translations/deb-installer_de.ts \
-                translations/deb-installer_el.ts \
-                translations/deb-installer_en.ts \
-                translations/deb-installer_es.ts \
-                translations/deb-installer_fr.ts \
-                translations/deb-installer_fr_BE.ts \
-                translations/deb-installer_it.ts \
-                translations/deb-installer_ja.ts \
-                translations/deb-installer_nl.ts \
-                translations/deb-installer_ro.ts \
-                translations/deb-installer_sv.ts
-
+TRANSLATIONS += translations/deb-installer_af.ts \
+    translations/deb-installer_ar.ts \
+    translations/deb-installer_be.ts \
+    translations/deb-installer_am.ts \
+    translations/deb-installer_bg.ts \
+    translations/deb-installer_bn.ts \
+    translations/deb-installer_ca.ts \
+    translations/deb-installer_cs.ts \
+    translations/deb-installer_da.ts \
+    translations/deb-installer_de.ts \
+    translations/deb-installer_el.ts \
+    translations/deb-installer_en_GB.ts
+    translations/deb-installer_en.ts \
+    translations/deb-installer_eo.ts \
+    translations/deb-installer_es_ES.ts \
+    translations/deb-installer_es.ts \
+    translations/deb-installer_et.ts \
+    translations/deb-installer_eu.ts \
+    translations/deb-installer_fa.ts \
+    translations/deb-installer_fil_PH.ts \
+    translations/deb-installer_fi.ts \
+    translations/deb-installer_fr_BE.ts \
+    translations/deb-installer_fr_FR.ts \
+    translations/deb-installer_fr.ts \
+    translations/deb-installer_gl_ES.ts \
+    translations/deb-installer_gu.ts \
+    translations/deb-installer_he_IL.ts \
+    translations/deb-installer_he.ts \
+    translations/deb-installer_hi.ts \
+    translations/deb-installer_hr.ts \
+    translations/deb-installer_hu.ts \
+    translations/deb-installer_id.ts \
+    translations/deb-installer_is.ts \
+    translations/deb-installer_it.ts \
+    translations/deb-installer_ja.ts \
+    translations/deb-installer_kk.ts \
+    translations/deb-installer_ko.ts \
+    translations/deb-installer_ku.ts \
+    translations/deb-installer_lt.ts \
+    translations/deb-installer_mk.ts \
+    translations/deb-installer_mr.ts \
+    translations/deb-installer_nb_NO.ts \
+    translations/deb-installer_nb.ts \
+    translations/deb-installer_nl_BE.ts \
+    translations/deb-installer_nl.ts \
+    translations/deb-installer_or.ts \
+    translations/deb-installer_pl.ts \
+    translations/deb-installer_pt_BR.ts \
+    translations/deb-installer_pt.ts \
+    translations/deb-installer_ro.ts \
+    translations/deb-installer_rue.ts \
+    translations/deb-installer_ru.ts \
+    translations/deb-installer_sk.ts \
+    translations/deb-installer_sl.ts \
+    translations/deb-installer_so.ts \
+    translations/deb-installer_sq.ts \
+    translations/deb-installer_sr.ts \
+    translations/deb-installer_sv.ts \
+    translations/deb-installer_th.ts \
+    translations/deb-installer_tr.ts \
+    translations/deb-installer_uk.ts \
+    translations/deb-installer_vi.ts \
+    translations/deb-installer_zh_CN.ts \
+    translations/deb-installer_zh_HK.ts \
+    translations/deb-installer_zh_TW.ts
