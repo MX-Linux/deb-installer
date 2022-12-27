@@ -1,7 +1,7 @@
 /**********************************************************************
  *  main.cpp
  **********************************************************************
- * Copyright (C) 2018 MX Authors
+ * Copyright (C) 2022 MX Authors
  *
  * Authors: Adrian
  *          MX Linux <http://mxlinux.org>
