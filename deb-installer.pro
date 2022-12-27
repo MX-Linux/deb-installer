@@ -52,7 +52,7 @@ TRANSLATIONS += translations/deb-installer_af.ts \
     translations/deb-installer_da.ts \
     translations/deb-installer_de.ts \
     translations/deb-installer_el.ts \
-    translations/deb-installer_en_GB.ts
+    translations/deb-installer_en_GB.ts \
     translations/deb-installer_en.ts \
     translations/deb-installer_eo.ts \
     translations/deb-installer_es_ES.ts \
