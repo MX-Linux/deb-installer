@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Sat, 07 Jan 2023 09:46:59 -0500
+Source: deb-installer
+Binary: deb-installer
+Architecture: source amd64
+Version: 21.1
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ deb-installer - deb-installer
+Changes:
+ deb-installer (21.1) mx; urgency=medium
+ .
+   * New translations
+Checksums-Sha1:
+ bfebfcf214cb5ba5af55aa8cf22cc6d5512ec352 1126 deb-installer_21.1.dsc
+ 36f83908da0dd075f39a39c5a3d288d307b7326e 43916 deb-installer_21.1.tar.xz
+ 5698f9c64db8525033fb2363ace1ec4e0d5c3a80 10746 deb-installer_21.1_amd64.buildinfo
+ 092501e89d18d4e031cbcad70b405010ac47293b 40768 deb-installer_21.1_amd64.deb
+Checksums-Sha256:
+ 712b0be3599f9e8625823fad3afccadbb28632ecc658385098915ba12ccaf7f8 1126 deb-installer_21.1.dsc
+ ae7ff843cf209320b4faef4aa1c35537e3684d863aafffeb0a952755db5f3891 43916 deb-installer_21.1.tar.xz
+ 0cb2a9800f99ca1c5d200029e782b5f33b0c8e6240a89c83e48cff1a1beff042 10746 deb-installer_21.1_amd64.buildinfo
+ 9db381bbc3912aacc602d51840c6b5ead30c0afbea2f20786e3343550114ce65 40768 deb-installer_21.1_amd64.deb
+Files:
+ e569513d2ce80a912f04eaea374882a0 1126 admin optional deb-installer_21.1.dsc
+ 1090e69acdb3bb7adf28c1098baca67e 43916 admin optional deb-installer_21.1.tar.xz
+ ae0c3d00e6eac26cc940771fb1cd7d13 10746 admin optional deb-installer_21.1_amd64.buildinfo
+ 7a2d24dc3498fe1ff0d3beebd20c0fe1 40768 admin optional deb-installer_21.1_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmO5huQTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumLUMB/0QBEfiP1a4jhWTLUgziZfe+uLlfabU
+NHuqiNVScG383Zx0lUuLvA3zkO7bVFJtvcLAKPoKb4Jb9UNTMiBegU+l7ZpCPAZa
+V677/h+Vc87ZXnkGhkah60vxN8FihkE6jxE/qsJmZERWqPWIYGMhdlwy4iMOGXZH
+wJbj9bDL5eGOe0cHB0Ki7LiUIB/6a+CEwrCUfj36NjUuEPK9OW98uEZmJUNRAL4k
+Oq5Wu1qst0aGYBjVDrNvnXjBrEKo1B8S1VDihRLPKmizGtD3aatHvswMrVMp5Ihl
+fVrYz2ym6li2GP4K2bZOodHtBsbVCCD3zbC4YTZrPOmHJoMvTaycWEK1
+=tOx+
+-----END PGP SIGNATURE-----
