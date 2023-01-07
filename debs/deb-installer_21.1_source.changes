@@ -1,0 +1,40 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Sat, 07 Jan 2023 09:46:59 -0500
+Source: deb-installer
+Architecture: source
+Version: 21.1
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Changes:
+ deb-installer (21.1) mx; urgency=medium
+ .
+   * New translations
+Checksums-Sha1:
+ bfebfcf214cb5ba5af55aa8cf22cc6d5512ec352 1126 deb-installer_21.1.dsc
+ 36f83908da0dd075f39a39c5a3d288d307b7326e 43916 deb-installer_21.1.tar.xz
+ 5698f9c64db8525033fb2363ace1ec4e0d5c3a80 10746 deb-installer_21.1_amd64.buildinfo
+Checksums-Sha256:
+ 712b0be3599f9e8625823fad3afccadbb28632ecc658385098915ba12ccaf7f8 1126 deb-installer_21.1.dsc
+ ae7ff843cf209320b4faef4aa1c35537e3684d863aafffeb0a952755db5f3891 43916 deb-installer_21.1.tar.xz
+ 0cb2a9800f99ca1c5d200029e782b5f33b0c8e6240a89c83e48cff1a1beff042 10746 deb-installer_21.1_amd64.buildinfo
+Files:
+ e569513d2ce80a912f04eaea374882a0 1126 admin optional deb-installer_21.1.dsc
+ 1090e69acdb3bb7adf28c1098baca67e 43916 admin optional deb-installer_21.1.tar.xz
+ ae0c3d00e6eac26cc940771fb1cd7d13 10746 admin optional deb-installer_21.1_amd64.buildinfo
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmO5huQTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumJzcCACLEGhNO2HDu3LkgUwsVk2jBRBHo6pc
+pKWmxOVirVcPdNww8XpIXV26nTkiPr/ecbFiQO9TBddCDbex3zioQb/M3Eu3xCqJ
+5UrJ5nVURn61oqGoykYEhe384wGInIEXvseoRNHAxh4HNh9acOKFW4YCjuHkh0BT
+kgWQw6psg0aSTN7mTI7atCV4C1w+YJ+LSOG8qvHaAqC+seX1OLfprQVDyEBHC1Hh
+Ze0gntL3Fsv87mlxhLNBzNGTvYPDReJgZT0GD8t0d1WNCzvPZkBW7MV2Soskbxcp
+MAIfiM2usrlsPfu66Hb0FtsNDgjVNEjTeGUdGvEmlBCgvXrRd6xLBmwA
+=OKos
+-----END PGP SIGNATURE-----

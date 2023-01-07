@@ -1,3 +1,9 @@
+deb-installer (21.1) mx; urgency=medium
+
+  * New translations
+
+ -- Adrian <adrian@mxlinux.org>  Sat, 07 Jan 2023 09:46:59 -0500
+
 deb-installer (0.22.12) mx; urgency=medium
 
   * initial release
