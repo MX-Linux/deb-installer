@@ -29,6 +29,7 @@
 #include <QLocale>
 #include <QMessageBox>
 #include <QTranslator>
+#include <QDebug>
 
 #include "installer.h"
 #include "version.h"
@@ -71,8 +72,7 @@ int main(int argc, char *argv[])
             parser.process(args);
         }
         if (parser.positionalArguments().isEmpty()) {
-            QApplication::beep();
-            QMessageBox::critical(nullptr, QObject::tr("Error"), QObject::tr("No .deb files were provided."));
+            qDebug().noquote() << QObject::tr("No .deb files were provided.");
             return EXIT_FAILURE;
         }
         const auto args = parser.positionalArguments();

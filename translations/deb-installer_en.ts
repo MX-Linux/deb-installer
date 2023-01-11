@@ -38,46 +38,45 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="46"/>
+        <location filename="../main.cpp" line="47"/>
         <source>Program for installing Debian binary packages (deb files)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="49"/>
+        <location filename="../main.cpp" line="50"/>
         <source>files...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="49"/>
+        <location filename="../main.cpp" line="50"/>
         <source>Name of .deb files to install</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="50"/>
+        <location filename="../main.cpp" line="51"/>
         <source>[file...]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="69"/>
+        <location filename="../main.cpp" line="70"/>
         <source>Select .deb files to install</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="70"/>
+        <location filename="../main.cpp" line="71"/>
         <source>Deb Files (*.deb)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
+        <source>No .deb files were provided.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../main.cpp" line="82"/>
         <location filename="../main.cpp" line="86"/>
         <location filename="../main.cpp" line="93"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="75"/>
-        <source>No .deb files were provided.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
