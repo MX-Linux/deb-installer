@@ -6,13 +6,13 @@
     <message>
         <location filename="../installer.cpp" line="85"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijderen</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="87"/>
         <location filename="../installer.cpp" line="117"/>
         <source>Install</source>
-        <translation type="unfinished"></translation>
+        <translation>Installeer</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="90"/>
@@ -32,7 +32,7 @@
     <message>
         <location filename="../installer.cpp" line="131"/>
         <source>Press any key to close</source>
-        <translation type="unfinished"></translation>
+        <translation>Druk een toets om te sluiten</translation>
     </message>
 </context>
 <context>
@@ -73,7 +73,7 @@
         <location filename="../main.cpp" line="86"/>
         <location filename="../main.cpp" line="93"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Foutmelding</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
@@ -93,7 +93,7 @@
     <message>
         <location filename="../main.cpp" line="93"/>
         <source>You must run this program as normal user.</source>
-        <translation type="unfinished"></translation>
+        <translation>U moet dit programma als normale gebruiker uitvoeren.</translation>
     </message>
 </context>
 </TS>

@@ -6,13 +6,13 @@
     <message>
         <location filename="../installer.cpp" line="85"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjern</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="87"/>
         <location filename="../installer.cpp" line="117"/>
         <source>Install</source>
-        <translation type="unfinished"></translation>
+        <translation>Installer</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="90"/>
@@ -73,7 +73,7 @@
         <location filename="../main.cpp" line="86"/>
         <location filename="../main.cpp" line="93"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>

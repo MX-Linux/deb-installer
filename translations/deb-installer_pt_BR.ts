@@ -6,33 +6,33 @@
     <message>
         <location filename="../installer.cpp" line="85"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Desinstalar</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="87"/>
         <location filename="../installer.cpp" line="117"/>
         <source>Install</source>
-        <translation type="unfinished"></translation>
+        <translation>Instalar</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="90"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
-        <translation type="unfinished"></translation>
+        <translation>Clique na opção &apos;Exibir detalhes...&apos; para obter mais informações sobre os pacotes que serão instalados a seguir.</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="98"/>
         <source>File: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo: %1</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="115"/>
         <source>Will install the following:</source>
-        <translation type="unfinished"></translation>
+        <translation>Será(ão) instalado(s) o(s) seguinte(s) pacote(s):</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="131"/>
         <source>Press any key to close</source>
-        <translation type="unfinished"></translation>
+        <translation>Pressione qualquer tecla para fechar</translation>
     </message>
 </context>
 <context>
@@ -40,32 +40,32 @@
     <message>
         <location filename="../main.cpp" line="46"/>
         <source>Program for installing Debian binary packages (deb files)</source>
-        <translation type="unfinished"></translation>
+        <translation>Programa para instalar pacotes/arquivos binários do  do Debian que possuem a extensão .deb</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="49"/>
         <source>files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivos...</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="49"/>
         <source>Name of .deb files to install</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome do(s) arquivo(s) .deb a ser(em) instalado(s)</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="50"/>
         <source>[file...]</source>
-        <translation type="unfinished"></translation>
+        <translation>[Arquivo...]</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="69"/>
         <source>Select .deb files to install</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecionar o(s) arquivo(s) .deb para ser(em) instalados</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="70"/>
         <source>Deb Files (*.deb)</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivos do Debian (*.deb)</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
@@ -73,27 +73,27 @@
         <location filename="../main.cpp" line="86"/>
         <location filename="../main.cpp" line="93"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocorreu um Erro</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
         <source>No .deb files were provided.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nenhum arquivo .deb foi fornecido.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="82"/>
         <source>File %1 not found</source>
-        <translation type="unfinished"></translation>
+        <translation>O arquivo %1 não foi encontrado</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="87"/>
         <source>File %1 is not a .deb file.</source>
-        <translation type="unfinished"></translation>
+        <translation>O arquivo %1 não é um arquivo do tipo .deb.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="93"/>
         <source>You must run this program as normal user.</source>
-        <translation type="unfinished"></translation>
+        <translation>Você tem que executar este programa como um usuário normal.</translation>
     </message>
 </context>
 </TS>

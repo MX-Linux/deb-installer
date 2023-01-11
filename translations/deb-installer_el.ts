@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="el_GR">
+<TS version="2.1" language="el">
 <context>
     <name>Installer</name>
     <message>
         <location filename="../installer.cpp" line="85"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Αφαίρεση</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="87"/>
         <location filename="../installer.cpp" line="117"/>
         <source>Install</source>
-        <translation type="unfinished"></translation>
+        <translation>Εγκατάσταση</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="90"/>
@@ -32,7 +32,7 @@
     <message>
         <location filename="../installer.cpp" line="131"/>
         <source>Press any key to close</source>
-        <translation type="unfinished"></translation>
+        <translation>Πατήστε οποιοδήποτε πλήκτρο για να κλείσει</translation>
     </message>
 </context>
 <context>
@@ -73,7 +73,7 @@
         <location filename="../main.cpp" line="86"/>
         <location filename="../main.cpp" line="93"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Σφάλμα</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
@@ -93,7 +93,7 @@
     <message>
         <location filename="../main.cpp" line="93"/>
         <source>You must run this program as normal user.</source>
-        <translation type="unfinished"></translation>
+        <translation>Πρέπει να τρέξετε αυτή την εφαρμογή ως κανονικός χρήστης.</translation>
     </message>
 </context>
 </TS>

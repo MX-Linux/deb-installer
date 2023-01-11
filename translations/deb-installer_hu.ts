@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="hu_HU">
+<TS version="2.1" language="hu">
 <context>
     <name>Installer</name>
     <message>
         <location filename="../installer.cpp" line="85"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Eltávolítás</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="87"/>
         <location filename="../installer.cpp" line="117"/>
         <source>Install</source>
-        <translation type="unfinished"></translation>
+        <translation>Telepítés</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="90"/>
@@ -32,7 +32,7 @@
     <message>
         <location filename="../installer.cpp" line="131"/>
         <source>Press any key to close</source>
-        <translation type="unfinished"></translation>
+        <translation>Nyomjon meg egy billentyűt a bezáráshoz</translation>
     </message>
 </context>
 <context>
@@ -73,7 +73,7 @@
         <location filename="../main.cpp" line="86"/>
         <location filename="../main.cpp" line="93"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiba</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
@@ -93,7 +93,7 @@
     <message>
         <location filename="../main.cpp" line="93"/>
         <source>You must run this program as normal user.</source>
-        <translation type="unfinished"></translation>
+        <translation>Egyszerű felhasználóként kell futtatnia ezt a programot.</translation>
     </message>
 </context>
 </TS>

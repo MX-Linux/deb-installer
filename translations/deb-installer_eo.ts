@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="eo_001">
+<TS version="2.1" language="eo">
 <context>
     <name>Installer</name>
     <message>
