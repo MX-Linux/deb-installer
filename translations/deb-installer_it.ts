@@ -38,37 +38,36 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="46"/>
+        <location filename="../main.cpp" line="47"/>
         <source>Program for installing Debian binary packages (deb files)</source>
         <translation>Programma per installare pacchetti Debian binari (file deb)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="49"/>
+        <location filename="../main.cpp" line="50"/>
         <source>files...</source>
         <translation>file...</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="49"/>
+        <location filename="../main.cpp" line="50"/>
         <source>Name of .deb files to install</source>
         <translation>Nome dei file .deb da installare</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="50"/>
+        <location filename="../main.cpp" line="51"/>
         <source>[file...]</source>
         <translation>[file...]</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="69"/>
+        <location filename="../main.cpp" line="70"/>
         <source>Select .deb files to install</source>
         <translation>Seleziona i file .deb da installare</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="70"/>
+        <location filename="../main.cpp" line="71"/>
         <source>Deb Files (*.deb)</source>
         <translation>File deb (*.deb)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="75"/>
         <location filename="../main.cpp" line="82"/>
         <location filename="../main.cpp" line="86"/>
         <location filename="../main.cpp" line="93"/>

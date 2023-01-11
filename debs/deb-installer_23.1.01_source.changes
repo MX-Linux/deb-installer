@@ -1,0 +1,40 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Wed, 11 Jan 2023 14:47:06 -0500
+Source: deb-installer
+Architecture: source
+Version: 23.1.01
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Changes:
+ deb-installer (23.1.01) mx; urgency=medium
+ .
+   * Exit silently (just log to terminal) if user cancels dialog
+Checksums-Sha1:
+ cc5e159b72b8eef688c5dbaf551b65feb3814f8d 1138 deb-installer_23.1.01.dsc
+ dbb7a480370a1fc76221ff49f1f50ebffd154457 50316 deb-installer_23.1.01.tar.xz
+ 0c987d2fe9ab28f1c501eb077a919312193e4565 10850 deb-installer_23.1.01_amd64.buildinfo
+Checksums-Sha256:
+ 1ddf7cdc5cb3cf5d978f1f5784aaafda323714282bc91ccca661d27e6af45a91 1138 deb-installer_23.1.01.dsc
+ 306d1aedae1479811ed5c352e18f335f6c1e42da26960a4f0e11ec817a2ac3b1 50316 deb-installer_23.1.01.tar.xz
+ a4fce12611203dc9bb031bb66a9b7939d52917a907a2801b2fc42c5e43135215 10850 deb-installer_23.1.01_amd64.buildinfo
+Files:
+ 213752d48ac863f016e84dda9aa930e7 1138 admin optional deb-installer_23.1.01.dsc
+ 63053b318605070c303eb28f4c93a934 50316 admin optional deb-installer_23.1.01.tar.xz
+ 7adf08058e05e2c5631f9efa72808a64 10850 admin optional deb-installer_23.1.01_amd64.buildinfo
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmO/EucTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumJq3B/wM2dl7jVRXcHLONYcgoEK1qPpyKc0b
+OK+vNCQlF3+uOoK9jWDJn3QFn2a4pWDZq3h9fQ69rStrEoZtQ5zFjZN6MrpeUtF5
+0au8ihp1KxN/MkKku7br4VFacTZFwLZdQIoCyqocBkqWsj6FUDUaSX3egDHiDR0E
+qkYiI4HgfN0Dm6JUook7haSWbiVhMCcwjc4e6x8Z7TT0rD+EphcmKW6GhqPsiB+h
+LK6vw9zpgGJvkx3892JRwtW0nU7jIUjz81vkbpa6JEYSqg6Z58EAXzpf6OjyLzQT
+G+fudh98XTgCILzWjYXJk4DqHxs27EjPptxMPMmms9pLt+9twxKqLMzX
+=ToMa
+-----END PGP SIGNATURE-----
