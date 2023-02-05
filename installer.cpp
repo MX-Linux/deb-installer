@@ -126,7 +126,9 @@ bool Installer::confirmAction(const QStringList &names)
 
 void Installer::install(const QStringList &file_names)
 {
-    cmd.run("x-terminal-emulator -e bash -c 'echo Installing selected package please authenticate; echo; pkexec apt "
+    QString admincommand = "sudo";
+    if (QFile("/usr/bin/pkexec").exists()){ admincommand = "pkexec";}
+    cmd.run("x-terminal-emulator -e bash -c 'echo Installing selected package please authenticate; echo; " + admincommand +" apt "
             "-o Acquire::AllowUnsizedPackages=true reinstall "
             + file_names.join(" ") + "; echo; read -n1 -srp \"" + tr("Press any key to close") + "\"'");
 }
