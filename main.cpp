@@ -22,6 +22,7 @@
 
 #include <QApplication>
 #include <QCommandLineParser>
+#include <QDebug>
 #include <QFileDialog>
 #include <QFileInfo>
 #include <QIcon>
@@ -29,7 +30,6 @@
 #include <QLocale>
 #include <QMessageBox>
 #include <QTranslator>
-#include <QDebug>
 
 #include "installer.h"
 #include "version.h"
@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
     parser.process(app);
 
     QTranslator qtTran;
-    if (qtTran.load(QLocale::system(), "qt", "_", QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
+    if (qtTran.load("qt_" + QLocale::system().name(), QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
         QApplication::installTranslator(&qtTran);
 
     QTranslator qtBaseTran;
