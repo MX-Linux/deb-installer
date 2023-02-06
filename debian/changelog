@@ -1,3 +1,9 @@
+deb-installer (23.2) mx; urgency=medium
+
+  * Use pkexec if present, otherwise use sudo
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 06 Feb 2023 08:26:59 -0500
+
 deb-installer (23.1.01) mx; urgency=medium
 
   * Exit silently (just log to terminal) if user cancels dialog
