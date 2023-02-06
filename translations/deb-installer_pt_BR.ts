@@ -4,33 +4,33 @@
 <context>
     <name>Installer</name>
     <message>
-        <location filename="../installer.cpp" line="85"/>
+        <location filename="../installer.cpp" line="84"/>
         <source>Remove</source>
         <translation>Desinstalar</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="87"/>
-        <location filename="../installer.cpp" line="117"/>
+        <location filename="../installer.cpp" line="86"/>
+        <location filename="../installer.cpp" line="116"/>
         <source>Install</source>
         <translation>Instalar</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="90"/>
+        <location filename="../installer.cpp" line="89"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
         <translation>Clique na opção &apos;Exibir detalhes...&apos; para obter mais informações sobre os pacotes que serão instalados a seguir.</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="98"/>
+        <location filename="../installer.cpp" line="97"/>
         <source>File: %1</source>
         <translation>Arquivo: %1</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="115"/>
+        <location filename="../installer.cpp" line="114"/>
         <source>Will install the following:</source>
         <translation>Será(ão) instalado(s) o(s) seguinte(s) pacote(s):</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="131"/>
+        <location filename="../installer.cpp" line="133"/>
         <source>Press any key to close</source>
         <translation>Pressione qualquer tecla para fechar</translation>
     </message>
@@ -68,16 +68,16 @@
         <translation>Arquivos do Debian (*.deb)</translation>
     </message>
     <message>
+        <location filename="../main.cpp" line="75"/>
+        <source>No .deb files were provided.</source>
+        <translation>Nenhum arquivo .deb foi fornecido.</translation>
+    </message>
+    <message>
         <location filename="../main.cpp" line="82"/>
         <location filename="../main.cpp" line="86"/>
         <location filename="../main.cpp" line="93"/>
         <source>Error</source>
         <translation>Ocorreu um Erro</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="75"/>
-        <source>No .deb files were provided.</source>
-        <translation>Nenhum arquivo .deb foi fornecido.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="82"/>
