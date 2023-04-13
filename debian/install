@@ -1,6 +1,7 @@
 deb-installer		    usr/bin
 deb-installer.desktop	usr/share/applications
 deb-installer.svg		usr/share/icons/hicolor/scalable/apps
+deb-installer.svg		usr/share/pixmaps
 docs/*			        usr/share/doc/deb-installer
 polkit/*				usr/share/polkit-1/actions/
 translations/*.qm	    usr/share/deb-installer/locale
