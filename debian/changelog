@@ -1,3 +1,10 @@
+deb-installer (23.4) mx; urgency=medium
+
+  * Update icon
+  * Uptate translations
+
+ -- Adrian <adrian@mxlinux.org>  Thu, 13 Apr 2023 21:47:12 -0400
+
 deb-installer (23.2) mx; urgency=medium
 
   * Use pkexec if present, otherwise use sudo

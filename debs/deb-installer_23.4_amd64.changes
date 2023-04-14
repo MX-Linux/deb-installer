@@ -1,0 +1,47 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Thu, 13 Apr 2023 21:47:12 -0400
+Source: deb-installer
+Binary: deb-installer
+Architecture: source amd64
+Version: 23.4
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ deb-installer - deb-installer
+Changes:
+ deb-installer (23.4) mx; urgency=medium
+ .
+   * Update icon
+   * Uptate translations
+Checksums-Sha1:
+ 8affa349f8651b3cafb9d9c8a9406f2ea80dbd0a 1126 deb-installer_23.4.dsc
+ a6ac9cbe7568a4f6939b1aafcd271347cc2cc0ab 30844 deb-installer_23.4.tar.xz
+ 451f5955cfb38051f10cef69f7b0c488e1e9f99e 10746 deb-installer_23.4_amd64.buildinfo
+ 63a23c5bf9c303f021ad69563016359738aee7d9 26140 deb-installer_23.4_amd64.deb
+Checksums-Sha256:
+ 008ad6645f050ca4024ffbf5d3e35e73f0ef29d857ba3db460000a35cb8ab260 1126 deb-installer_23.4.dsc
+ 7681d5eb5106b7ff85d60f269174ff1997ea9c17eeb4fbc5ca207c7d2014b9ab 30844 deb-installer_23.4.tar.xz
+ fd732a311da75dc9ffb35953b3faa5dbd674d678b92267f4325dc94a29e2aad7 10746 deb-installer_23.4_amd64.buildinfo
+ 1960bb6ced162e86ffbd4d670674df882be0ad6db1b55cc77d3bce479b305563 26140 deb-installer_23.4_amd64.deb
+Files:
+ fab9070fa908bf411bdd971096c7a195 1126 admin optional deb-installer_23.4.dsc
+ 1dab32190321a2ce1a13d67974373ce8 30844 admin optional deb-installer_23.4.tar.xz
+ ee31530e6d5273655900e06992c8a255 10746 admin optional deb-installer_23.4_amd64.buildinfo
+ 8299e915ed1a84a4d028f020f68b26bb 26140 admin optional deb-installer_23.4_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmQ4svkTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumF7BCACmJKFyHviUihx82icUxrLV29beBMMP
+ehHunHph08svNYo9x3/Cn32rtjl2dbMtkxtACqT8gUs/C9tI//8LNDG/fmoGzxz5
+wJ/KnLiYmMWP4gqiyMo8xJF9hk82MNJogcJSaLiJKqczpDb3EQdA2oIvpQH3Ta/B
+9iMekTF7m0uRu9wmGtQ7INrZ5WWXQwP5m9+JPKm+uca14E6QPuCmCs8fttalWhYf
+vdqNlqz9Pt2rTkaTtKF+KGz0Z28+9sROn0k/Y0Ptp200mD8xotjzMg7C62dojzWb
+M9mva1VEd7il+R8hC67EcgEPEPKStgRdIJAS/fFXbSYTXuG336dLzES7
+=X1NM
+-----END PGP SIGNATURE-----
