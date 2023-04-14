@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="tr">
+<TS version="2.1" language="tr_TR">
 <context>
     <name>Installer</name>
     <message>
         <location filename="../installer.cpp" line="84"/>
         <source>Remove</source>
-        <translation>Kaldır</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="86"/>
         <location filename="../installer.cpp" line="116"/>
         <source>Install</source>
-        <translation>Kur</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="89"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
-        <translation>Aşağıdaki paketler kurulacaktır. Paketler hakkında bilgi edinmek için &apos;Ayrıntıları Göster...&apos;i tıklayın.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="97"/>
         <source>File: %1</source>
-        <translation>Dosya: %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="114"/>
         <source>Will install the following:</source>
-        <translation>Aşağıdakiler kurulacak:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="133"/>
         <source>Press any key to close</source>
-        <translation>Kapatmak için herhangi bir tuşa basın</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -40,59 +40,59 @@
     <message>
         <location filename="../main.cpp" line="47"/>
         <source>Program for installing Debian binary packages (deb files)</source>
-        <translation>Debian binary paketlerini kurma programı (deb dosyaları)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.cpp" line="50"/>
         <source>files...</source>
-        <translation>dosyalar...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.cpp" line="50"/>
         <source>Name of .deb files to install</source>
-        <translation>Kurulacak .deb dosyasının adı</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.cpp" line="51"/>
         <source>[file...]</source>
-        <translation>[dosya...]</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.cpp" line="70"/>
         <source>Select .deb files to install</source>
-        <translation>Kurulacak .deb dosyolarını seçin</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.cpp" line="71"/>
         <source>Deb Files (*.deb)</source>
-        <translation>Deb Dosyaları (*.deb)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
         <source>No .deb files were provided.</source>
-        <translation>Hiç .deb dosyası sağlanmadı.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.cpp" line="82"/>
         <location filename="../main.cpp" line="86"/>
         <location filename="../main.cpp" line="93"/>
         <source>Error</source>
-        <translation>Hata</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.cpp" line="82"/>
         <source>File %1 not found</source>
-        <translation>%1 dosyası bulunamadı.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.cpp" line="87"/>
         <source>File %1 is not a .deb file.</source>
-        <translation>%1 dosyası .deb dosyası değil.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.cpp" line="93"/>
         <source>You must run this program as normal user.</source>
-        <translation>Bu programı normal kullanıcı olarak çalıştırmalısınız.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
