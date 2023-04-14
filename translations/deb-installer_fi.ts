@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="fi_FI">
+<TS version="2.1" language="fi">
 <context>
     <name>Installer</name>
     <message>
         <location filename="../installer.cpp" line="84"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="86"/>
         <location filename="../installer.cpp" line="116"/>
         <source>Install</source>
-        <translation type="unfinished"></translation>
+        <translation>Asenna</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="89"/>
@@ -32,7 +32,7 @@
     <message>
         <location filename="../installer.cpp" line="133"/>
         <source>Press any key to close</source>
-        <translation type="unfinished"></translation>
+        <translation>Paina mitä tahansa näppäintä sulkeaksesi</translation>
     </message>
 </context>
 <context>
@@ -77,7 +77,7 @@
         <location filename="../main.cpp" line="86"/>
         <location filename="../main.cpp" line="93"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="82"/>
@@ -92,7 +92,7 @@
     <message>
         <location filename="../main.cpp" line="93"/>
         <source>You must run this program as normal user.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sinun täytyy suorittaa tämä ohjelma tavallisena käyttäjänä.</translation>
     </message>
 </context>
 </TS>

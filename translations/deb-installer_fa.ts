@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="fa_IR">
+<TS version="2.1" language="fa">
 <context>
     <name>Installer</name>
     <message>
@@ -32,7 +32,7 @@
     <message>
         <location filename="../installer.cpp" line="133"/>
         <source>Press any key to close</source>
-        <translation type="unfinished"></translation>
+        <translation>برای خروج یک کلید را فشاردهید</translation>
     </message>
 </context>
 <context>
@@ -92,7 +92,7 @@
     <message>
         <location filename="../main.cpp" line="93"/>
         <source>You must run this program as normal user.</source>
-        <translation type="unfinished"></translation>
+        <translation>شما باید این برنامه را با یوزر معمولی اجرا کنید.</translation>
     </message>
 </context>
 </TS>

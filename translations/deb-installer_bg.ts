@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="bg_BG">
+<TS version="2.1" language="bg">
 <context>
     <name>Installer</name>
     <message>
         <location filename="../installer.cpp" line="84"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Премахване</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="86"/>
@@ -77,7 +77,7 @@
         <location filename="../main.cpp" line="86"/>
         <location filename="../main.cpp" line="93"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Грешка</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="82"/>

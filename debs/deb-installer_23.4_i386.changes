@@ -16,11 +16,11 @@ Changes:
    * Update icon
    * Uptate translations
 Checksums-Sha1:
- f5a877c57518261cf4d1819f4d8237599362fcbe 10074 deb-installer_23.4_i386.buildinfo
- 74fb61ec76b69254e4490ac753fa73ef0c0ea1df 27092 deb-installer_23.4_i386.deb
+ 1644076e92b87b0a287efcbc771b55a1d49165e3 10074 deb-installer_23.4_i386.buildinfo
+ 2481c6b1e83007b05a5c9f37a0cd498ffbb03421 38164 deb-installer_23.4_i386.deb
 Checksums-Sha256:
- bd1eba6d4a45f913f45b06e7a18308b922aa9f068c8905cc4afe8d47a3bc4032 10074 deb-installer_23.4_i386.buildinfo
- 581951347c822905a17a1f2f20ce3d8c4b90c5bc1fd1e056f1a8ef34724a35fb 27092 deb-installer_23.4_i386.deb
+ 525266a3755317d81022a7b573dd481e020ac8dc64a1fea662b416c28ec1eace 10074 deb-installer_23.4_i386.buildinfo
+ 9288314c3ef819c39ffa3eed44a8973d80c81fbe2fd6b65fb079969d1a50eccc 38164 deb-installer_23.4_i386.deb
 Files:
- 092ac408be353becf8d20b60649b54a2 10074 admin optional deb-installer_23.4_i386.buildinfo
- 9a8447bb494ef529cbb26e10127f39d8 27092 admin optional deb-installer_23.4_i386.deb
+ a45401026b72f5a26971d112f517d703 10074 admin optional deb-installer_23.4_i386.buildinfo
+ 4116d7c4423fcfd52b89471d503bf16a 38164 admin optional deb-installer_23.4_i386.deb

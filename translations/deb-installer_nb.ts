@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="nb_NO">
+<TS version="2.1" language="nb">
 <context>
     <name>Installer</name>
     <message>
         <location filename="../installer.cpp" line="84"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjern</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="86"/>
         <location filename="../installer.cpp" line="116"/>
         <source>Install</source>
-        <translation type="unfinished"></translation>
+        <translation>Installer</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="89"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
-        <translation type="unfinished"></translation>
+        <translation>Følgende pakker vil installeres. Velg «Vis detaljer …» for mer informasjon om pakkene.</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="97"/>
         <source>File: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Fil: %1</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="114"/>
         <source>Will install the following:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vil installere følgende:</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="133"/>
         <source>Press any key to close</source>
-        <translation type="unfinished"></translation>
+        <translation>Trykk en vilkårlig tast for å lukke</translation>
     </message>
 </context>
 <context>
@@ -40,59 +40,59 @@
     <message>
         <location filename="../main.cpp" line="47"/>
         <source>Program for installing Debian binary packages (deb files)</source>
-        <translation type="unfinished"></translation>
+        <translation>Program for installering av binærpakker på Debian-format (deb-filer)</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="50"/>
         <source>files...</source>
-        <translation type="unfinished"></translation>
+        <translation>filer …</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="50"/>
         <source>Name of .deb files to install</source>
-        <translation type="unfinished"></translation>
+        <translation>Navnet til .deb-filene som skal installeres</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="51"/>
         <source>[file...]</source>
-        <translation type="unfinished"></translation>
+        <translation>[fil …]</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="70"/>
         <source>Select .deb files to install</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg .deb-filer som skal installeres</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="71"/>
         <source>Deb Files (*.deb)</source>
-        <translation type="unfinished"></translation>
+        <translation>Deb-filer (*.deb)</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
         <source>No .deb files were provided.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen .deb-filer ble valgt.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="82"/>
         <location filename="../main.cpp" line="86"/>
         <location filename="../main.cpp" line="93"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="82"/>
         <source>File %1 not found</source>
-        <translation type="unfinished"></translation>
+        <translation>Fant ikke fila %1</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="87"/>
         <source>File %1 is not a .deb file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fila %1 er ikke ei .deb-fil.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="93"/>
         <source>You must run this program as normal user.</source>
-        <translation type="unfinished"></translation>
+        <translation>Du må kjøre dette programmet som en vanlig bruker.</translation>
     </message>
 </context>
 </TS>

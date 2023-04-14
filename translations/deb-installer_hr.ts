@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="hr_HR">
+<TS version="2.1" language="hr">
 <context>
     <name>Installer</name>
     <message>
         <location filename="../installer.cpp" line="84"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukloni</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="86"/>
@@ -32,7 +32,7 @@
     <message>
         <location filename="../installer.cpp" line="133"/>
         <source>Press any key to close</source>
-        <translation type="unfinished"></translation>
+        <translation>Pritisnite bilo koju tipku za zatvaranje</translation>
     </message>
 </context>
 <context>
@@ -77,7 +77,7 @@
         <location filename="../main.cpp" line="86"/>
         <location filename="../main.cpp" line="93"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Greška</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="82"/>
@@ -92,7 +92,7 @@
     <message>
         <location filename="../main.cpp" line="93"/>
         <source>You must run this program as normal user.</source>
-        <translation type="unfinished"></translation>
+        <translation>Morate pokrenuti ovaj program kao normalni korisnik.</translation>
     </message>
 </context>
 </TS>

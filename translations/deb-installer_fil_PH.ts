@@ -6,7 +6,7 @@
     <message>
         <location filename="../installer.cpp" line="84"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Tanggalin</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="86"/>
@@ -77,7 +77,7 @@
         <location filename="../main.cpp" line="86"/>
         <location filename="../main.cpp" line="93"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>May error</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="82"/>
