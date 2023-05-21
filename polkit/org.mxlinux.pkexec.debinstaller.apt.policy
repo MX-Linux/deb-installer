@@ -9,7 +9,8 @@
   <vendor>MX Linux</vendor>
   <vendor_url>https://mxlinux.org</vendor_url>
   <action id="org.mxlinux.debinstaller.apt">
-	<message>deb-installer:  Authentication is required to proceed</message>
+	<message gettext-domain="mx-launcher-l10n">Deb Installer</message>
+	<icon_name>deb-installer</icon_name>
     <description>Install deb packages</description>
     <defaults>
       <allow_any>no</allow_any>
