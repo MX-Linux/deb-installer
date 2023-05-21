@@ -17,17 +17,17 @@
     <message>
         <location filename="../installer.cpp" line="89"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zostaną zainstalowane następujące pakiety. Kliknij „Pokaż szczegóły...”, aby uzyskać informacje o pakietach.</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="97"/>
         <source>File: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Plik: %1</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="114"/>
         <source>Will install the following:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zainstaluje następujące:</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="133"/>
@@ -40,37 +40,37 @@
     <message>
         <location filename="../main.cpp" line="47"/>
         <source>Program for installing Debian binary packages (deb files)</source>
-        <translation type="unfinished"></translation>
+        <translation>Program do instalacji pakietów binarnych Debiana (plików deb)</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="50"/>
         <source>files...</source>
-        <translation type="unfinished"></translation>
+        <translation>pliki...</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="50"/>
         <source>Name of .deb files to install</source>
-        <translation type="unfinished"></translation>
+        <translation>Nazwa plików .deb do zainstalowania</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="51"/>
         <source>[file...]</source>
-        <translation type="unfinished"></translation>
+        <translation>[plik...]</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="70"/>
         <source>Select .deb files to install</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybierz pliki .deb do zainstalowania</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="71"/>
         <source>Deb Files (*.deb)</source>
-        <translation type="unfinished"></translation>
+        <translation>Pliki Deb (*.deb)</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
         <source>No .deb files were provided.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie dostarczono żadnych plików .deb.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="82"/>
@@ -82,12 +82,12 @@
     <message>
         <location filename="../main.cpp" line="82"/>
         <source>File %1 not found</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie znaleziono pliku %1</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="87"/>
         <source>File %1 is not a .deb file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Plik %1 nie jest plikiem .deb.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="93"/>
