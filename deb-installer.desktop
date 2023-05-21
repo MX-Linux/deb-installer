@@ -2,6 +2,7 @@
 Encoding=UTF-8
 Name[ca]=Deb Installer
 Name[cs]=Instalátor DEB balíků
+Name[de]=Installationsprogramm für .deb-Dateien
 Name[el]=Πρόγραμμα εγκατάστασης Deb
 Name[es]=Instalador de Deb
 Name[es_ES]=Instalador de Deb
@@ -24,6 +25,7 @@ Name[tr]=Deb Yükleyici
 Name=Deb Installer
 Comment[ca]=Instal·la paquets deb descarregats
 Comment[cs]=Instalace stažených DEB balíků
+Comment[de]=Heruntergeladene deb-Pakete installieren
 Comment[el]=Εγκαταστήστε τα ληφθέντα πακέτα deb
 Comment[es]=Instalar los paquetes deb descargados
 Comment[es_ES]=Instalar los paquetes deb descargados

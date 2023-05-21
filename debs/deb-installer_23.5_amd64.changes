@@ -1,0 +1,47 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Sat, 20 May 2023 22:03:35 -0400
+Source: deb-installer
+Binary: deb-installer
+Architecture: source amd64
+Version: 23.5
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ deb-installer - deb-installer
+Changes:
+ deb-installer (23.5) mx; urgency=medium
+ .
+   * Update policy file
+   * Fix svg icon
+Checksums-Sha1:
+ c08e86eb2f062195cd794c601fe074198a22a5b6 1126 deb-installer_23.5.dsc
+ 7523766f544b01f962d11cd25bbad3dbfd91f26c 40908 deb-installer_23.5.tar.xz
+ 7449a8fe98a2ea11cd1be6d9dc04acb5c631ab3a 10746 deb-installer_23.5_amd64.buildinfo
+ 79c4447e0a9d01631da7134bc1a6124b8dc42001 38016 deb-installer_23.5_amd64.deb
+Checksums-Sha256:
+ b7ea8030f38e807d8905c2efc2d9f325da914eea32f4375fa98ff6b0016dc4c4 1126 deb-installer_23.5.dsc
+ 014ca746cebdb923cffb4271b1bfbb8b0fd55b367d7da8799bcd818e0e9b1f4d 40908 deb-installer_23.5.tar.xz
+ bec4593d0e03a5dd5361593430c7db28710ecd39c69073316bcc729feccce830 10746 deb-installer_23.5_amd64.buildinfo
+ d78d9a2918d274f31d3839b89a41ac2134bbbc83f213ffeb6d1b5b9cd8a4279a 38016 deb-installer_23.5_amd64.deb
+Files:
+ 639d21e786b4c5df50416a68818c562a 1126 admin optional deb-installer_23.5.dsc
+ 408c4a4fa99d4e5e36757d6b74752679 40908 admin optional deb-installer_23.5.tar.xz
+ 6b8f35974ff5ec0208a59da167f1139b 10746 admin optional deb-installer_23.5_amd64.buildinfo
+ 092c0d0b899359474bfa1fb33074a6b1 38016 admin optional deb-installer_23.5_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmRpfGcTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumD5XB/9Q25J06WFJSBoQRuqUHsbhMtepCowW
+nemN3X5IA2h6YWLA8jq0rZcAaMgjxx11sFqKlJs+6f7kujyp02WuR2dtBtrPFepf
+Efiu/DbQqRXdo4dBL4FCdk22JPeU3pnLvHTFcByi1seY8TIT+g/JFCz39t3Xh0DA
+A/XwpvxbsAtAeCjXac9PN/S2OIBQntdYXRFEsAA+OSAhsu3dPESqM40EzN/+gUjd
+4oqM3xAyoy3wVO+j/dMPp6UGGr6/gmWc7+Z/Qd0FgE91LDMVMCtvF4YwhGvcQHLK
+p8nHODCFLm9r429hlvFFwcr2Z/jGkR3zOXth7ft34xFjfizNChaBEwis
+=x3sd
+-----END PGP SIGNATURE-----

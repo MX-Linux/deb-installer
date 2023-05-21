@@ -1,0 +1,26 @@
+Format: 1.8
+Date: Sat, 20 May 2023 22:03:35 -0400
+Source: deb-installer
+Binary: deb-installer
+Architecture: i386
+Version: 23.5
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ deb-installer - deb-installer
+Changes:
+ deb-installer (23.5) mx; urgency=medium
+ .
+   * Update policy file
+   * Fix svg icon
+Checksums-Sha1:
+ 47960ed72f519ec34deb70e4b5517d7acec92c9a 10074 deb-installer_23.5_i386.buildinfo
+ a22c085f9bac6b5c8810d02c74cefbdf5bcb08f9 38884 deb-installer_23.5_i386.deb
+Checksums-Sha256:
+ fce30762cd36845787f8358f76247ab7956f4457a5a696f0ed3f6cb4ddab6e69 10074 deb-installer_23.5_i386.buildinfo
+ 7b33fad5b6e23195d6c028b0039344dde29973c6737d535b6c24b46034225b6c 38884 deb-installer_23.5_i386.deb
+Files:
+ a75c8fc8bdb0c1853fc86a458cf8670d 10074 admin optional deb-installer_23.5_i386.buildinfo
+ 77538a96ee9b53045fd448f6e6cd77f1 38884 admin optional deb-installer_23.5_i386.deb

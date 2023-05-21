@@ -17,7 +17,7 @@
     <message>
         <location filename="../installer.cpp" line="89"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
-        <translation>Les paquets suivants seront installés. Cliquez sur « Afficher les détails... » pour obtenir des informations sur les paquets.</translation>
+        <translation>Les paquets suivants seront installés. Cliquez sur « Afficher les détails ... » pour obtenir des informations sur les paquets.</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="97"/>
