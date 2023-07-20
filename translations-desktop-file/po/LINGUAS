@@ -1,6 +1,7 @@
 deb-installer-desktop_af
 deb-installer-desktop_am
 deb-installer-desktop_ar
+deb-installer-desktop_ast
 deb-installer-desktop_be
 deb-installer-desktop_bg
 deb-installer-desktop_bn
@@ -44,12 +45,16 @@ deb-installer-desktop_hr
 deb-installer-desktop_ht
 deb-installer-desktop_hu
 deb-installer-desktop_hy
+deb-installer-desktop_hy_AM
+deb-installer-desktop_hye
 deb-installer-desktop_id
+deb-installer-desktop_ie
 deb-installer-desktop_is
 deb-installer-desktop_it
 deb-installer-desktop_ja
 deb-installer-desktop_jv
 deb-installer-desktop_ka
+deb-installer-desktop_kab
 deb-installer-desktop_kk
 deb-installer-desktop_km
 deb-installer-desktop_kn
@@ -74,7 +79,9 @@ deb-installer-desktop_nb_NO
 deb-installer-desktop_ne
 deb-installer-desktop_nl
 deb-installer-desktop_nl_BE
+deb-installer-desktop_nn
 deb-installer-desktop_ny
+deb-installer-desktop_oc
 deb-installer-desktop_or
 deb-installer-desktop_pa
 deb-installer-desktop_pl

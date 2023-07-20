@@ -3,9 +3,6 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Wallon Wallon, 2023
-# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -13,24 +10,23 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-23 17:53-0500\n"
 "PO-Revision-Date: 2022-12-23 22:53+0000\n"
-"Last-Translator: Wallon Wallon, 2023\n"
-"Language-Team: French (https://app.transifex.com/anticapitalista/teams/10162/fr/)\n"
+"Language-Team: Kabyle (https://app.transifex.com/anticapitalista/teams/10162/kab/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Language: kab\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. The desktop entry name will be displayed within the menu.
 #: desktop-in/deb-installer.desktop.in:5
 msgid "Deb Installer"
-msgstr "Installateur Deb - Deb Installer"
+msgstr ""
 
 #. # The desktop entry comment will be shown within the menu.
 #: desktop-in/deb-installer.desktop.in:7
 msgid "Install downloaded deb packages"
-msgstr "Installation des paquets deb téléchargés"
+msgstr ""
 
 #: desktop-in/deb-installer.desktop.in:16
 msgid "package;apt;dpkg;install"
-msgstr "package;apt;dpkg;install;paquet;"
+msgstr ""

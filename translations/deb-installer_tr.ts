@@ -17,7 +17,7 @@
     <message>
         <location filename="../installer.cpp" line="89"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
-        <translation>Aşağıdaki paketler kurulacaktır. Paketler hakkında bilgi edinmek için &apos;Ayrıntıları Göster...&apos;i tıklayın.</translation>
+        <translation>Aşağıdaki paketler kurulacaktır. Paketler hakkında bilgi edinmek için ‘Ayrıntıları Göster...’i tıklayın.</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="97"/>
