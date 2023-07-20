@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Thu, 20 Jul 2023 17:55:30 -0400
+Source: deb-installer
+Binary: deb-installer
+Architecture: i386
+Version: 23.7
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ deb-installer - deb-installer
+Changes:
+ deb-installer (23.7) mx; urgency=medium
+ .
+   * Update translations
+Checksums-Sha1:
+ 932f8668697a8c2acf92d47a90a68e4037f110a8 10074 deb-installer_23.7_i386.buildinfo
+ 6c7e9dc73a845a1f2ccc2ff0b74788b07dacf30b 39132 deb-installer_23.7_i386.deb
+Checksums-Sha256:
+ e5b184c452b3e1919f1f42687f6a66ef88c1e2fea9c3fed633ce9622f9d45b9e 10074 deb-installer_23.7_i386.buildinfo
+ 86054eed1527a07368bde097c785dba43f53510190686524ef4e60bb92dd302b 39132 deb-installer_23.7_i386.deb
+Files:
+ c7d1b8ae8bebab9870b3d2d51e203299 10074 admin optional deb-installer_23.7_i386.buildinfo
+ 0118cacf02924edf68dd8e23c868cf39 39132 admin optional deb-installer_23.7_i386.deb

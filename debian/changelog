@@ -1,3 +1,9 @@
+deb-installer (23.7) mx; urgency=medium
+
+  * Update translations
+
+ -- Adrian <adrian@mxlinux.org>  Thu, 20 Jul 2023 17:55:30 -0400
+
 deb-installer (23.5) mx; urgency=medium
 
   * Update policy file

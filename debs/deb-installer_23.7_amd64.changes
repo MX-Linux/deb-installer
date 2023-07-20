@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Thu, 20 Jul 2023 17:55:30 -0400
+Source: deb-installer
+Binary: deb-installer
+Architecture: source amd64
+Version: 23.7
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ deb-installer - deb-installer
+Changes:
+ deb-installer (23.7) mx; urgency=medium
+ .
+   * Update translations
+Checksums-Sha1:
+ 8c4629df29d54709e294a7a978e0380b925bae63 1126 deb-installer_23.7.dsc
+ cbeac7b8b47c3aa0a460430f9f78c8f4ce1fddd5 41636 deb-installer_23.7.tar.xz
+ a2adb426032c64aa49ac00965bc92daf2f403567 10746 deb-installer_23.7_amd64.buildinfo
+ b4398ce8468de7ab49240a48b79d089973d63ef5 38212 deb-installer_23.7_amd64.deb
+Checksums-Sha256:
+ 0440288f854eec07999d1f64183e0ea80ea10b5c6fd3d77e845c859fa8cf5945 1126 deb-installer_23.7.dsc
+ 5af9aafdde076240bbf2571c8633c4009426285625312bf16ce9d2f9fedb5120 41636 deb-installer_23.7.tar.xz
+ f4f582b98a1df556ab8c2b50d9f2da0fa50d5bbfa27346104313fd46ff7e1d45 10746 deb-installer_23.7_amd64.buildinfo
+ 50cf2db9ace327cb17b8f4ba51ced129f5bf5cff5ee26e3f9d45110bc4d8eab1 38212 deb-installer_23.7_amd64.deb
+Files:
+ e71acc3fa5455911b0ccd7cbe81debba 1126 admin optional deb-installer_23.7.dsc
+ 13b27aac8ef0be164971f91b5556e76c 41636 admin optional deb-installer_23.7.tar.xz
+ 119b4a1bac57757ee8eb9c7a6c348e20 10746 admin optional deb-installer_23.7_amd64.buildinfo
+ f23809c989a797124765ab245de65096 38212 admin optional deb-installer_23.7_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmS5rf8THGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumPRxCACFwzgw+cgClKgP+fh6/WQjTmRw7T+w
+DZVNM6pNdefi8ReMzkFtPOuV7NRcxOBmRmabz53EJTDDxAZ0YefUBrY5Plcxlozm
+oqC03YDUlOL8Xs+bRT8NZ6snA98EUbmPLuNq9VnneEsf3Eb0r0B4pOGKujItmLbo
+/EWr0+nEhDjT26VvV51jTjGVoc9RBt3vfcgKr2a7T98aqNkX4BK9wiqbNQLjzPf9
+YwablP4lfWe1VIpVqAt8RjN3ws+Vj7RY6UUoftdCdPRI59pgcI3klrsEfFaNWJ+Y
+MhTj8zDuXqJPOP74NARZ1kuoAVzoSZ7nTpb/lwkyKBzC8O8rY/Evio9b
+=e7W8
+-----END PGP SIGNATURE-----
