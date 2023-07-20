@@ -50,7 +50,7 @@
     <message>
         <location filename="../main.cpp" line="50"/>
         <source>Name of .deb files to install</source>
-        <translation>Όνομα αρχείων .deb προς εγκατάσταση</translation>
+        <translation>Όνομα αρχείων .deb για εγκατάσταση</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="51"/>
@@ -60,7 +60,7 @@
     <message>
         <location filename="../main.cpp" line="70"/>
         <source>Select .deb files to install</source>
-        <translation>Επιλέξτε αρχεία .deb για εγκατάσταση</translation>
+        <translation>Επιλογή αρχείων .deb για εγκατάσταση</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="71"/>
@@ -92,7 +92,7 @@
     <message>
         <location filename="../main.cpp" line="93"/>
         <source>You must run this program as normal user.</source>
-        <translation>Πρέπει να τρέξετε αυτή την εφαρμογή ως κανονικός χρήστης.</translation>
+        <translation>Πρέπει να τρέξετε αυτή την εφαρμογή ως απλός χρήστης.</translation>
     </message>
 </context>
 </TS>

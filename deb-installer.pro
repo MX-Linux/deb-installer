@@ -71,7 +71,6 @@ TRANSLATIONS += translations/deb-installer_af.ts \
                 translations/deb-installer_fil.ts \
                 translations/deb-installer_fi.ts \
                 translations/deb-installer_fr_BE.ts \
-                translations/deb-installer_fr_FR.ts \
                 translations/deb-installer_fr.ts \
                 translations/deb-installer_fy.ts \
                 translations/deb-installer_ga.ts \
