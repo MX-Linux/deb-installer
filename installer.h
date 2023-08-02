@@ -32,8 +32,7 @@ class Installer : QObject
     Q_OBJECT
 
 public:
-    Installer(const QCommandLineParser &arg_parser = {}, QObject *parent = nullptr);
-    ~Installer();
+    explicit Installer(const QCommandLineParser &arg_parser = {}, QObject *parent = nullptr);
 
 public slots:
 
