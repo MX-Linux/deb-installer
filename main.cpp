@@ -24,7 +24,6 @@
 #include <QCommandLineParser>
 #include <QDebug>
 #include <QFileDialog>
-#include <QFileInfo>
 #include <QIcon>
 #include <QLibraryInfo>
 #include <QLocale>
@@ -77,7 +76,7 @@ int main(int argc, char *argv[])
         }
         const auto args = parser.positionalArguments();
         for (const auto &file : args)
-            if (!QFileInfo::exists(file)) {
+            if (!QFile::exists(file)) {
                 QApplication::beep();
                 QMessageBox::critical(nullptr, QObject::tr("Error"), QObject::tr("File %1 not found").arg(file));
                 return EXIT_FAILURE;
