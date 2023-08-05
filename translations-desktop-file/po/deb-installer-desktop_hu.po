@@ -33,4 +33,4 @@ msgstr "Letöltött deb csomagok telepítése"
 
 #: desktop-in/deb-installer.desktop.in:16
 msgid "package;apt;dpkg;install"
-msgstr ""
+msgstr "csomag;apt;dpkg;telepítés"
