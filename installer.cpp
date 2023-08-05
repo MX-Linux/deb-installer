@@ -56,7 +56,7 @@ bool Installer::confirmAction(const QStringList &names)
     QStringList detailed_installed_names;
 
     const QString frontend
-        = "DEBIAN_FRONTEND=$(dpkg -l debconf-kde-helper 2>/dev/null | grep -sq ^i && echo kde || echo gnome) LANG=C ";
+        = "DEBIAN_FRONTEND=$(dpkg -l debconf-kde-helper 2>/dev/null | grep -sq ^i && echo kde || echo gnome) ";
     const QString aptget {"apt-get -s -V -o=Dpkg::Use-Pty=0 "};
 
     detailed_names = cmd.getCmdOut(
@@ -125,7 +125,7 @@ void Installer::install(const QStringList &file_names)
 {
     QString admincommand = QFile::exists("/usr/bin/pkexec") ? "pkexec" : "sudo";
     const QString msg {tr("Installing selected package please authenticate")};
-    cmd.run("x-terminal-emulator -e bash -c 'echo " + msg + "; echo; " + admincommand
+    cmd.run("x-terminal-emulator -e " + admincommand + " bash -c ' LANG=" + qEnvironmentVariable("LANG")
             + " apt -o Acquire::AllowUnsizedPackages=true reinstall " + file_names.join(" ")
             + "; echo; read -n1 -srp \"" + tr("Press any key to close") + "\"'");
 }
