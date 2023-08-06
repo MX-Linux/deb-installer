@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Sat, 05 Aug 2023 21:28:06 -0400
+Source: deb-installer
+Binary: deb-installer
+Architecture: i386
+Version: 23.8
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ deb-installer - deb-installer
+Changes:
+ deb-installer (23.8) mx; urgency=medium
+ .
+   * Use localization in terminal window
+Checksums-Sha1:
+ ced9610ecc32774d7342c22459e1e63394294db7 10074 deb-installer_23.8_i386.buildinfo
+ 2b721a59cc85c8a791e9244f558112e3cd0277b2 39608 deb-installer_23.8_i386.deb
+Checksums-Sha256:
+ 471ce491bb527630fdde997e389e142924150915af05e5e570a5d2f5d7be19db 10074 deb-installer_23.8_i386.buildinfo
+ f6eeda497d7a37b24fae90549de73d58c93d3a3be095911cd9cf8a64bf267fe2 39608 deb-installer_23.8_i386.deb
+Files:
+ 0baa88f9434527a320bca7b58e8252c8 10074 admin optional deb-installer_23.8_i386.buildinfo
+ 3c5f4402a390f3c76d37af9930223296 39608 admin optional deb-installer_23.8_i386.deb

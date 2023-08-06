@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Sat, 05 Aug 2023 21:28:06 -0400
+Source: deb-installer
+Binary: deb-installer
+Architecture: source amd64
+Version: 23.8
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ deb-installer - deb-installer
+Changes:
+ deb-installer (23.8) mx; urgency=medium
+ .
+   * Use localization in terminal window
+Checksums-Sha1:
+ 7f48bf0c3a374cad8651f66604a4f32ada71324a 1126 deb-installer_23.8.dsc
+ 02f172c2b8343a4c4371c920bcab4f7db4d8eeb9 41608 deb-installer_23.8.tar.xz
+ d2aa63044e1de0d34d31d597989ce4cd20dfbb5d 10922 deb-installer_23.8_amd64.buildinfo
+ dfed3d5ca8dfb0b2e813eb36aab2c25f0f2ac43e 38820 deb-installer_23.8_amd64.deb
+Checksums-Sha256:
+ cd76961eb25496dd15e2d01bd63445205ea5ff378160240d1453ae9a0cb7ab9e 1126 deb-installer_23.8.dsc
+ 3f14d6b3ae223188a9b069ca289b58a6b7af581dce26d6fa26e9c3df1afcaff4 41608 deb-installer_23.8.tar.xz
+ 1883eda13ae94615e43e1718f318be4c96817c7e180b8f608f3a8c681623a6b8 10922 deb-installer_23.8_amd64.buildinfo
+ 42bf269f19fadfb57f27760994c9038561158f0cabce239e60bda1c9e11491af 38820 deb-installer_23.8_amd64.deb
+Files:
+ 4ad770d1834e915409169f95202ef2b3 1126 admin optional deb-installer_23.8.dsc
+ f9d5ee9c6bba021d599c6052a4a6cecb 41608 admin optional deb-installer_23.8.tar.xz
+ f067efb2cdeee4b4f14dd34ecd7270d6 10922 admin optional deb-installer_23.8_amd64.buildinfo
+ 153a8c8d36a24aa102e1557c1a6e670a 38820 admin optional deb-installer_23.8_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmTO96sTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumEgBB/0ZosgxMutQaIRlz+JKGJjTnPS7tr75
+09jpYoAtRWs2LfVwGPQ7vhDo+4Glo4bVVhS5VJrRQD4p6SLfoib4KJlXNqzztf83
+FGN3LgqToQrELy8i4O9ZyecTEmVBamgFAnEZ7K5a3sM0q/mLvvFXAv+7lKze+Z1+
+hrCnaiFIU7l14hHoHlZiJXAgGe4NizcIynRI+ZYUaURS2szpX5IP2Mmi5XO+Hebz
+HkbeGFm8MN4V6eAvNqifR0XJzAbV34VVgxFvCjGXHvCXTPKbIgmPXTzP/MqkxY9h
+4M8c6rJIFx95Plfz/GNGQ2rYeghY4JQ+eClRwmuIwj9b8tdAXOpNPIG5
+=syX4
+-----END PGP SIGNATURE-----

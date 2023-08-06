@@ -1,3 +1,9 @@
+deb-installer (23.8) mx; urgency=medium
+
+  * Use localization in terminal window
+
+ -- Adrian <adrian@mxlinux.org>  Sat, 05 Aug 2023 21:28:06 -0400
+
 deb-installer (23.7) mx; urgency=medium
 
   * Update translations
