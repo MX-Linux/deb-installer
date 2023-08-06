@@ -4,33 +4,38 @@
 <context>
     <name>Installer</name>
     <message>
-        <location filename="../installer.cpp" line="84"/>
+        <location filename="../installer.cpp" line="82"/>
         <source>Remove</source>
         <translation>Vymazať</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="86"/>
-        <location filename="../installer.cpp" line="116"/>
+        <location filename="../installer.cpp" line="84"/>
+        <location filename="../installer.cpp" line="114"/>
         <source>Install</source>
         <translation>Inštalovať</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="89"/>
+        <location filename="../installer.cpp" line="87"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="97"/>
+        <location filename="../installer.cpp" line="95"/>
         <source>File: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="114"/>
+        <location filename="../installer.cpp" line="112"/>
         <source>Will install the following:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="133"/>
+        <location filename="../installer.cpp" line="127"/>
+        <source>Installing selected package please authenticate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../installer.cpp" line="130"/>
         <source>Press any key to close</source>
         <translation>Pre ukončenie stlačte ľubovoľnú klávesu</translation>
     </message>
@@ -38,59 +43,59 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="47"/>
+        <location filename="../main.cpp" line="46"/>
         <source>Program for installing Debian binary packages (deb files)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="50"/>
+        <location filename="../main.cpp" line="49"/>
         <source>files...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="50"/>
+        <location filename="../main.cpp" line="49"/>
         <source>Name of .deb files to install</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="51"/>
+        <location filename="../main.cpp" line="50"/>
         <source>[file...]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="70"/>
+        <location filename="../main.cpp" line="69"/>
         <source>Select .deb files to install</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="71"/>
+        <location filename="../main.cpp" line="70"/>
         <source>Deb Files (*.deb)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="74"/>
         <source>No .deb files were provided.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="82"/>
-        <location filename="../main.cpp" line="86"/>
-        <location filename="../main.cpp" line="93"/>
+        <location filename="../main.cpp" line="81"/>
+        <location filename="../main.cpp" line="85"/>
+        <location filename="../main.cpp" line="92"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="82"/>
+        <location filename="../main.cpp" line="81"/>
         <source>File %1 not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="87"/>
+        <location filename="../main.cpp" line="86"/>
         <source>File %1 is not a .deb file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="93"/>
+        <location filename="../main.cpp" line="92"/>
         <source>You must run this program as normal user.</source>
         <translation>Tento program musíte spustiť ako normálny užívateľ.</translation>
     </message>
