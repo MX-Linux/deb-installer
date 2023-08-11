@@ -51,17 +51,20 @@ int main(int argc, char *argv[])
     parser.process(app);
 
     QTranslator qtTran;
-    if (qtTran.load("qt_" + QLocale::system().name(), QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
+    if (qtTran.load("qt_" + QLocale::system().name(), QLibraryInfo::location(QLibraryInfo::TranslationsPath))) {
         QApplication::installTranslator(&qtTran);
+    }
 
     QTranslator qtBaseTran;
-    if (qtBaseTran.load("qtbase_" + QLocale::system().name(), QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
+    if (qtBaseTran.load("qtbase_" + QLocale::system().name(), QLibraryInfo::location(QLibraryInfo::TranslationsPath))) {
         QApplication::installTranslator(&qtBaseTran);
+    }
 
     QTranslator appTran;
     if (appTran.load(QApplication::applicationName() + "_" + QLocale::system().name(),
-                     "/usr/share/" + QApplication::applicationName() + "/locale"))
+                     "/usr/share/" + QApplication::applicationName() + "/locale")) {
         QApplication::installTranslator(&appTran);
+    }
 
     if (getuid() != 0) {
         if (parser.positionalArguments().isEmpty()) {
@@ -75,7 +78,7 @@ int main(int argc, char *argv[])
             return EXIT_FAILURE;
         }
         const auto args = parser.positionalArguments();
-        for (const auto &file : args)
+        for (const auto &file : args) {
             if (!QFile::exists(file)) {
                 QApplication::beep();
                 QMessageBox::critical(nullptr, QObject::tr("Error"), QObject::tr("File %1 not found").arg(file));
@@ -86,6 +89,7 @@ int main(int argc, char *argv[])
                                       QObject::tr("File %1 is not a .deb file.").arg(file));
                 return EXIT_FAILURE;
             }
+        }
         Installer installer(parser);
     } else {
         QApplication::beep();
