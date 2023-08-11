@@ -27,8 +27,9 @@ bool Cmd::run(const QString &cmd, QString &output, bool quiet)
         qDebug() << "Process already running:" << this->program() << this->arguments();
         return false;
     }
-    if (!quiet)
+    if (!quiet) {
         qDebug().noquote() << cmd;
+    }
     QEventLoop loop;
     connect(this, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), &loop, &QEventLoop::quit);
     connect(this, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, &Cmd::done);

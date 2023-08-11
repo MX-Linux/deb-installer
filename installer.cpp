@@ -33,16 +33,18 @@ Installer::Installer(const QCommandLineParser &arg_parser, QObject *parent)
     : QObject(parent)
 {
     QStringList file_names = canonicalize(arg_parser.positionalArguments());
-    if (confirmAction(file_names))
+    if (confirmAction(file_names)) {
         install(file_names);
+    }
 }
 
 QStringList Installer::canonicalize(const QStringList &file_names)
 {
     QStringList new_list;
     new_list.reserve(file_names.size());
-    for (auto const &name : file_names)
+    for (auto const &name : file_names) {
         new_list << "\"" + QFileInfo(name).canonicalFilePath() + "\"";
+    }
     return new_list;
 }
 
@@ -62,8 +64,9 @@ bool Installer::confirmAction(const QStringList &names)
     detailed_names = cmd.getCmdOut(
         frontend + aptget + "install " + names_str
         + R"lit(|grep 'Inst\|Remv'| awk '{V=""; P="";}; $3 ~ /^\[/ { V=$3 }; $3 ~ /^\(/ { P=$3 ")"}; $4 ~ /^\(/ {P=" => " $4 ")"}; {print $2 ";" V  P ";" $1}')lit");
-    if (!detailed_names.isEmpty())
+    if (!detailed_names.isEmpty()) {
         detailed_installed_names = detailed_names.split("\n");
+    }
     detailed_installed_names.sort();
     QStringListIterator iterator(detailed_installed_names);
     QString value;
@@ -78,10 +81,12 @@ bool Installer::confirmAction(const QStringList &names)
             detailed_to_install += value + "\n";
         }
     }
-    if (!detailed_removed_names.isEmpty())
+    if (!detailed_removed_names.isEmpty()) {
         detailed_removed_names.prepend(tr("Remove") + "\n");
-    if (!detailed_to_install.isEmpty())
+    }
+    if (!detailed_to_install.isEmpty()) {
         detailed_to_install.prepend(tr("Install") + "\n");
+    }
 
     msg = "<b>"
           + tr("The following packages will be installed. Click 'Show Details...' for information about the packages.")
@@ -106,10 +111,11 @@ bool Installer::confirmAction(const QStringList &names)
     const auto height = qMin(recommended, max);
     detailedInfo->setFixedHeight(height);
 
-    if (!detailed_installed_names.isEmpty() || !detailed_removed_names.isEmpty())
+    if (!detailed_installed_names.isEmpty() || !detailed_removed_names.isEmpty()) {
         msgBox.setInformativeText(detailed_to_install + "\n" + detailed_removed_names);
-    else
+    } else {
         msgBox.setInformativeText(tr("Will install the following:") + "\n" + names.join("\n"));
+    }
 
     msgBox.addButton(tr("Install"), QMessageBox::AcceptRole);
     msgBox.addButton(QMessageBox::Cancel);
@@ -123,9 +129,10 @@ bool Installer::confirmAction(const QStringList &names)
 
 void Installer::install(const QStringList &file_names)
 {
-    QString admincommand = QFile::exists("/usr/bin/pkexec") ? "pkexec" : "sudo";
     const QString msg {tr("Installing selected package please authenticate")};
+    QString admincommand = QFile::exists("/usr/bin/pkexec") ? "pkexec" : QString("sudo -p '%1':").arg(msg);
     cmd.run("x-terminal-emulator -e " + admincommand + " bash -c ' LANG=" + qEnvironmentVariable("LANG")
-            + " DISPLAY=" + qEnvironmentVariable("DISPLAY") + " XAUTHORITY=" + qEnvironmentVariable("XAUTHORITY") + " apt -o Acquire::AllowUnsizedPackages=true reinstall " + file_names.join(" ")
+            + " DISPLAY=" + qEnvironmentVariable("DISPLAY") + " XAUTHORITY=" + qEnvironmentVariable("XAUTHORITY")
+            + " apt -o Acquire::AllowUnsizedPackages=true reinstall " + file_names.join(" ")
             + "; echo; read -n1 -srp \"" + tr("Press any key to close") + "\"'");
 }
