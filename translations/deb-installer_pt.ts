@@ -4,38 +4,38 @@
 <context>
     <name>Installer</name>
     <message>
-        <location filename="../installer.cpp" line="82"/>
+        <location filename="../installer.cpp" line="85"/>
         <source>Remove</source>
         <translation>Remover</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="84"/>
-        <location filename="../installer.cpp" line="114"/>
+        <location filename="../installer.cpp" line="88"/>
+        <location filename="../installer.cpp" line="120"/>
         <source>Install</source>
         <translation>Instalar</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="87"/>
+        <location filename="../installer.cpp" line="92"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
         <translation>Serão instalados os seguintes pacotes. Clique em &apos;Mostrar detalhes...&apos; para obter informações sobre os pacotes.</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="95"/>
+        <location filename="../installer.cpp" line="100"/>
         <source>File: %1</source>
         <translation>Ficheiro: %1</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="112"/>
+        <location filename="../installer.cpp" line="117"/>
         <source>Will install the following:</source>
         <translation>Irá instalar o seguinte:</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="127"/>
+        <location filename="../installer.cpp" line="132"/>
         <source>Installing selected package please authenticate</source>
-        <translation type="unfinished"></translation>
+        <translation>A instalar o pacote selecionado, autenticar</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="130"/>
+        <location filename="../installer.cpp" line="137"/>
         <source>Press any key to close</source>
         <translation>Premir qualquer tecla para fechar</translation>
     </message>
@@ -63,39 +63,39 @@
         <translation>[file...]</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="69"/>
+        <location filename="../main.cpp" line="72"/>
         <source>Select .deb files to install</source>
         <translation>Selecione ficheiros .deb para instalar</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="70"/>
+        <location filename="../main.cpp" line="73"/>
         <source>Deb Files (*.deb)</source>
         <translation>Ficheiros deb (*.deb)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="74"/>
+        <location filename="../main.cpp" line="77"/>
         <source>No .deb files were provided.</source>
         <translation>Não foram fornecidos ficheiros .deb.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="81"/>
-        <location filename="../main.cpp" line="85"/>
-        <location filename="../main.cpp" line="92"/>
+        <location filename="../main.cpp" line="84"/>
+        <location filename="../main.cpp" line="88"/>
+        <location filename="../main.cpp" line="96"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="81"/>
+        <location filename="../main.cpp" line="84"/>
         <source>File %1 not found</source>
         <translation>Ficheiro %1 não encontrado</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="86"/>
+        <location filename="../main.cpp" line="89"/>
         <source>File %1 is not a .deb file.</source>
         <translation>O ficheiro %1 não é um ficheiro .deb.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="92"/>
+        <location filename="../main.cpp" line="96"/>
         <source>You must run this program as normal user.</source>
         <translation>Este programa tem que ser executado como utilizador normal.</translation>
     </message>
