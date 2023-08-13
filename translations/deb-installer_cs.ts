@@ -4,38 +4,38 @@
 <context>
     <name>Installer</name>
     <message>
-        <location filename="../installer.cpp" line="82"/>
+        <location filename="../installer.cpp" line="85"/>
         <source>Remove</source>
         <translation>Odstranit</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="84"/>
-        <location filename="../installer.cpp" line="114"/>
+        <location filename="../installer.cpp" line="88"/>
+        <location filename="../installer.cpp" line="120"/>
         <source>Install</source>
         <translation>Instalovat</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="87"/>
+        <location filename="../installer.cpp" line="92"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
         <translation>Následující balíky budou nainstalovány. Informaci o balících zobrazíte kliknutím na &apos;Zobrazit podrobnosti&apos;.</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="95"/>
+        <location filename="../installer.cpp" line="100"/>
         <source>File: %1</source>
         <translation>Soubor: %1</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="112"/>
+        <location filename="../installer.cpp" line="117"/>
         <source>Will install the following:</source>
         <translation>Tohle se nainstaluje:</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="127"/>
+        <location filename="../installer.cpp" line="132"/>
         <source>Installing selected package please authenticate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="130"/>
+        <location filename="../installer.cpp" line="137"/>
         <source>Press any key to close</source>
         <translation>Zavřít stiskem libovolné klávesy</translation>
     </message>
@@ -63,39 +63,39 @@
         <translation>[soubor...]</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="69"/>
+        <location filename="../main.cpp" line="72"/>
         <source>Select .deb files to install</source>
         <translation>Vybrat .deb soubory k instalaci</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="70"/>
+        <location filename="../main.cpp" line="73"/>
         <source>Deb Files (*.deb)</source>
         <translation>Deb Soubory (*.deb)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="74"/>
+        <location filename="../main.cpp" line="77"/>
         <source>No .deb files were provided.</source>
         <translation>Nebyly poskutnuté žádné .deb soubory.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="81"/>
-        <location filename="../main.cpp" line="85"/>
-        <location filename="../main.cpp" line="92"/>
+        <location filename="../main.cpp" line="84"/>
+        <location filename="../main.cpp" line="88"/>
+        <location filename="../main.cpp" line="96"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="81"/>
+        <location filename="../main.cpp" line="84"/>
         <source>File %1 not found</source>
         <translation>Soubor %1 nenalezen</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="86"/>
+        <location filename="../main.cpp" line="89"/>
         <source>File %1 is not a .deb file.</source>
         <translation>Soubor %1 není .deb souborem.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="92"/>
+        <location filename="../main.cpp" line="96"/>
         <source>You must run this program as normal user.</source>
         <translation>Tento program musíte spustit jako normální uživatel</translation>
     </message>
