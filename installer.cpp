@@ -50,28 +50,25 @@ QStringList Installer::canonicalize(const QStringList &file_names)
 
 bool Installer::confirmAction(const QStringList &names)
 {
-    QString detailed_names;
-    QString detailed_removed_names;
-    QString detailed_to_install;
-    QString msg;
-    QString names_str = names.join(" ");
-    QStringList detailed_installed_names;
-
-    const QString frontend
-        = "DEBIAN_FRONTEND=$(dpkg -l debconf-kde-helper 2>/dev/null | grep -sq ^i && echo kde || echo gnome) ";
+    const QString names_str = names.join(" ");
+    const QString frontend {
+        "DEBIAN_FRONTEND=$(dpkg -l debconf-kde-helper 2>/dev/null | grep -sq ^i && echo kde || echo gnome) "};
     const QString aptget {"apt-get -s -V -o=Dpkg::Use-Pty=0 "};
 
-    detailed_names = cmd.getCmdOut(
+    const QString detailed_names = cmd.getCmdOut(
         frontend + aptget + "install " + names_str
         + R"lit(|grep 'Inst\|Remv'| awk '{V=""; P="";}; $3 ~ /^\[/ { V=$3 }; $3 ~ /^\(/ { P=$3 ")"}; $4 ~ /^\(/ {P=" => " $4 ")"}; {print $2 ";" V  P ";" $1}')lit");
+
+    QStringList detailed_installed_names;
     if (!detailed_names.isEmpty()) {
         detailed_installed_names = detailed_names.split("\n");
     }
     detailed_installed_names.sort();
+    QString detailed_to_install;
+    QString detailed_removed_names;
     QStringListIterator iterator(detailed_installed_names);
-    QString value;
     while (iterator.hasNext()) {
-        value = iterator.next();
+        auto value = iterator.next();
         if (value.contains(QLatin1String("Remv"))) {
             value = value.section(";", 0, 0) + " " + value.section(";", 1, 1);
             detailed_removed_names += value + "\n";
@@ -88,7 +85,8 @@ bool Installer::confirmAction(const QStringList &names)
         detailed_to_install.prepend(tr("Install") + "\n");
     }
 
-    msg = "<b>"
+    const QString msg
+        = "<b>"
           + tr("The following packages will be installed. Click 'Show Details...' for information about the packages.")
           + "</b>";
 
@@ -130,7 +128,7 @@ bool Installer::confirmAction(const QStringList &names)
 void Installer::install(const QStringList &file_names)
 {
     const QString msg {tr("Installing selected package please authenticate")};
-    QString admincommand = QFile::exists("/usr/bin/pkexec") ? "pkexec" : QString("sudo -p '%1':").arg(msg);
+    const QString admincommand = QFile::exists("/usr/bin/pkexec") ? "pkexec" : QString("sudo -p '%1':").arg(msg);
     cmd.run("x-terminal-emulator -e " + admincommand + " bash -c ' LANG=" + qEnvironmentVariable("LANG")
             + " DISPLAY=" + qEnvironmentVariable("DISPLAY") + " XAUTHORITY=" + qEnvironmentVariable("XAUTHORITY")
             + " apt -o Acquire::AllowUnsizedPackages=true reinstall " + file_names.join(" ")
