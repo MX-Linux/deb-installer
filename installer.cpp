@@ -85,10 +85,10 @@ bool Installer::confirmAction(const QStringList &names)
         detailed_to_install.prepend(tr("Install") + "\n");
     }
 
-    const QString msg
-        = "<b>"
-          + tr("The following packages will be installed. Click 'Show Details...' for information about the packages.")
-          + "</b>";
+    const QString msg {
+        "<b>"
+        + tr("The following packages will be installed. Click 'Show Details...' for information about the packages.")
+        + "</b>"};
 
     QMessageBox msgBox;
     msgBox.setText(msg);
@@ -128,7 +128,7 @@ bool Installer::confirmAction(const QStringList &names)
 void Installer::install(const QStringList &file_names)
 {
     const QString msg {tr("Installing selected package please authenticate")};
-    const QString admincommand = QFile::exists("/usr/bin/pkexec") ? "pkexec" : QString("sudo -p '%1':").arg(msg);
+    const QString admincommand = QFile::exists("/usr/bin/pkexec") ? "pkexec" : QString("sudo -p '%1: '").arg(msg);
     cmd.run("x-terminal-emulator -e " + admincommand + " bash -c ' LANG=" + qEnvironmentVariable("LANG")
             + " DISPLAY=" + qEnvironmentVariable("DISPLAY") + " XAUTHORITY=" + qEnvironmentVariable("XAUTHORITY")
             + " apt -o Acquire::AllowUnsizedPackages=true reinstall " + file_names.join(" ")
