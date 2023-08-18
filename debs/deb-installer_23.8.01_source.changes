@@ -1,0 +1,41 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Fri, 18 Aug 2023 00:30:57 -0400
+Source: deb-installer
+Architecture: source
+Version: 23.8.01
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Changes:
+ deb-installer (23.8.01) mx; urgency=medium
+ .
+   * Re-add text prompting to elevate to install packages
+   * Update translations
+Checksums-Sha1:
+ eead7c2425af988247a189127a0f8b191b49cb4c 1138 deb-installer_23.8.01.dsc
+ 649852c475417b2199a45d6c59c71d73cf9eaae9 42076 deb-installer_23.8.01.tar.xz
+ 54f699892f333861c7040f564a0d0b077cab90cb 10946 deb-installer_23.8.01_amd64.buildinfo
+Checksums-Sha256:
+ 8619156dca6215f83f04b3f0a43f0f711ca6a24735cc6cb0a6cbb9b746ff6f4c 1138 deb-installer_23.8.01.dsc
+ e8172f936144120c250958af80b676d3171d3f1a6f769a3dd3a2a31e07583e2b 42076 deb-installer_23.8.01.tar.xz
+ 2635f7eb600b0f88b7c9b2805a3e5c7a9cdf3c7ce44817530abe347bc047d387 10946 deb-installer_23.8.01_amd64.buildinfo
+Files:
+ c204f7d6b10b8b6d2ce0a4e90e7522a4 1138 admin optional deb-installer_23.8.01.dsc
+ a887eb3cbccd93d18512437ed446c263 42076 admin optional deb-installer_23.8.01.tar.xz
+ 82faef18f41523bf96993c0364c4fd11 10946 admin optional deb-installer_23.8.01_amd64.buildinfo
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmTe9FoTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumGTnB/4yREye+0NqR75Y5npl+LdHUANtJGV9
+lB8k8YIZW2uliOC2TUbqpYACQ31HLNsfHCxeDgdeq9ogKeTmv6jt3GjC2GJFSoto
+ULvQDCREMK7cb6i1VsFyRsnEqPaTWOMgby7PVIejZRKtQ2HbV9ypZtIGP9+zORN1
+llAm5aDH7LVyY1QNkgkFRVv0ORBT6sGXEW19XWO3s4Ei54zEwFr35Im7H+dyJ9lk
+FDkc9XuTrFcuiSkXjjxkeA26aOHDwfUAOs2EdVK9aGLD+FrZHJ987M3zuvERGWcz
+XL6NndVGkbZWhJsagXGJO1snI+dNd/6wtiCxoPVsU5NPB263BoWqXu/7
+=uI8+
+-----END PGP SIGNATURE-----

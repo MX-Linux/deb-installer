@@ -1,3 +1,10 @@
+deb-installer (23.8.01) mx; urgency=medium
+
+  * Re-add text prompting to elevate to install packages
+  * Update translations
+
+ -- Adrian <adrian@mxlinux.org>  Fri, 18 Aug 2023 00:30:57 -0400
+
 deb-installer (23.8) mx; urgency=medium
 
   * Use localization in terminal window

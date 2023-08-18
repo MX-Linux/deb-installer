@@ -1,0 +1,47 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Fri, 18 Aug 2023 00:30:57 -0400
+Source: deb-installer
+Binary: deb-installer
+Architecture: source amd64
+Version: 23.8.01
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ deb-installer - deb-installer
+Changes:
+ deb-installer (23.8.01) mx; urgency=medium
+ .
+   * Re-add text prompting to elevate to install packages
+   * Update translations
+Checksums-Sha1:
+ eead7c2425af988247a189127a0f8b191b49cb4c 1138 deb-installer_23.8.01.dsc
+ 649852c475417b2199a45d6c59c71d73cf9eaae9 42076 deb-installer_23.8.01.tar.xz
+ 54f699892f333861c7040f564a0d0b077cab90cb 10946 deb-installer_23.8.01_amd64.buildinfo
+ 7cb06e480e65d1c023d021d450906094f7dc36ed 39280 deb-installer_23.8.01_amd64.deb
+Checksums-Sha256:
+ 8619156dca6215f83f04b3f0a43f0f711ca6a24735cc6cb0a6cbb9b746ff6f4c 1138 deb-installer_23.8.01.dsc
+ e8172f936144120c250958af80b676d3171d3f1a6f769a3dd3a2a31e07583e2b 42076 deb-installer_23.8.01.tar.xz
+ 2635f7eb600b0f88b7c9b2805a3e5c7a9cdf3c7ce44817530abe347bc047d387 10946 deb-installer_23.8.01_amd64.buildinfo
+ e25b843ca69f7f53131b6e90a4f4185dc0d74d022267e425833e61336f639eef 39280 deb-installer_23.8.01_amd64.deb
+Files:
+ c204f7d6b10b8b6d2ce0a4e90e7522a4 1138 admin optional deb-installer_23.8.01.dsc
+ a887eb3cbccd93d18512437ed446c263 42076 admin optional deb-installer_23.8.01.tar.xz
+ 82faef18f41523bf96993c0364c4fd11 10946 admin optional deb-installer_23.8.01_amd64.buildinfo
+ 2508158819bd1d4d2339830745d5ae4a 39280 admin optional deb-installer_23.8.01_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmTe9FoTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumHmhB/9PAU0hccZoYnAmWNQ3gzdFF0+hLO+R
+vbzCHM+WHMZh/qaB0bCGrGHHUo0mNTf8VVFxgSqaZLVxdRZ4UN/v5jx5ZNQQ2txY
+V2b36No7UgIo6Bpt3mke6+Fic6dYR/cUeLtpumEIBhUpx7SwzymTiahzU/h7zvfD
+Q9uJOxfi0erS3z0tlL8JbvPF7OVs4ZyK6zd6NkCUD8qMULoOuCu+GcI+IdEfWuSj
+MiGw3f+wyXq8bIaiF9pcmn7cO6u/Wt8jjNmH1ww+wJi5w9QbygrgjyD6xJCocVt1
+xijCeYdZhmgWfGa4CNaz0Vw9HloAT64FEp/lB2CtlHwpvvi4/FZF52Mk
+=2dyN
+-----END PGP SIGNATURE-----
