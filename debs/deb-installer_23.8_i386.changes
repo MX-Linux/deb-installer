@@ -15,11 +15,11 @@ Changes:
  .
    * Use localization in terminal window
 Checksums-Sha1:
- ced9610ecc32774d7342c22459e1e63394294db7 10074 deb-installer_23.8_i386.buildinfo
- 2b721a59cc85c8a791e9244f558112e3cd0277b2 39608 deb-installer_23.8_i386.deb
+ e0d989ceafb621fe3f4d55a2891c0096e85c8961 10074 deb-installer_23.8_i386.buildinfo
+ 0662602f4813763240465ac30f3440a1fddeb76a 40028 deb-installer_23.8_i386.deb
 Checksums-Sha256:
- 471ce491bb527630fdde997e389e142924150915af05e5e570a5d2f5d7be19db 10074 deb-installer_23.8_i386.buildinfo
- f6eeda497d7a37b24fae90549de73d58c93d3a3be095911cd9cf8a64bf267fe2 39608 deb-installer_23.8_i386.deb
+ 40a6f08781d9b8fb476867b134f65a38737f6945a0dd14e1208d92801ab7d7d9 10074 deb-installer_23.8_i386.buildinfo
+ 72f602ae1209f83899e70b6b5b4db476fcf9df2727e43ec87e2022fd5d69b559 40028 deb-installer_23.8_i386.deb
 Files:
- 0baa88f9434527a320bca7b58e8252c8 10074 admin optional deb-installer_23.8_i386.buildinfo
- 3c5f4402a390f3c76d37af9930223296 39608 admin optional deb-installer_23.8_i386.deb
+ 3afda064265f40feb59667b0942f8cd1 10074 admin optional deb-installer_23.8_i386.buildinfo
+ 93d1c76eb228de379aff30c94ed1d3e3 40028 admin optional deb-installer_23.8_i386.deb

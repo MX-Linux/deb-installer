@@ -4,38 +4,38 @@
 <context>
     <name>Installer</name>
     <message>
-        <location filename="../installer.cpp" line="85"/>
+        <location filename="../installer.cpp" line="82"/>
         <source>Remove</source>
         <translation>Desinstalar</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="88"/>
-        <location filename="../installer.cpp" line="120"/>
+        <location filename="../installer.cpp" line="85"/>
+        <location filename="../installer.cpp" line="118"/>
         <source>Install</source>
         <translation>Instalar</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="92"/>
+        <location filename="../installer.cpp" line="90"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
         <translation>Clique na opção ‘Exibir detalhes...’ para obter mais informações sobre o(s) pacote(s) que será(ão) instalado(s) a seguir.</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="100"/>
+        <location filename="../installer.cpp" line="98"/>
         <source>File: %1</source>
         <translation>Arquivo: %1</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="117"/>
+        <location filename="../installer.cpp" line="115"/>
         <source>Will install the following:</source>
         <translation>Será(ão) instalado(s) o(s) seguinte(s) pacote(s):</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="132"/>
+        <location filename="../installer.cpp" line="130"/>
         <source>Installing selected package please authenticate</source>
         <translation>Por favor, realize a autenticação para continuar o processo de instalação do pacote selecionado</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="137"/>
+        <location filename="../installer.cpp" line="135"/>
         <source>Press any key to close</source>
         <translation>Pressione qualquer tecla para fechar</translation>
     </message>
