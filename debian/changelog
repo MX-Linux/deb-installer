@@ -1,3 +1,9 @@
+deb-installer (23.8.02) mx; urgency=medium
+
+  * Fix: Download is performed unsandboxed as root
+
+ -- fehlix <fehlix@mxlinux.org>  Sat, 19 Aug 2023 20:35:24 -0400
+
 deb-installer (23.8.01) mx; urgency=medium
 
   * Re-add text prompting to elevate to install packages
