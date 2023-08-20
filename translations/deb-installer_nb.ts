@@ -35,7 +35,7 @@
         <translation>Autentisering før installasjon av valgte pakker</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="135"/>
+        <location filename="../installer.cpp" line="136"/>
         <source>Press any key to close</source>
         <translation>Trykk en vilkårlig tast for å lukke</translation>
     </message>

@@ -35,7 +35,7 @@
         <translation>Seçili paket yükleniyor, lütfen onaylayın</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="135"/>
+        <location filename="../installer.cpp" line="136"/>
         <source>Press any key to close</source>
         <translation>Kapatmak için herhangi bir tuşa basın</translation>
     </message>

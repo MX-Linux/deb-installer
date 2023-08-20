@@ -35,7 +35,7 @@
         <translation>Instal·lant el paquet triat; si us plau autentiqueu-vos</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="135"/>
+        <location filename="../installer.cpp" line="136"/>
         <source>Press any key to close</source>
         <translation>Premeu qualsevol tecla per tancar</translation>
     </message>

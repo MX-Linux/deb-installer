@@ -35,7 +35,7 @@
         <translation>Installerar valt paket var vänlig verifiera</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="135"/>
+        <location filename="../installer.cpp" line="136"/>
         <source>Press any key to close</source>
         <translation>Tryck på valfri tangent för att stänga</translation>
     </message>

@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Sat, 19 Aug 2023 20:35:24 -0400
+Source: deb-installer
+Binary: deb-installer
+Architecture: i386
+Version: 23.8.02
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: fehlix <fehlix@mxlinux.org>
+Description:
+ deb-installer - deb-installer
+Changes:
+ deb-installer (23.8.02) mx; urgency=medium
+ .
+   * Fix: Download is performed unsandboxed as root
+Checksums-Sha1:
+ b4f625dae6eb19fb4abcd6cb275051fac7125d35 10089 deb-installer_23.8.02_i386.buildinfo
+ e15f6b0fa9e2843b67fcf0eb5cf4d09f338eb0f8 40276 deb-installer_23.8.02_i386.deb
+Checksums-Sha256:
+ 9d22cf223e5dce3ebfe61c1149117738002e64b6d3633937caba8b1fe0b6f892 10089 deb-installer_23.8.02_i386.buildinfo
+ 7ddc1de6395721dde36c18f5c4bf76f7ca34ac7011391649ea9dd609138f93d7 40276 deb-installer_23.8.02_i386.deb
+Files:
+ c825f45728c49b0753d75c696727702b 10089 admin optional deb-installer_23.8.02_i386.buildinfo
+ 1e4a56844787147ebf937c4c4ed767c1 40276 admin optional deb-installer_23.8.02_i386.deb

@@ -36,7 +36,7 @@ Klicken sie auf  &apos;Details anzeigen...&apos; für Informationen über die Pa
         <translation>Installiere ausgewählte Pakete. Bitte authentifizieren...</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="135"/>
+        <location filename="../installer.cpp" line="136"/>
         <source>Press any key to close</source>
         <translation>Schließen mit beliebiger Taste</translation>
     </message>

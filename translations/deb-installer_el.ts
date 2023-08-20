@@ -35,7 +35,7 @@
         <translation>Εγκατάσταση επιλεγμένου πακέτου, ελέγξτε την ταυτότητα</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="135"/>
+        <location filename="../installer.cpp" line="136"/>
         <source>Press any key to close</source>
         <translation>Πατήστε οποιοδήποτε πλήκτρο για να κλείσει</translation>
     </message>
