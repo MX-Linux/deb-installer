@@ -131,7 +131,6 @@ void Installer::install(const QStringList &file_names)
     const QString admincommand = QFile::exists("/usr/bin/pkexec") ? "pkexec" : QString("sudo -p '%1: '").arg(msg);
     cmd.run("x-terminal-emulator -e " + admincommand + " bash -c ' LANG=" + qEnvironmentVariable("LANG")
             + " DISPLAY=" + qEnvironmentVariable("DISPLAY") + " XAUTHORITY=" + qEnvironmentVariable("XAUTHORITY")
-            + " apt -o Acquire::AllowUnsizedPackages=true -o APT::Sandbox::User=root"
-            + " reinstall " + file_names.join(" ")
-            + "; echo; read -n1 -srp \"" + tr("Press any key to close") + "\"'");
+            + " apt -o Acquire::AllowUnsizedPackages=true -o APT::Sandbox::User=root" + " reinstall "
+            + file_names.join(" ") + "; echo; read -n1 -srp \"" + tr("Press any key to close") + "\"'");
 }

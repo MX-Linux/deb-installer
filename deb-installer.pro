@@ -37,7 +37,6 @@ SOURCES += \
 
 HEADERS  += \
     installer.h \
-    version.h \
     cmd.h
 
 TRANSLATIONS += translations/deb-installer_en.ts

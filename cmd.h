@@ -1,5 +1,4 @@
-#ifndef CMD_H
-#define CMD_H
+#pragma once
 
 #include <QProcess>
 
@@ -18,5 +17,3 @@ public:
 signals:
     void done();
 };
-
-#endif // CMD_H
