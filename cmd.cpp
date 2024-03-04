@@ -34,7 +34,7 @@ bool Cmd::run(const QString &cmd, QString &output, bool quiet)
     connect(this, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), &loop, &QEventLoop::quit);
     connect(this, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, &Cmd::done);
     setProcessChannelMode(QProcess::MergedChannels);
-    start(QStringLiteral("/bin/bash"), {QStringLiteral("-c"), cmd});
+    start("/bin/bash", {"-c", cmd});
     loop.exec();
     output = readAll().trimmed();
     return (exitStatus() == QProcess::NormalExit && exitCode() == 0);

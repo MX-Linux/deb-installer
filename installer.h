@@ -35,8 +35,8 @@ public:
 public slots:
 
 private slots:
-    static QStringList canonicalize(const QStringList &file_names);
-    bool confirmAction(const QStringList &file_names);
+    [[nodiscard]] static QStringList canonicalize(const QStringList &file_names);
+    [[nodiscard]] bool confirmAction(const QStringList &file_names);
     void install(const QStringList &file_names);
 
 private:

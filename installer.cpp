@@ -43,14 +43,14 @@ QStringList Installer::canonicalize(const QStringList &file_names)
     QStringList new_list;
     new_list.reserve(file_names.size());
     for (auto const &name : file_names) {
-        new_list << "\"" + QFileInfo(name).canonicalFilePath() + "\"";
+        new_list << '"' + QFileInfo(name).canonicalFilePath() + '"';
     }
     return new_list;
 }
 
 bool Installer::confirmAction(const QStringList &names)
 {
-    const QString names_str = names.join(" ");
+    const QString names_str = names.join(' ');
     const QString frontend {
         "DEBIAN_FRONTEND=$(dpkg -l debconf-kde-helper 2>/dev/null | grep -sq ^i && echo kde || echo gnome) "};
     const QString aptget {"apt-get -s -V -o=Dpkg::Use-Pty=0 "};
@@ -61,7 +61,7 @@ bool Installer::confirmAction(const QStringList &names)
 
     QStringList detailed_installed_names;
     if (!detailed_names.isEmpty()) {
-        detailed_installed_names = detailed_names.split("\n");
+        detailed_installed_names = detailed_names.split('\n');
     }
     detailed_installed_names.sort();
     QString detailed_to_install;
@@ -69,20 +69,20 @@ bool Installer::confirmAction(const QStringList &names)
     QStringListIterator iterator(detailed_installed_names);
     while (iterator.hasNext()) {
         auto value = iterator.next();
-        if (value.contains(QLatin1String("Remv"))) {
-            value = value.section(";", 0, 0) + " " + value.section(";", 1, 1);
-            detailed_removed_names += value + "\n";
+        if (value.contains("Remv")) {
+            value = value.section(';', 0, 0) + ' ' + value.section(';', 1, 1);
+            detailed_removed_names += value + '\n';
         }
-        if (value.contains(QLatin1String("Inst"))) {
-            value = value.section(";", 0, 0) + " " + value.section(";", 1, 1);
-            detailed_to_install += value + "\n";
+        if (value.contains("Inst")) {
+            value = value.section(';', 0, 0) + ' ' + value.section(';', 1, 1);
+            detailed_to_install += value + '\n';
         }
     }
     if (!detailed_removed_names.isEmpty()) {
-        detailed_removed_names.prepend(tr("Remove") + "\n");
+        detailed_removed_names.prepend(tr("Remove") + '\n');
     }
     if (!detailed_to_install.isEmpty()) {
-        detailed_to_install.prepend(tr("Install") + "\n");
+        detailed_to_install.prepend(tr("Install") + '\n');
     }
 
     const QString msg {
@@ -101,7 +101,7 @@ bool Installer::confirmAction(const QStringList &names)
     }
     msgBox.setDetailedText(detailed_text);
 
-    // find Detailed Info box and set heigth, set box height between 100 - 400 depending on length of content
+    // Find Detailed Info box and set heigth, set box height between 100 - 400 depending on length of content
     const auto min = 100;
     const auto max = 400;
     auto *const detailedInfo = msgBox.findChild<QTextEdit *>();
@@ -110,9 +110,9 @@ bool Installer::confirmAction(const QStringList &names)
     detailedInfo->setFixedHeight(height);
 
     if (!detailed_installed_names.isEmpty() || !detailed_removed_names.isEmpty()) {
-        msgBox.setInformativeText(detailed_to_install + "\n" + detailed_removed_names);
+        msgBox.setInformativeText(detailed_to_install + '\n' + detailed_removed_names);
     } else {
-        msgBox.setInformativeText(tr("Will install the following:") + "\n" + names.join("\n"));
+        msgBox.setInformativeText(tr("Will install the following:") + '\n' + names.join('\n'));
     }
 
     msgBox.addButton(tr("Install"), QMessageBox::AcceptRole);
@@ -132,5 +132,5 @@ void Installer::install(const QStringList &file_names)
     cmd.run("x-terminal-emulator -e " + admincommand + " bash -c ' LANG=" + qEnvironmentVariable("LANG")
             + " DISPLAY=" + qEnvironmentVariable("DISPLAY") + " XAUTHORITY=" + qEnvironmentVariable("XAUTHORITY")
             + " apt -o Acquire::AllowUnsizedPackages=true -o APT::Sandbox::User=root" + " reinstall "
-            + file_names.join(" ") + "; echo; read -n1 -srp \"" + tr("Press any key to close") + "\"'");
+            + file_names.join(' ') + "; echo; read -n1 -srp \"" + tr("Press any key to close") + "\"'");
 }
