@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="sl">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="sl">
 <context>
     <name>Installer</name>
     <message>
@@ -32,7 +30,7 @@
     <message>
         <location filename="../installer.cpp" line="130"/>
         <source>Installing selected package please authenticate</source>
-        <translation type="unfinished"></translation>
+        <translation>Nameščanje izbranih paketov zahteva overitev</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="136"/>

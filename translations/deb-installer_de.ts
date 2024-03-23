@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="de">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="de">
 <context>
     <name>Installer</name>
     <message>
@@ -18,7 +16,7 @@
         <location filename="../installer.cpp" line="90"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
         <translation>Die folgenden Pakete werden installiert.
-Klicken sie auf  &apos;Details anzeigen...&apos; für Informationen über die Pakete.</translation>
+Klicken Sie auf  &apos;Details anzeigen...&apos; für Informationen über die Pakete.</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="98"/>
@@ -66,7 +64,7 @@ Klicken sie auf  &apos;Details anzeigen...&apos; für Informationen über die Pa
     <message>
         <location filename="../main.cpp" line="72"/>
         <source>Select .deb files to install</source>
-        <translation>Wählen sie die zu installierenden .deb-Dateien aus</translation>
+        <translation>Wählen Sie die zu installierenden .deb-Dateien aus</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="73"/>

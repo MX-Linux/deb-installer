@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fi">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="fi">
 <context>
     <name>Installer</name>
     <message>
@@ -17,22 +15,22 @@
     <message>
         <location filename="../installer.cpp" line="90"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seuraavat paketit asennetaan. Paina &quot;Näytä tiedot...&quot; ja saat tietoa paketeista.</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="98"/>
         <source>File: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiedosto: %1</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="115"/>
         <source>Will install the following:</source>
-        <translation type="unfinished"></translation>
+        <translation>Asennetaan seuraavat:</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="130"/>
         <source>Installing selected package please authenticate</source>
-        <translation type="unfinished"></translation>
+        <translation>Asenna valittu paketti, ole hyvä ja vahvista</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="136"/>
@@ -45,37 +43,37 @@
     <message>
         <location filename="../main.cpp" line="46"/>
         <source>Program for installing Debian binary packages (deb files)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohjelma Debian pakettien (deb-tiedostojen) asentamiseen</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="49"/>
         <source>files...</source>
-        <translation type="unfinished"></translation>
+        <translation>tiedostot...</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="49"/>
         <source>Name of .deb files to install</source>
-        <translation type="unfinished"></translation>
+        <translation>Asennettavien .deb-tiedostojen nimet</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="50"/>
         <source>[file...]</source>
-        <translation type="unfinished"></translation>
+        <translation>[tiedosto...]</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="72"/>
         <source>Select .deb files to install</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse asennettavat .deb-tiedostot</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="73"/>
         <source>Deb Files (*.deb)</source>
-        <translation type="unfinished"></translation>
+        <translation>Deb-tiedostot (*.deb)</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="77"/>
         <source>No .deb files were provided.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei .deb-tiedostoja toimitettu.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="84"/>
@@ -87,12 +85,12 @@
     <message>
         <location filename="../main.cpp" line="84"/>
         <source>File %1 not found</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiedostoa %1 ei löydy</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="89"/>
         <source>File %1 is not a .deb file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiedosto %1 ei ole .deb-tiedosto.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="96"/>
