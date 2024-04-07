@@ -42,9 +42,9 @@ QStringList Installer::canonicalize(const QStringList &file_names)
 {
     QStringList new_list;
     new_list.reserve(file_names.size());
-    for (auto const &name : file_names) {
-        new_list << '"' + QFileInfo(name).canonicalFilePath() + '"';
-    }
+
+    std::transform(file_names.cbegin(), file_names.cend(), std::back_inserter(new_list),
+                   [](const QString &name) { return '"' + QFileInfo(name).canonicalFilePath() + '"'; });
     return new_list;
 }
 
