@@ -26,6 +26,7 @@
 #include <QGridLayout>
 #include <QMessageBox>
 #include <QTextEdit>
+#include <QDebug>
 
 #include "cmd.h"
 
@@ -33,9 +34,12 @@ Installer::Installer(const QCommandLineParser &arg_parser, QObject *parent)
     : QObject(parent)
 {
     QStringList file_names = canonicalize(arg_parser.positionalArguments());
+    file_arguments = file_names;
+    qDebug() << "file arguments is " << file_arguments;
     if (file_names.isEmpty() || !confirmAction(file_names)) {
         return;
     }
+
     install(file_names);
 }
 
@@ -92,6 +96,8 @@ bool Installer::confirmAction(const QStringList &names)
         detailed_text += tr("File: %1").arg(file_name) + "\n\n";
         detailed_text += cmd.getCmdOut("dpkg -I " + file_name + "| sed -n '/Package:/,$p'") + "\n\n";
     }
+    detailed_text += detailed_to_install;
+    detailed_text += "\n" + detailed_removed_names;
     msgBox.setDetailedText(detailed_text);
 
     // Set height of detailed info box
@@ -100,8 +106,8 @@ bool Installer::confirmAction(const QStringList &names)
     detailedInfo->setFixedHeight(height);
 
     msgBox.setInformativeText(!detailed_installed_names.isEmpty() || !detailed_removed_names.isEmpty()
-                                  ? detailed_to_install + '\n' + detailed_removed_names
-                                  : tr("Will install the following:") + '\n' + names.join('\n'));
+                                  ? file_arguments.join("\n") + '\n'
+                                  : tr("Will install the following:") + '\n' + file_arguments.join("\n"));
 
     msgBox.addButton(tr("Install"), QMessageBox::AcceptRole);
     msgBox.addButton(QMessageBox::Cancel);
