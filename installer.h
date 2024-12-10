@@ -31,6 +31,7 @@ class Installer : QObject
 
 public:
     explicit Installer(const QCommandLineParser &arg_parser = {}, QObject *parent = nullptr);
+    QStringList file_arguments;
 
 private slots:
     [[nodiscard]] static QStringList canonicalize(const QStringList &file_names);
