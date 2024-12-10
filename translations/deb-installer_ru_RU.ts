@@ -33,7 +33,7 @@
         <translation>Установка выбранных пакетов, пройдите аутентификацию</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="136"/>
+        <location filename="../installer.cpp" line="135"/>
         <source>Press any key to close</source>
         <translation>Нажмите любую клавишу, чтобы закрыть</translation>
     </message>

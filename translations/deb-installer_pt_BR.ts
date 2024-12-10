@@ -33,7 +33,7 @@
         <translation>Por favor, realize a autenticação para continuar o processo de instalação do pacote selecionado</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="136"/>
+        <location filename="../installer.cpp" line="135"/>
         <source>Press any key to close</source>
         <translation>Pressione qualquer tecla para fechar</translation>
     </message>

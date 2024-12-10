@@ -1,3 +1,10 @@
+deb-installer (24.12) mx; urgency=medium
+
+  * List deb files instead of actual packages in the informative text,
+    and push the list into the detailed text.
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 09 Dec 2024 22:38:11 -0500
+
 deb-installer (24.3.01) mx; urgency=medium
 
   * Update translations

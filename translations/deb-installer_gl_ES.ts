@@ -33,7 +33,7 @@
         <translation>Instalando o paquete seleccionado, por favor autentíquese.</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="136"/>
+        <location filename="../installer.cpp" line="135"/>
         <source>Press any key to close</source>
         <translation>Premer calquera tecla para pechar</translation>
     </message>

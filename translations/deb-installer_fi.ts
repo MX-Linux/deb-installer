@@ -33,7 +33,7 @@
         <translation>Asenna valittu paketti, ole hyvä ja vahvista</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="136"/>
+        <location filename="../installer.cpp" line="135"/>
         <source>Press any key to close</source>
         <translation>Paina mitä tahansa näppäintä sulkeaksesi</translation>
     </message>

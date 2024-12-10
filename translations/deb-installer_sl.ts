@@ -33,7 +33,7 @@
         <translation>Nameščanje izbranih paketov zahteva overitev</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="136"/>
+        <location filename="../installer.cpp" line="135"/>
         <source>Press any key to close</source>
         <translation>Pritisnite poljubno tipko za izhod</translation>
     </message>
