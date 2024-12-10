@@ -33,7 +33,7 @@
         <translation>Po instalohen paketat e përzgjedhura, ju lutemi, bëni mirëfilltësimin</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="136"/>
+        <location filename="../installer.cpp" line="135"/>
         <source>Press any key to close</source>
         <translation>Shtypni çfarëdo tasti, që të mbyllet</translation>
     </message>

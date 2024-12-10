@@ -30,10 +30,10 @@
     <message>
         <location filename="../installer.cpp" line="130"/>
         <source>Installing selected package please authenticate</source>
-        <translation type="unfinished"/>
+        <translation>Geselecteerd pakket installeren a.u.b. verifiëren</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="136"/>
+        <location filename="../installer.cpp" line="135"/>
         <source>Press any key to close</source>
         <translation>Druk een toets om te sluiten</translation>
     </message>

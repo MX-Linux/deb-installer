@@ -33,7 +33,7 @@
         <translation>選択したパッケージをインストールするには認証が必要です</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="136"/>
+        <location filename="../installer.cpp" line="135"/>
         <source>Press any key to close</source>
         <translation>任意のキーを押すと終了します</translation>
     </message>

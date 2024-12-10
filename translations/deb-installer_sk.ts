@@ -33,7 +33,7 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../installer.cpp" line="136"/>
+        <location filename="../installer.cpp" line="135"/>
         <source>Press any key to close</source>
         <translation>Pre ukončenie stlačte ľubovoľnú klávesu</translation>
     </message>
