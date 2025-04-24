@@ -8,32 +8,32 @@
     </message>
     <message>
         <location filename="../installer.cpp" line="85"/>
-        <location filename="../installer.cpp" line="118"/>
+        <location filename="../installer.cpp" line="112"/>
         <source>Install</source>
         <translation>Instal·la</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="90"/>
+        <location filename="../installer.cpp" line="91"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
         <translation>S&apos;instal·laran aquests paquets. Cliqueu &apos;Mostra detalls...&apos; per tenir informació sobre els paquets</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="98"/>
+        <location filename="../installer.cpp" line="96"/>
         <source>File: %1</source>
         <translation>Fitxer: %1</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="115"/>
+        <location filename="../installer.cpp" line="110"/>
         <source>Will install the following:</source>
         <translation>Instal·larà el següent:</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="130"/>
-        <source>Installing selected package please authenticate</source>
-        <translation>Instal·lant el paquet triat; si us plau autentiqueu-vos</translation>
+        <location filename="../installer.cpp" line="123"/>
+        <source>Installing selected package, please authenticate</source>
+        <translation>Instal·lant el paquet seleccionat, si us plau autentiqueu-vos</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="135"/>
+        <location filename="../installer.cpp" line="128"/>
         <source>Press any key to close</source>
         <translation>Premeu qualsevol tecla per tancar</translation>
     </message>

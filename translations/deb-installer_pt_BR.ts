@@ -8,34 +8,34 @@
     </message>
     <message>
         <location filename="../installer.cpp" line="85"/>
-        <location filename="../installer.cpp" line="118"/>
+        <location filename="../installer.cpp" line="112"/>
         <source>Install</source>
         <translation>Instalar</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="90"/>
+        <location filename="../installer.cpp" line="91"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
-        <translation>Clique na opção ‘Exibir detalhes...’ para obter mais informações sobre o(s) pacote(s) que será(ão) instalado(s) a seguir.</translation>
+        <translation>Clique no botão ‘Exibir os Detalhes...’ para obter mais informações sobre o(s) pacote(s) que será(ão) instalado(s) a seguir.</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="98"/>
+        <location filename="../installer.cpp" line="96"/>
         <source>File: %1</source>
         <translation>Arquivo: %1</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="115"/>
+        <location filename="../installer.cpp" line="110"/>
         <source>Will install the following:</source>
         <translation>Será(ão) instalado(s) o(s) seguinte(s) pacote(s):</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="130"/>
-        <source>Installing selected package please authenticate</source>
-        <translation>Por favor, realize a autenticação para continuar o processo de instalação do pacote selecionado</translation>
+        <location filename="../installer.cpp" line="123"/>
+        <source>Installing selected package, please authenticate</source>
+        <translation>Por favor, insira a sua senha e pressione a tecla ‘Enter’ para continuar com a instalação do pacote que foi selecionado</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="135"/>
+        <location filename="../installer.cpp" line="128"/>
         <source>Press any key to close</source>
-        <translation>Pressione qualquer tecla para fechar</translation>
+        <translation>Pressione qualquer tecla para fechar a janela do Emulador de Terminal</translation>
     </message>
 </context>
 <context>

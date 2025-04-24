@@ -8,32 +8,32 @@
     </message>
     <message>
         <location filename="../installer.cpp" line="85"/>
-        <location filename="../installer.cpp" line="118"/>
+        <location filename="../installer.cpp" line="112"/>
         <source>Install</source>
         <translation>Įdiegti</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="90"/>
+        <location filename="../installer.cpp" line="91"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../installer.cpp" line="98"/>
+        <location filename="../installer.cpp" line="96"/>
         <source>File: %1</source>
-        <translation type="unfinished"/>
+        <translation>Failas: %1</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="115"/>
+        <location filename="../installer.cpp" line="110"/>
         <source>Will install the following:</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../installer.cpp" line="130"/>
-        <source>Installing selected package please authenticate</source>
+        <location filename="../installer.cpp" line="123"/>
+        <source>Installing selected package, please authenticate</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../installer.cpp" line="135"/>
+        <location filename="../installer.cpp" line="128"/>
         <source>Press any key to close</source>
         <translation>Norėdami užverti, paspauskite bet kurį klavišą</translation>
     </message>
@@ -68,12 +68,12 @@
     <message>
         <location filename="../main.cpp" line="73"/>
         <source>Deb Files (*.deb)</source>
-        <translation type="unfinished"/>
+        <translation>Deb failai (*.deb)</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="77"/>
         <source>No .deb files were provided.</source>
-        <translation type="unfinished"/>
+        <translation>Nebuvo pateikta jokių .deb failų.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="84"/>
@@ -85,12 +85,12 @@
     <message>
         <location filename="../main.cpp" line="84"/>
         <source>File %1 not found</source>
-        <translation type="unfinished"/>
+        <translation>Failas %1 nerastas</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="89"/>
         <source>File %1 is not a .deb file.</source>
-        <translation type="unfinished"/>
+        <translation>Failas %1 nėra .deb failas.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="96"/>

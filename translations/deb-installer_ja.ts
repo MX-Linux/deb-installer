@@ -8,32 +8,32 @@
     </message>
     <message>
         <location filename="../installer.cpp" line="85"/>
-        <location filename="../installer.cpp" line="118"/>
+        <location filename="../installer.cpp" line="112"/>
         <source>Install</source>
         <translation>インストール</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="90"/>
+        <location filename="../installer.cpp" line="91"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
         <translation>以下のパッケージをインストールします。「詳細の表示...」をクリックするとパッケージに関する情報を表示します。</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="98"/>
+        <location filename="../installer.cpp" line="96"/>
         <source>File: %1</source>
         <translation>ファイル: %1</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="115"/>
+        <location filename="../installer.cpp" line="110"/>
         <source>Will install the following:</source>
         <translation>以下のパッケージをインストールします。</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="130"/>
-        <source>Installing selected package please authenticate</source>
+        <location filename="../installer.cpp" line="123"/>
+        <source>Installing selected package, please authenticate</source>
         <translation>選択したパッケージをインストールするには認証が必要です</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="135"/>
+        <location filename="../installer.cpp" line="128"/>
         <source>Press any key to close</source>
         <translation>任意のキーを押すと終了します</translation>
     </message>

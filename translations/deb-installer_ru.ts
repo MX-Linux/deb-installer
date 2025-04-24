@@ -8,32 +8,32 @@
     </message>
     <message>
         <location filename="../installer.cpp" line="85"/>
-        <location filename="../installer.cpp" line="118"/>
+        <location filename="../installer.cpp" line="112"/>
         <source>Install</source>
         <translation>Установить</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="90"/>
+        <location filename="../installer.cpp" line="91"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
         <translation>Следующие пакеты будут установлены. Щёлкните на «Показать подробности…» для просмотра сведений о пакетах.</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="98"/>
+        <location filename="../installer.cpp" line="96"/>
         <source>File: %1</source>
         <translation>Файл: %1</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="115"/>
+        <location filename="../installer.cpp" line="110"/>
         <source>Will install the following:</source>
         <translation>Будет установлено следующее:</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="130"/>
-        <source>Installing selected package please authenticate</source>
+        <location filename="../installer.cpp" line="123"/>
+        <source>Installing selected package, please authenticate</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../installer.cpp" line="135"/>
+        <location filename="../installer.cpp" line="128"/>
         <source>Press any key to close</source>
         <translation>Нажмите любую клавишу, чтобы закрыть</translation>
     </message>

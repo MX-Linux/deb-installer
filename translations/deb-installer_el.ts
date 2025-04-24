@@ -8,32 +8,32 @@
     </message>
     <message>
         <location filename="../installer.cpp" line="85"/>
-        <location filename="../installer.cpp" line="118"/>
+        <location filename="../installer.cpp" line="112"/>
         <source>Install</source>
         <translation>Εγκατάσταση</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="90"/>
+        <location filename="../installer.cpp" line="91"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
         <translation>Θα εγκατασταθούν τα ακόλουθα πακέτα. Κάντε κλικ στην επιλογή &quot;Εμφάνιση λεπτομερειών...&quot; για πληροφορίες σχετικά με τα πακέτα.</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="98"/>
+        <location filename="../installer.cpp" line="96"/>
         <source>File: %1</source>
         <translation>Αρχείο: %1</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="115"/>
+        <location filename="../installer.cpp" line="110"/>
         <source>Will install the following:</source>
         <translation>Θα εγκατασταθούν τα εξής:</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="130"/>
-        <source>Installing selected package please authenticate</source>
-        <translation>Εγκατάσταση επιλεγμένου πακέτου, ελέγξτε την ταυτότητα</translation>
+        <location filename="../installer.cpp" line="123"/>
+        <source>Installing selected package, please authenticate</source>
+        <translation>Γίνεται εγκατάσταση επιλεγμένου πακέτου, παρακαλώ πιστοποιήστε την ταυτότητά σας</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="135"/>
+        <location filename="../installer.cpp" line="128"/>
         <source>Press any key to close</source>
         <translation>Πατήστε οποιοδήποτε πλήκτρο για να κλείσει</translation>
     </message>
