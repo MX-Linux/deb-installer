@@ -1,3 +1,9 @@
+deb-installer (25.4.01) mx; urgency=medium
+
+  * Fix install button
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 27 Apr 2025 10:57:53 -0400
+
 deb-installer (25.4) mx; urgency=medium
 
   * Update to Qt6
