@@ -22,11 +22,12 @@
 #include "installer.h"
 
 #include <QApplication>
+#include <QDebug>
 #include <QFileDialog>
 #include <QGridLayout>
 #include <QMessageBox>
+#include <QPushButton>
 #include <QTextEdit>
-#include <QDebug>
 
 #include "cmd.h"
 
@@ -109,13 +110,12 @@ bool Installer::confirmAction(const QStringList &names)
                                   ? file_arguments.join("\n") + '\n'
                                   : tr("Will install the following:") + '\n' + file_arguments.join("\n"));
 
-    msgBox.addButton(tr("Install"), QMessageBox::AcceptRole);
-    msgBox.addButton(QMessageBox::Cancel);
-
+    msgBox.setStandardButtons(QMessageBox::Cancel | QMessageBox::Ok);
+    msgBox.button(QMessageBox::Ok)->setText(tr("Install"));
     auto *layout = qobject_cast<QGridLayout *>(msgBox.layout());
     layout->addItem(new QSpacerItem(600, 0, QSizePolicy::Minimum, QSizePolicy::Expanding), 0, 1);
-
-    return msgBox.exec() == QMessageBox::AcceptRole;
+    msgBox.exec();
+    return msgBox.clickedButton() == msgBox.button(QMessageBox::Ok);
 }
 
 void Installer::install(const QStringList &file_names)
