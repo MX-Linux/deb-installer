@@ -38,10 +38,12 @@ Installer::Installer(const QCommandLineParser &arg_parser, QObject *parent)
     file_arguments = file_names;
     qDebug() << "file arguments is " << file_arguments;
     if (file_names.isEmpty() || !confirmAction(file_names)) {
+        QMetaObject::invokeMethod(QApplication::instance(), "quit", Qt::QueuedConnection);
         return;
     }
 
     install(file_names);
+    QMetaObject::invokeMethod(QApplication::instance(), "quit", Qt::QueuedConnection);
 }
 
 QStringList Installer::canonicalize(const QStringList &file_names)
@@ -103,8 +105,10 @@ bool Installer::confirmAction(const QStringList &names)
 
     // Set height of detailed info box
     auto *const detailedInfo = msgBox.findChild<QTextEdit *>();
-    const int height = qBound(100, msgBox.detailedText().length() / 2, 400);
-    detailedInfo->setFixedHeight(height);
+    if (detailedInfo) {
+        const int height = qBound(100, msgBox.detailedText().length() / 2, 400);
+        detailedInfo->setFixedHeight(height);
+    }
 
     msgBox.setInformativeText(!detailed_installed_names.isEmpty() || !detailed_removed_names.isEmpty()
                                   ? file_arguments.join("\n") + '\n'
@@ -113,7 +117,9 @@ bool Installer::confirmAction(const QStringList &names)
     msgBox.setStandardButtons(QMessageBox::Cancel | QMessageBox::Ok);
     msgBox.button(QMessageBox::Ok)->setText(tr("Install"));
     auto *layout = qobject_cast<QGridLayout *>(msgBox.layout());
-    layout->addItem(new QSpacerItem(600, 0, QSizePolicy::Minimum, QSizePolicy::Expanding), 0, 1);
+    if (layout) {
+        layout->addItem(new QSpacerItem(600, 0, QSizePolicy::Minimum, QSizePolicy::Expanding), 0, 1);
+    }
     msgBox.exec();
     return msgBox.clickedButton() == msgBox.button(QMessageBox::Ok);
 }

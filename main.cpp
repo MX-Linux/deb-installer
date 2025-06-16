@@ -91,6 +91,7 @@ int main(int argc, char *argv[])
             }
         }
         Installer installer(parser);
+        return app.exec();
     } else {
         QApplication::beep();
         QMessageBox::critical(nullptr, QObject::tr("Error"), QObject::tr("You must run this program as normal user."));
