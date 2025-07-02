@@ -19,7 +19,7 @@
 # **********************************************************************/
 
 QT       += core gui widgets
-CONFIG   += c++17
+CONFIG   += c++20
 
 TARGET = deb-installer
 TEMPLATE = app
