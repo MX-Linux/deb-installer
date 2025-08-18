@@ -2,28 +2,28 @@
 <context>
     <name>Installer</name>
     <message>
-        <location filename="../installer.cpp" line="82"/>
+        <location filename="../installer.cpp" line="83"/>
         <source>Remove</source>
         <translation>Elimina </translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="85"/>
-        <location filename="../installer.cpp" line="112"/>
+        <location filename="../installer.cpp" line="86"/>
+        <location filename="../installer.cpp" line="114"/>
         <source>Install</source>
         <translation>Instal·la</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="91"/>
+        <location filename="../installer.cpp" line="92"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
         <translation>S&apos;instal·laran aquests paquets. Cliqueu &apos;Mostra detalls...&apos; per tenir informació sobre els paquets</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="96"/>
+        <location filename="../installer.cpp" line="97"/>
         <source>File: %1</source>
         <translation>Fitxer: %1</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="110"/>
+        <location filename="../installer.cpp" line="111"/>
         <source>Will install the following:</source>
         <translation>Instal·larà el següent:</translation>
     </message>

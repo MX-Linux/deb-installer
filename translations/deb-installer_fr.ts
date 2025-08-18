@@ -2,28 +2,28 @@
 <context>
     <name>Installer</name>
     <message>
-        <location filename="../installer.cpp" line="82"/>
+        <location filename="../installer.cpp" line="83"/>
         <source>Remove</source>
         <translation>Supprimer</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="85"/>
-        <location filename="../installer.cpp" line="112"/>
+        <location filename="../installer.cpp" line="86"/>
+        <location filename="../installer.cpp" line="114"/>
         <source>Install</source>
         <translation>Installer</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="91"/>
+        <location filename="../installer.cpp" line="92"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
-        <translation>Les paquets suivants seront installés. Cliquez sur « Afficher les détails... » pour obtenir des informations sur les paquets.</translation>
+        <translation>Les paquets suivants seront installés. Cliquez sur « Afficher les détails… » pour obtenir des informations sur les paquets.</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="96"/>
+        <location filename="../installer.cpp" line="97"/>
         <source>File: %1</source>
         <translation>Fichier : %1</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="110"/>
+        <location filename="../installer.cpp" line="111"/>
         <source>Will install the following:</source>
         <translation>Installera ce qui suit :</translation>
     </message>
@@ -48,7 +48,7 @@
     <message>
         <location filename="../main.cpp" line="49"/>
         <source>files...</source>
-        <translation>fichiers...</translation>
+        <translation>fichiers…</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="49"/>
@@ -58,7 +58,7 @@
     <message>
         <location filename="../main.cpp" line="50"/>
         <source>[file...]</source>
-        <translation>[fichier...]</translation>
+        <translation>[fichier…]</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="72"/>

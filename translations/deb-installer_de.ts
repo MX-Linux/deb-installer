@@ -2,29 +2,29 @@
 <context>
     <name>Installer</name>
     <message>
-        <location filename="../installer.cpp" line="82"/>
+        <location filename="../installer.cpp" line="83"/>
         <source>Remove</source>
         <translation>Entfernen</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="85"/>
-        <location filename="../installer.cpp" line="112"/>
+        <location filename="../installer.cpp" line="86"/>
+        <location filename="../installer.cpp" line="114"/>
         <source>Install</source>
         <translation>Installieren</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="91"/>
+        <location filename="../installer.cpp" line="92"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
         <translation>Die folgenden Pakete werden installiert.
 Klicken Sie auf  &apos;Details anzeigen...&apos; für Informationen über die Pakete.</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="96"/>
+        <location filename="../installer.cpp" line="97"/>
         <source>File: %1</source>
         <translation>Datei: %1</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="110"/>
+        <location filename="../installer.cpp" line="111"/>
         <source>Will install the following:</source>
         <translation>Wird das Folgende installieren:</translation>
     </message>
