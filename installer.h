@@ -23,7 +23,7 @@
 
 #include <QCommandLineParser>
 
-#include <cmd.h>
+#include "cmd.h"
 
 class Installer : QObject
 {

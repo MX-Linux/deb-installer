@@ -1,7 +1,7 @@
-deb-installer		    usr/bin
-deb-installer.desktop	usr/share/applications
-deb-installer.svg		usr/share/icons/hicolor/scalable/apps
-deb-installer.png		usr/share/pixmaps
-docs/*			        usr/share/doc/deb-installer
-polkit/*				usr/share/polkit-1/actions/
-translations/*.qm	    usr/share/deb-installer/locale
+deb-installer.desktop		usr/share/applications
+deb-installer.svg			usr/share/icons/hicolor/scalable/apps
+deb-installer.png			usr/share/pixmaps
+docs/*					usr/share/doc/deb-installer
+polkit/*					usr/share/polkit-1/actions/
+obj-*/*.qm				usr/share/deb-installer/locale
+obj-*/deb-installer		usr/bin
