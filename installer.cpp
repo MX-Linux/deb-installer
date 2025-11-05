@@ -24,12 +24,17 @@
 #include <QApplication>
 #include <QDebug>
 #include <QFileDialog>
+#include <QFileInfo>
 #include <QGridLayout>
 #include <QMessageBox>
+#include <QMetaObject>
 #include <QPushButton>
+#include <QSpacerItem>
+#include <QSizePolicy>
 #include <QTextEdit>
 
-#include "cmd.h"
+#include <algorithm>
+#include <iterator>
 
 Installer::Installer(const QCommandLineParser &arg_parser, QObject *parent)
     : QObject(parent)

@@ -22,10 +22,12 @@
 #pragma once
 
 #include <QCommandLineParser>
+#include <QObject>
+#include <QStringList>
 
 #include "cmd.h"
 
-class Installer : QObject
+class Installer : public QObject
 {
     Q_OBJECT
 

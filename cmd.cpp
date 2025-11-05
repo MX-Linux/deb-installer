@@ -6,6 +6,7 @@
 Cmd::Cmd(QObject *parent)
     : QProcess(parent)
 {
+    connect(this, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, &Cmd::done);
 }
 
 bool Cmd::run(const QString &cmd, bool quiet)
@@ -32,10 +33,23 @@ bool Cmd::run(const QString &cmd, QString &output, bool quiet)
     }
     QEventLoop loop;
     connect(this, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), &loop, &QEventLoop::quit);
-    connect(this, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, &Cmd::done);
+    bool encounteredError = false;
+    auto errorConnection = connect(this, &QProcess::errorOccurred, &loop,
+                                   [&loop, &encounteredError](QProcess::ProcessError) {
+                                       encounteredError = true;
+                                       loop.quit();
+                                   });
     setProcessChannelMode(QProcess::MergedChannels);
     start("/bin/bash", {"-c", cmd});
+    if (!waitForStarted()) {
+        if (!quiet) {
+            qDebug().noquote() << "Failed to start process:" << errorString();
+        }
+        disconnect(errorConnection);
+        return false;
+    }
     loop.exec();
+    disconnect(errorConnection);
     output = readAll().trimmed();
-    return (exitStatus() == QProcess::NormalExit && exitCode() == 0);
+    return (!encounteredError && exitStatus() == QProcess::NormalExit && exitCode() == 0);
 }
