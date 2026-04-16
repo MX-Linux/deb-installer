@@ -64,19 +64,51 @@ QStringList Installer::canonicalize(const QStringList &file_names)
 bool Installer::confirmAction(const QStringList &names)
 {
     const QString names_str = names.join(' ');
-    const QString frontend {
-        "DEBIAN_FRONTEND=$(dpkg -l debconf-kde-helper 2>/dev/null | grep -sq ^i && echo kde || echo gnome) "};
+
+    // Detect debconf frontend without shell pipe/command-substitution
+    const QString dpkgStatus = cmd.getCmdOut("dpkg -l debconf-kde-helper 2>/dev/null", true);
+    bool kdeFrontend = false;
+    for (const auto &line : dpkgStatus.split('\n', Qt::SkipEmptyParts)) {
+        if (line.startsWith("ii")) {
+            kdeFrontend = true;
+            break;
+        }
+    }
+    const QString frontend = QStringLiteral("DEBIAN_FRONTEND=%1 ").arg(kdeFrontend ? "kde" : "gnome");
     const QString aptget {"apt-get -s -V -o=Dpkg::Use-Pty=0 "};
 
-    const QString detailed_names = cmd.getCmdOut(
-        frontend + aptget + "install " + names_str
-        + R"lit(|grep 'Inst\|Remv'| awk '{V=""; P="";}; $3 ~ /^\[/ { V=$3 }; $3 ~ /^\(/ { P=$3 ")"}; $4 ~ /^\(/ {P=" => " $4 ")"}; {print $2 ";" V  P ";" $1}')lit");
-
-    QStringList detailed_installed_names = detailed_names.split('\n', Qt::SkipEmptyParts);
-    detailed_installed_names.sort();
+    // Run apt-get simulation, then parse Inst/Remv lines in Qt (no shell grep/awk)
+    const QString aptOutput = cmd.getCmdOut(frontend + aptget + "install " + names_str);
 
     QString detailed_to_install;
     QString detailed_removed_names;
+    QStringList detailed_installed_names;
+
+    const QStringList aptLines = aptOutput.split('\n', Qt::SkipEmptyParts);
+    for (const auto &line : aptLines) {
+        const QStringList fields = line.split(' ', Qt::SkipEmptyParts);
+        if (fields.size() < 2) {
+            continue;
+        }
+        const QString &action = fields.at(0);
+        if (action != "Inst" && action != "Remv") {
+            continue;
+        }
+        const QString &pkg = fields.at(1);
+        QString oldVer;
+        QString newVer;
+        if (fields.size() >= 3 && fields.at(2).startsWith('[')) {
+            oldVer = fields.at(2);
+        }
+        if (fields.size() >= 3 && fields.at(2).startsWith('(')) {
+            newVer = fields.at(2) + ')';
+        }
+        if (fields.size() >= 4 && fields.at(3).startsWith('(')) {
+            newVer = " => " + fields.at(3) + ')';
+        }
+        detailed_installed_names << pkg + ';' + oldVer + newVer + ';' + action;
+    }
+    detailed_installed_names.sort();
 
     for (const auto &value : detailed_installed_names) {
         if (value.contains("Remv")) {
@@ -102,7 +134,9 @@ bool Installer::confirmAction(const QStringList &names)
     QString detailed_text;
     for (const auto &file_name : names) {
         detailed_text += tr("File: %1").arg(file_name) + "\n\n";
-        detailed_text += cmd.getCmdOut("dpkg -I " + file_name + "| sed -n '/Package:/,$p'") + "\n\n";
+        const QString dpkgInfo = cmd.getCmdOut("dpkg -I " + file_name);
+        const int pkgIdx = dpkgInfo.indexOf(QStringLiteral("Package:"));
+        detailed_text += (pkgIdx >= 0 ? dpkgInfo.mid(pkgIdx) : dpkgInfo) + "\n\n";
     }
     detailed_text += detailed_to_install;
     detailed_text += "\n" + detailed_removed_names;
