@@ -36,6 +36,16 @@
 #include <algorithm>
 #include <iterator>
 
+namespace {
+
+QString shellQuote(QString value)
+{
+    value.replace('\'', QStringLiteral("'\\''"));
+    return QStringLiteral("'") + value + QStringLiteral("'");
+}
+
+}
+
 Installer::Installer(const QCommandLineParser &arg_parser, QObject *parent)
     : QObject(parent)
 {
@@ -57,7 +67,7 @@ QStringList Installer::canonicalize(const QStringList &file_names)
     new_list.reserve(file_names.size());
 
     std::transform(file_names.cbegin(), file_names.cend(), std::back_inserter(new_list),
-                   [](const QString &name) { return '"' + QFileInfo(name).canonicalFilePath() + '"'; });
+                   [](const QString &name) { return shellQuote(QFileInfo(name).canonicalFilePath()); });
     return new_list;
 }
 
@@ -166,9 +176,16 @@ bool Installer::confirmAction(const QStringList &names)
 void Installer::install(const QStringList &file_names)
 {
     const QString msg {tr("Installing selected package, please authenticate")};
-    const QString admincommand = QFile::exists("/usr/bin/pkexec") ? "pkexec" : QString("sudo -p '%1: '").arg(msg);
-    cmd.run("x-terminal-emulator -e " + admincommand + " bash -c ' LANG=" + qEnvironmentVariable("LANG")
-            + " DISPLAY=" + qEnvironmentVariable("DISPLAY") + " XAUTHORITY=" + qEnvironmentVariable("XAUTHORITY")
-            + " apt -o Acquire::AllowUnsizedPackages=true -o APT::Sandbox::User=root reinstall " + file_names.join(' ')
-            + "; echo; read -n1 -srp \"" + tr("Press any key to close") + "\"'");
+    const QString admincommand = QFile::exists("/usr/bin/pkexec") ? QStringLiteral("pkexec")
+                                                                  : QStringLiteral("sudo -p ")
+                                                                        + shellQuote(msg + QStringLiteral(": "));
+    const QString script = QStringLiteral("LANG=") + shellQuote(qEnvironmentVariable("LANG"))
+                           + QStringLiteral(" DISPLAY=") + shellQuote(qEnvironmentVariable("DISPLAY"))
+                           + QStringLiteral(" XAUTHORITY=") + shellQuote(qEnvironmentVariable("XAUTHORITY"))
+                           + QStringLiteral(" apt -o Acquire::AllowUnsizedPackages=true "
+                                            "-o APT::Sandbox::User=root reinstall ")
+                           + file_names.join(' ') + QStringLiteral("; echo; read -n1 -srp ")
+                           + shellQuote(tr("Press any key to close"));
+    cmd.run(QStringLiteral("x-terminal-emulator -e ") + admincommand + QStringLiteral(" bash -c ")
+            + shellQuote(script));
 }
