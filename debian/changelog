@@ -1,3 +1,14 @@
+deb-installer (26.04) mx; urgency=medium
+
+  * Stop installation when the apt simulation fails and show the error details.
+  * Handle local package paths with spaces and special characters correctly.
+  * Improve package install confirmation details.
+  * Fix startup behavior on Wayland sessions.
+  * Ensure required authentication and terminal helpers are installed.
+  * Update translations.
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 26 Apr 2026 00:00:00 -0400
+
 deb-installer (25.4.01) mx; urgency=medium
 
   * Fix install button

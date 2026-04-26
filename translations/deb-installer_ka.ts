@@ -15,27 +15,27 @@
     <message>
         <location filename="../installer.cpp" line="92"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
-        <translation type="unfinished"/>
+        <translation>მოხდება შემდეგი პაკეტების დაყენება. პაკეტების შესახები ინფორმაციისთვის დააწკაპუნეთ ღილაკზე &apos;დეტალების ჩვენება...&apos;.</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="97"/>
         <source>File: %1</source>
-        <translation type="unfinished"/>
+        <translation>ფაილი: %1</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="111"/>
         <source>Will install the following:</source>
-        <translation type="unfinished"/>
+        <translation>მოხდება შემდეგი პაკეტების დაყენება:</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="123"/>
         <source>Installing selected package, please authenticate</source>
-        <translation type="unfinished"/>
+        <translation>მიმდინარეობს არჩეული პაკეტის დაყენება. გაიარეთ ავთენტიკაცია</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="128"/>
         <source>Press any key to close</source>
-        <translation type="unfinished"/>
+        <translation>დასახურად დააჭირეთ ნებისმიერ ღილაკს</translation>
     </message>
 </context>
 <context>
@@ -43,7 +43,7 @@
     <message>
         <location filename="../main.cpp" line="46"/>
         <source>Program for installing Debian binary packages (deb files)</source>
-        <translation type="unfinished"/>
+        <translation>პროგრამა Debian-ის ბინარული პაკეტების (deb ფაილების) დასაყენებლად</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="49"/>
@@ -53,7 +53,7 @@
     <message>
         <location filename="../main.cpp" line="49"/>
         <source>Name of .deb files to install</source>
-        <translation type="unfinished"/>
+        <translation>.deb ფაილის სახელი დასაყენებლად</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="50"/>
@@ -63,17 +63,17 @@
     <message>
         <location filename="../main.cpp" line="72"/>
         <source>Select .deb files to install</source>
-        <translation type="unfinished"/>
+        <translation>აირჩიეთ .deb ფაილები დასაყენებლად</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="73"/>
         <source>Deb Files (*.deb)</source>
-        <translation type="unfinished"/>
+        <translation>Deb ფაილები (*.deb)</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="77"/>
         <source>No .deb files were provided.</source>
-        <translation type="unfinished"/>
+        <translation>.deb ფაილები მოწოდებული არაა.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="84"/>
@@ -85,17 +85,17 @@
     <message>
         <location filename="../main.cpp" line="84"/>
         <source>File %1 not found</source>
-        <translation type="unfinished"/>
+        <translation>ფაილი %1 აღმოჩენილი არაა</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="89"/>
         <source>File %1 is not a .deb file.</source>
-        <translation type="unfinished"/>
+        <translation>ფაილი %1 .deb ფაილი არაა.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="96"/>
         <source>You must run this program as normal user.</source>
-        <translation type="unfinished"/>
+        <translation>ეს პროგრამა ნორმალური მომხმარებლით უნდა გაუშვათ.</translation>
     </message>
 </context>
 </TS>

@@ -30,7 +30,7 @@
     <message>
         <location filename="../installer.cpp" line="123"/>
         <source>Installing selected package, please authenticate</source>
-        <translation>Instal·lant el paquet seleccionat, si us plau autentiqueu-vos</translation>
+        <translation>S&apos;instal·la el paquet seleccionat. Si us plau, autentiqueu-vos.</translation>
     </message>
     <message>
         <location filename="../installer.cpp" line="128"/>
