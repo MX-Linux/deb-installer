@@ -176,16 +176,13 @@ bool Installer::confirmAction(const QStringList &names)
 void Installer::install(const QStringList &file_names)
 {
     const QString msg {tr("Installing selected package, please authenticate")};
-    const QString admincommand = QFile::exists("/usr/bin/pkexec") ? QStringLiteral("pkexec")
-                                                                  : QStringLiteral("sudo -p ")
-                                                                        + shellQuote(msg + QStringLiteral(": "));
-    const QString script = QStringLiteral("LANG=") + shellQuote(qEnvironmentVariable("LANG"))
-                           + QStringLiteral(" DISPLAY=") + shellQuote(qEnvironmentVariable("DISPLAY"))
-                           + QStringLiteral(" XAUTHORITY=") + shellQuote(qEnvironmentVariable("XAUTHORITY"))
-                           + QStringLiteral(" apt -o Acquire::AllowUnsizedPackages=true "
-                                            "-o APT::Sandbox::User=root reinstall ")
-                           + file_names.join(' ') + QStringLiteral("; echo; read -n1 -srp ")
+    const QString aptCommand = QStringLiteral("/usr/bin/apt -o Acquire::AllowUnsizedPackages=true "
+                                              "-o APT::Sandbox::User=root reinstall ")
+                               + file_names.join(' ');
+    const QString adminCommand = QFile::exists("/usr/bin/pkexec")
+                                     ? QStringLiteral("pkexec ")
+                                     : QStringLiteral("sudo -p ") + shellQuote(msg + QStringLiteral(": "));
+    const QString script = adminCommand + aptCommand + QStringLiteral("; echo; read -n1 -srp ")
                            + shellQuote(tr("Press any key to close"));
-    cmd.run(QStringLiteral("x-terminal-emulator -e ") + admincommand + QStringLiteral(" bash -c ")
-            + shellQuote(script));
+    cmd.run(QStringLiteral("x-terminal-emulator -e sh -c ") + shellQuote(script));
 }
