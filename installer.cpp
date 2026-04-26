@@ -88,7 +88,17 @@ bool Installer::confirmAction(const QStringList &names)
     const QString aptget {"apt-get -s -V -o=Dpkg::Use-Pty=0 "};
 
     // Run apt-get simulation, then parse Inst/Remv lines in Qt (no shell grep/awk)
-    const QString aptOutput = cmd.getCmdOut(frontend + aptget + "install " + names_str);
+    QString aptOutput;
+    if (!cmd.run(frontend + aptget + "install " + names_str, aptOutput)) {
+        QApplication::beep();
+        QMessageBox msgBox;
+        msgBox.setIcon(QMessageBox::Critical);
+        msgBox.setWindowTitle(tr("Error"));
+        msgBox.setText(tr("Could not simulate the package installation."));
+        msgBox.setDetailedText(aptOutput);
+        msgBox.exec();
+        return false;
+    }
 
     QString detailed_to_install;
     QString detailed_removed_names;
