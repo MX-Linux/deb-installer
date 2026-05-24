@@ -88,14 +88,14 @@ set(CMAKE_AUTORCC ON)
 
 # Define source files
 set(SOURCES
-    main.cpp
-    cmd.cpp
-    installer.cpp
+    src/main.cpp
+    src/cmd.cpp
+    src/installer.cpp
 )
 
 set(HEADERS
-    installer.h
-    cmd.h
+    src/installer.h
+    src/cmd.h
 )
 
 # Get all translation files
