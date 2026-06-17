@@ -1,3 +1,17 @@
+deb-installer (26.06) mx; urgency=medium
+
+  * The installer now automatically finds the programs it needs on your
+    system and shows a helpful message if anything is missing.
+  * Improved support for KDE Plasma and Wayland sessions — the installer
+    now picks the right graphical tools for your desktop environment.
+  * The package details section now sizes itself better to fit the amount of
+    information shown.
+  * If the terminal window can't open, the installer now displays a clear
+    error message instead of failing silently.
+  * Security improvements for package installation commands.
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 17 Jun 2026 08:54:46 -0400
+
 deb-installer (26.04) mx; urgency=medium
 
   * Stop installation when the apt simulation fails and show the error details.
