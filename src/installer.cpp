@@ -167,11 +167,13 @@ bool Installer::confirmAction(const QStringList &names)
     detailed_text += "\n" + detailed_removed_names;
     msgBox.setDetailedText(detailed_text);
 
-    // Set height of detailed info box
+    // Limit detailed info box height to a reasonable maximum
     auto *const detailedInfo = msgBox.findChild<QTextEdit *>();
     if (detailedInfo) {
-        const int height = qBound(100, msgBox.detailedText().length() / 2, 400);
-        detailedInfo->setFixedHeight(height);
+        const int lineCount = msgBox.detailedText().count('\n') + 1;
+        const int lineHeight = detailedInfo->fontMetrics().lineSpacing();
+        const int maxHeight = qMin(lineCount * lineHeight + 20, 400);
+        detailedInfo->setMaximumHeight(maxHeight);
     }
 
     msgBox.setInformativeText(!detailed_installed_names.isEmpty() || !detailed_removed_names.isEmpty()
