@@ -34,13 +34,13 @@ class Installer : public QObject
 public:
     explicit Installer(const QCommandLineParser &arg_parser = {}, QObject *parent = nullptr);
     [[nodiscard]] QStringList fileArguments() const { return file_arguments; }
+    [[nodiscard]] static QStringList canonicalize(const QStringList &file_names);
 
 private:
     QStringList file_arguments;
     Cmd cmd;
 
 private slots:
-    [[nodiscard]] static QStringList canonicalize(const QStringList &file_names);
     [[nodiscard]] bool confirmAction(const QStringList &file_names);
     void install(const QStringList &file_names);
 };

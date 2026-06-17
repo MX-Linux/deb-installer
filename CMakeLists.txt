@@ -174,6 +174,41 @@ set_target_properties(deb-installer PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}
 )
 
+# Tests (optional, off by default)
+option(BUILD_TESTS "Build unit tests" OFF)
+if(BUILD_TESTS)
+    add_executable(deb-installer-tests
+        tests/test_main.cpp
+        src/cmd.cpp
+        src/installer.cpp
+    )
+    target_include_directories(deb-installer-tests PRIVATE src)
+    target_link_libraries(deb-installer-tests
+        Qt6::Core
+        Qt6::Gui
+        Qt6::Widgets
+    )
+    target_compile_options(deb-installer-tests PRIVATE
+        -Wpedantic
+        -pedantic
+        -Werror=return-type
+        -Werror=switch
+        -Werror=uninitialized
+        -Werror
+    )
+    target_compile_definitions(deb-installer-tests PRIVATE
+        QT_DEPRECATED_WARNINGS
+        QT_DISABLE_DEPRECATED_BEFORE=0x060000
+        VERSION="0.0.0-test"
+    )
+    set_target_properties(deb-installer-tests PROPERTIES
+        AUTOMOC ON
+        RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}
+    )
+    enable_testing()
+    add_test(NAME deb-installer-tests COMMAND deb-installer-tests)
+endif()
+
 # Install target (required by Debian build system)
 # Other files are handled by debian/install
 install(TARGETS deb-installer
