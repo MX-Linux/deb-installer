@@ -22,6 +22,8 @@
 
 cmake_minimum_required(VERSION 3.16)
 
+include(CheckCXXCompilerFlag)
+
 # Option to use clang for testing builds - needs to be early so project() picks it up
 option(USE_CLANG "Use clang compiler" OFF)
 if(USE_CLANG)
@@ -143,13 +145,19 @@ if(CMAKE_BUILD_TYPE STREQUAL "Release")
     target_compile_definitions(deb-installer PRIVATE NDEBUG)
     target_compile_options(deb-installer PRIVATE -O3)
 
-    # Add LTO - different flags for different compilers
+    # Add LTO - different flags for different compilers, with graceful fallback
     if(CMAKE_CXX_COMPILER_ID STREQUAL "Clang" OR USE_CLANG)
-        target_compile_options(deb-installer PRIVATE -flto=thin)
-        target_link_options(deb-installer PRIVATE -flto=thin)
+        check_cxx_compiler_flag(-flto=thin HAS_CLANG_LTO)
+        if(HAS_CLANG_LTO)
+            target_compile_options(deb-installer PRIVATE -flto=thin)
+            target_link_options(deb-installer PRIVATE -flto=thin)
+        endif()
     else()
-        target_compile_options(deb-installer PRIVATE -flto=auto)
-        target_link_options(deb-installer PRIVATE -flto=auto)
+        check_cxx_compiler_flag(-flto=auto HAS_GCC_LTO)
+        if(HAS_GCC_LTO)
+            target_compile_options(deb-installer PRIVATE -flto=auto)
+            target_link_options(deb-installer PRIVATE -flto=auto)
+        endif()
     endif()
 endif()
 
