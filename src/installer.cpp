@@ -203,7 +203,8 @@ void Installer::install(const QStringList &file_names)
     const QString script = adminCommand + quotedNames.join(' ')
                            + QStringLiteral("; echo; read -n1 -srp ")
                            + shellQuote(tr("Press any key to close"));
-    cmd.run(QStringLiteral("x-terminal-emulator -e sh -c ") + shellQuote(script));
+    QString terminalOutput;
+    cmd.run(QStringLiteral("x-terminal-emulator -e sh -c ") + shellQuote(script), terminalOutput);
     if (cmd.error() == QProcess::FailedToStart) {
         QMessageBox::critical(nullptr, tr("Error"),
                               tr("Failed to launch the terminal emulator.\n"

@@ -10,12 +10,6 @@ Cmd::Cmd(QObject *parent)
     connect(this, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, &Cmd::done);
 }
 
-bool Cmd::run(const QString &cmd, bool quiet)
-{
-    QString output;
-    return run(cmd, output, quiet);
-}
-
 QString Cmd::getCmdOut(const QString &cmd, bool quiet)
 {
     QString output;
