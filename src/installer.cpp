@@ -32,6 +32,7 @@
 #include <QPushButton>
 #include <QSpacerItem>
 #include <QSizePolicy>
+#include <QStandardPaths>
 #include <QTextEdit>
 
 #include <algorithm>
@@ -74,13 +75,22 @@ QStringList Installer::canonicalize(const QStringList &file_names)
 
 bool Installer::confirmAction(const QStringList &names)
 {
-    // Detect debconf frontend — check if debconf-kde-helper package is installed
-    const QString dpkgStatus = cmd.getCmdOut("dpkg", {"-l", "debconf-kde-helper"}, true);
-    bool kdeFrontend = false;
-    for (const auto &line : dpkgStatus.split('\n', Qt::SkipEmptyParts)) {
-        if (line.startsWith("ii")) {
-            kdeFrontend = true;
-            break;
+    // Detect debconf frontend — prefer desktop environment detection over dpkg
+    QString de = qEnvironmentVariable("XDG_CURRENT_DESKTOP");
+    bool kdeFrontend = de.contains(QStringLiteral("KDE"), Qt::CaseInsensitive);
+    if (!kdeFrontend) {
+        de = qEnvironmentVariable("DESKTOP_SESSION");
+        kdeFrontend = de.contains(QStringLiteral("kde"), Qt::CaseInsensitive)
+                      || de.contains(QStringLiteral("plasma"), Qt::CaseInsensitive);
+    }
+    if (!kdeFrontend) {
+        // Fall back to dpkg check
+        const QString dpkgStatus = cmd.getCmdOut("dpkg", {"-l", "debconf-kde-helper"}, true);
+        for (const auto &line : dpkgStatus.split('\n', Qt::SkipEmptyParts)) {
+            if (line.startsWith("ii")) {
+                kdeFrontend = true;
+                break;
+            }
         }
     }
 
@@ -159,7 +169,7 @@ bool Installer::confirmAction(const QStringList &names)
     QString detailed_text;
     for (const auto &file_name : names) {
         detailed_text += tr("File: %1").arg(file_name) + "\n\n";
-        const QString dpkgInfo = cmd.getCmdOut("dpkg", {"-I", file_name});
+        const QString dpkgInfo = cmd.getCmdOut("dpkg-deb", {"--info", file_name});
         const int pkgIdx = dpkgInfo.indexOf(QStringLiteral("Package:"));
         detailed_text += (pkgIdx >= 0 ? dpkgInfo.mid(pkgIdx) : dpkgInfo) + "\n\n";
     }
@@ -197,16 +207,45 @@ void Installer::install(const QStringList &file_names)
     QStringList quotedNames;
     quotedNames.reserve(file_names.size());
     std::transform(file_names.cbegin(), file_names.cend(), std::back_inserter(quotedNames), shellQuote);
-    const QString adminCommand = QFile::exists("/usr/bin/pkexec")
-                                     ? QStringLiteral("pkexec /usr/lib/deb-installer/apt-install ")
-                                     : QStringLiteral("sudo -p ") + shellQuote(msg + QStringLiteral(": "))
-                                       + QStringLiteral(" /usr/bin/apt -o Acquire::AllowUnsizedPackages=true "
-                                                        "-o APT::Sandbox::User=root reinstall ");
+
+    const QString pkexecPath = QStandardPaths::findExecutable(QStringLiteral("pkexec"));
+    const QString aptPath = QStandardPaths::findExecutable(QStringLiteral("apt"));
+    const QString sudoPath = QStandardPaths::findExecutable(QStringLiteral("sudo"));
+    const QString terminalPath = QStandardPaths::findExecutable(QStringLiteral("x-terminal-emulator"));
+
+    QString adminCommand;
+    if (!pkexecPath.isEmpty()) {
+        adminCommand = pkexecPath + QStringLiteral(" /usr/lib/deb-installer/apt-install ");
+    } else if (!sudoPath.isEmpty() && !aptPath.isEmpty()) {
+        adminCommand = sudoPath + QStringLiteral(" -p ") + shellQuote(msg + QStringLiteral(": "))
+                       + QStringLiteral(" ") + aptPath
+                       + QStringLiteral(" -o Acquire::AllowUnsizedPackages=true "
+                                        "-o APT::Sandbox::User=root reinstall ");
+    } else {
+        QMessageBox::critical(nullptr, tr("Error"),
+                              tr("No privilege escalation tool found.\n"
+                                 "Please install pkexec or sudo."));
+        return;
+    }
+
+    if (terminalPath.isEmpty()) {
+        QMessageBox::critical(nullptr, tr("Error"),
+                              tr("No terminal emulator found.\n"
+                                 "Please install x-terminal-emulator."));
+        return;
+    }
+
     const QString script = adminCommand + quotedNames.join(' ')
                            + QStringLiteral("; echo; read -n1 -srp ")
                            + shellQuote(tr("Press any key to close"));
     QString terminalOutput;
-    cmd.run(QStringLiteral("x-terminal-emulator -e sh -c ") + shellQuote(script), terminalOutput);
+    // Use shell-based invocation for x-terminal-emulator — the -e flag's
+    // behaviour (single string vs. rest-of-args) varies across terminals.
+    cmd.run(terminalPath + " -e sh -c " + shellQuote(script), terminalOutput);
+    // Only treat a genuine launch failure as an error. Do NOT use the run()
+    // return value here: the terminal stays open until the user presses a key,
+    // so a non-zero exit (window closed, Ctrl-C/Ctrl-D at the prompt) is normal
+    // and must not raise a spurious "failed to launch" dialog.
     if (cmd.error() == QProcess::FailedToStart) {
         QMessageBox::critical(nullptr, tr("Error"),
                               tr("Failed to launch the terminal emulator.\n"

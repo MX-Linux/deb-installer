@@ -29,6 +29,7 @@
 #include <QLibraryInfo>
 #include <QLocale>
 #include <QMessageBox>
+#include <QStandardPaths>
 #include <QTranslator>
 
 #include "installer.h"
@@ -68,8 +69,12 @@ int main(int argc, char *argv[])
     }
 
     QTranslator appTran;
-    if (appTran.load(QApplication::applicationName() + "_" + QLocale::system().name(),
-                     "/usr/share/" + QApplication::applicationName() + "/locale")) {
+    const QString appName = QApplication::applicationName();
+    const QString localeDir = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                                      appName + QStringLiteral("/locale"),
+                                                      QStandardPaths::LocateDirectory);
+    if (!localeDir.isEmpty()
+        && appTran.load(appName + QStringLiteral("_") + QLocale::system().name(), localeDir)) {
         QApplication::installTranslator(&appTran);
     }
 
