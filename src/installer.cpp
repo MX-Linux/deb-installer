@@ -28,6 +28,7 @@
 #include <QGridLayout>
 #include <QMessageBox>
 #include <QMetaObject>
+#include <QProcessEnvironment>
 #include <QPushButton>
 #include <QSpacerItem>
 #include <QSizePolicy>
@@ -67,16 +68,14 @@ QStringList Installer::canonicalize(const QStringList &file_names)
     new_list.reserve(file_names.size());
 
     std::transform(file_names.cbegin(), file_names.cend(), std::back_inserter(new_list),
-                   [](const QString &name) { return shellQuote(QFileInfo(name).canonicalFilePath()); });
+                   [](const QString &name) { return QFileInfo(name).canonicalFilePath(); });
     return new_list;
 }
 
 bool Installer::confirmAction(const QStringList &names)
 {
-    const QString names_str = names.join(' ');
-
-    // Detect debconf frontend without shell pipe/command-substitution
-    const QString dpkgStatus = cmd.getCmdOut("dpkg -l debconf-kde-helper 2>/dev/null", true);
+    // Detect debconf frontend — check if debconf-kde-helper package is installed
+    const QString dpkgStatus = cmd.getCmdOut("dpkg", {"-l", "debconf-kde-helper"}, true);
     bool kdeFrontend = false;
     for (const auto &line : dpkgStatus.split('\n', Qt::SkipEmptyParts)) {
         if (line.startsWith("ii")) {
@@ -84,12 +83,18 @@ bool Installer::confirmAction(const QStringList &names)
             break;
         }
     }
-    const QString frontend = QStringLiteral("DEBIAN_FRONTEND=%1 ").arg(kdeFrontend ? "kde" : "gnome");
-    const QString aptget {"apt-get -s -V -o=Dpkg::Use-Pty=0 "};
 
-    // Run apt-get simulation, then parse Inst/Remv lines in Qt (no shell grep/awk)
+    // Build the apt-get simulation with the correct debconf frontend
+    QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+    env.insert("DEBIAN_FRONTEND", kdeFrontend ? "kde" : "gnome");
+
+    QStringList aptArgs = {
+        "-s", "-V", "-o=Dpkg::Use-Pty=0", "install"
+    };
+    aptArgs.append(names);
+
     QString aptOutput;
-    if (!cmd.run(frontend + aptget + "install " + names_str, aptOutput)) {
+    if (!cmd.run("apt-get", aptArgs, aptOutput, false, env)) {
         QApplication::beep();
         QMessageBox msgBox;
         msgBox.setIcon(QMessageBox::Critical);
@@ -154,7 +159,7 @@ bool Installer::confirmAction(const QStringList &names)
     QString detailed_text;
     for (const auto &file_name : names) {
         detailed_text += tr("File: %1").arg(file_name) + "\n\n";
-        const QString dpkgInfo = cmd.getCmdOut("dpkg -I " + file_name);
+        const QString dpkgInfo = cmd.getCmdOut("dpkg", {"-I", file_name});
         const int pkgIdx = dpkgInfo.indexOf(QStringLiteral("Package:"));
         detailed_text += (pkgIdx >= 0 ? dpkgInfo.mid(pkgIdx) : dpkgInfo) + "\n\n";
     }
@@ -186,13 +191,17 @@ bool Installer::confirmAction(const QStringList &names)
 void Installer::install(const QStringList &file_names)
 {
     const QString msg {tr("Installing selected package, please authenticate")};
-    const QString aptCommand = QStringLiteral("/usr/bin/apt -o Acquire::AllowUnsizedPackages=true "
-                                              "-o APT::Sandbox::User=root reinstall ")
-                               + file_names.join(' ');
+    // file names still need shell quoting for the x-terminal-emulator / sh -c invocation
+    QStringList quotedNames;
+    quotedNames.reserve(file_names.size());
+    std::transform(file_names.cbegin(), file_names.cend(), std::back_inserter(quotedNames), shellQuote);
     const QString adminCommand = QFile::exists("/usr/bin/pkexec")
-                                     ? QStringLiteral("pkexec ")
-                                     : QStringLiteral("sudo -p ") + shellQuote(msg + QStringLiteral(": "));
-    const QString script = adminCommand + aptCommand + QStringLiteral("; echo; read -n1 -srp ")
+                                     ? QStringLiteral("pkexec /usr/lib/deb-installer/apt-install ")
+                                     : QStringLiteral("sudo -p ") + shellQuote(msg + QStringLiteral(": "))
+                                       + QStringLiteral(" /usr/bin/apt -o Acquire::AllowUnsizedPackages=true "
+                                                        "-o APT::Sandbox::User=root reinstall ");
+    const QString script = adminCommand + quotedNames.join(' ')
+                           + QStringLiteral("; echo; read -n1 -srp ")
                            + shellQuote(tr("Press any key to close"));
     cmd.run(QStringLiteral("x-terminal-emulator -e sh -c ") + shellQuote(script));
     if (cmd.error() == QProcess::FailedToStart) {

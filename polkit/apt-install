@@ -1,0 +1,16 @@
+#!/bin/sh
+# Wrapper for apt install, used by deb-installer via pkexec.
+#
+# This wrapper enforces fixed safe options so that the polkit policy
+# (org.mxlinux.pkexec.debinstaller.apt) only needs to authorize this
+# specific script rather than granting blanket access to /usr/bin/apt.
+#
+# Only the "reinstall" subcommand is allowed, with the fixed options
+# that deb-installer needs. Additional arguments (the .deb file paths)
+# are forwarded verbatim.
+
+exec /usr/bin/apt \
+    -o Acquire::AllowUnsizedPackages=true \
+    -o APT::Sandbox::User=root \
+    reinstall \
+    "$@"
