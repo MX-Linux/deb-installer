@@ -23,6 +23,7 @@
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QDebug>
+#include <QDir>
 #include <QFileDialog>
 #include <QIcon>
 #include <QLibraryInfo>
