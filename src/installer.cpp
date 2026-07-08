@@ -30,6 +30,7 @@
 #include <QMetaObject>
 #include <QProcessEnvironment>
 #include <QPushButton>
+#include <QRegularExpression>
 #include <QSpacerItem>
 #include <QSizePolicy>
 #include <QStandardPaths>
@@ -120,6 +121,8 @@ bool Installer::confirmAction(const QStringList &names)
     QStringList detailed_installed_names;
 
     const QStringList aptLines = aptOutput.split('\n', Qt::SkipEmptyParts);
+    static const QRegularExpression oldVerRe(R"(\[([^\]]+)\])");
+    static const QRegularExpression newVerRe(R"(\(([^)]+)\))");
     for (const auto &line : aptLines) {
         const QStringList fields = line.split(' ', Qt::SkipEmptyParts);
         if (fields.size() < 2) {
@@ -132,14 +135,20 @@ bool Installer::confirmAction(const QStringList &names)
         const QString &pkg = fields.at(1);
         QString oldVer;
         QString newVer;
-        if (fields.size() >= 3 && fields.at(2).startsWith('[')) {
-            oldVer = fields.at(2);
+        const auto oldMatch = oldVerRe.match(line);
+        const auto newMatch = newVerRe.match(line);
+        if (oldMatch.hasMatch()) {
+            // Only accept bracket that appears before the version parens,
+            // to avoid matching arch tags (e.g. [all]) nested inside parens
+            if (!newMatch.hasMatch() || oldMatch.capturedStart() < newMatch.capturedStart()) {
+                oldVer = '[' + oldMatch.captured(1) + ']';
+            }
         }
-        if (fields.size() >= 3 && fields.at(2).startsWith('(')) {
-            newVer = fields.at(2) + ')';
-        }
-        if (fields.size() >= 4 && fields.at(3).startsWith('(')) {
-            newVer = " => " + fields.at(3) + ')';
+        if (newMatch.hasMatch()) {
+            newVer = '(' + newMatch.captured(1) + ')';
+            if (!oldVer.isEmpty()) {
+                newVer = " => " + newVer;
+            }
         }
         detailed_installed_names << pkg + ';' + oldVer + newVer + ';' + action;
     }
