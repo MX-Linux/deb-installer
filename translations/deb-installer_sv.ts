@@ -2,98 +2,132 @@
 <context>
     <name>Installer</name>
     <message>
-        <location filename="../installer.cpp" line="83"/>
+        <location filename="../src/installer.cpp" line="111"/>
+        <location filename="../src/installer.cpp" line="225"/>
+        <location filename="../src/installer.cpp" line="232"/>
+        <location filename="../src/installer.cpp" line="250"/>
+        <source>Error</source>
+        <translation>Fel</translation>
+    </message>
+    <message>
+        <location filename="../src/installer.cpp" line="112"/>
+        <source>Could not simulate the package installation.</source>
+        <translation>Kunde inte simulera paketinstallationen.</translation>
+    </message>
+    <message>
+        <location filename="../src/installer.cpp" line="157"/>
         <source>Remove</source>
         <translation>Ta bort</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="86"/>
-        <location filename="../installer.cpp" line="114"/>
+        <location filename="../src/installer.cpp" line="160"/>
+        <location filename="../src/installer.cpp" line="194"/>
         <source>Install</source>
         <translation>Installera</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="92"/>
+        <location filename="../src/installer.cpp" line="166"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
         <translation>Följande paket kommer att installeras. Klicka på &apos;Visa Detaljer...&apos; för information om paketen.</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="97"/>
+        <location filename="../src/installer.cpp" line="171"/>
         <source>File: %1</source>
         <translation>Fil: %1</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="111"/>
+        <location filename="../src/installer.cpp" line="191"/>
         <source>Will install the following:</source>
         <translation>Kommer att installera följande:</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="123"/>
+        <location filename="../src/installer.cpp" line="205"/>
         <source>Installing selected package, please authenticate</source>
         <translation>Installerar valt paket, var vänlig bekräfta</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="128"/>
+        <location filename="../src/installer.cpp" line="226"/>
+        <source>No privilege escalation tool found.
+Please install pkexec or sudo.</source>
+        <translation>Inget privilegie-eskalationsverktyg hittat.
+Var vänlig installera pkexec eller sudo.</translation>
+    </message>
+    <message>
+        <location filename="../src/installer.cpp" line="233"/>
+        <source>No terminal emulator found.
+Please install x-terminal-emulator.</source>
+        <translation>Ingen terminalemulator hittad.
+Var vänlig installera x-terminal-emulator.</translation>
+    </message>
+    <message>
+        <location filename="../src/installer.cpp" line="240"/>
         <source>Press any key to close</source>
         <translation>Tryck på valfri tangent för att stänga</translation>
+    </message>
+    <message>
+        <location filename="../src/installer.cpp" line="251"/>
+        <source>Failed to launch the terminal emulator.
+Please check that x-terminal-emulator is installed.</source>
+        <translation>Misslyckades med att starta terminalemulator.
+Var vänlig kontrollera att x-terminal-emulator är installerad.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="46"/>
+        <location filename="../src/main.cpp" line="54"/>
         <source>Program for installing Debian binary packages (deb files)</source>
         <translation>Program för att installera Debian binära paket (deb filer)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="49"/>
+        <location filename="../src/main.cpp" line="57"/>
         <source>files...</source>
         <translation>filer...</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="49"/>
+        <location filename="../src/main.cpp" line="57"/>
         <source>Name of .deb files to install</source>
         <translation>Namn på .deb filer som ska installeras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="50"/>
+        <location filename="../src/main.cpp" line="58"/>
         <source>[file...]</source>
         <translation>[fil...]</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="72"/>
+        <location filename="../src/main.cpp" line="84"/>
         <source>Select .deb files to install</source>
         <translation>Välj .deb filer som ska installeras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="73"/>
+        <location filename="../src/main.cpp" line="85"/>
         <source>Deb Files (*.deb)</source>
         <translation>Deb Filer (*.deb)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="77"/>
+        <location filename="../src/main.cpp" line="89"/>
         <source>No .deb files were provided.</source>
         <translation>Inga .deb filer fanns.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="84"/>
-        <location filename="../main.cpp" line="88"/>
-        <location filename="../main.cpp" line="96"/>
+        <location filename="../src/main.cpp" line="96"/>
+        <location filename="../src/main.cpp" line="100"/>
+        <location filename="../src/main.cpp" line="109"/>
         <source>Error</source>
         <translation>Fel</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="84"/>
+        <location filename="../src/main.cpp" line="96"/>
         <source>File %1 not found</source>
         <translation>Fil %1 inte hittad</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="89"/>
+        <location filename="../src/main.cpp" line="101"/>
         <source>File %1 is not a .deb file.</source>
         <translation>Fil %1 är inte en .deb fil.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="96"/>
+        <location filename="../src/main.cpp" line="109"/>
         <source>You must run this program as normal user.</source>
         <translation>Du måste köra det här programmet som vanlig användare.</translation>
     </message>

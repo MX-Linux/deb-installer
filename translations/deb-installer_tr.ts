@@ -2,98 +2,129 @@
 <context>
     <name>Installer</name>
     <message>
-        <location filename="../installer.cpp" line="83"/>
+        <location filename="../src/installer.cpp" line="111"/>
+        <location filename="../src/installer.cpp" line="225"/>
+        <location filename="../src/installer.cpp" line="232"/>
+        <location filename="../src/installer.cpp" line="250"/>
+        <source>Error</source>
+        <translation>Hata</translation>
+    </message>
+    <message>
+        <location filename="../src/installer.cpp" line="112"/>
+        <source>Could not simulate the package installation.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/installer.cpp" line="157"/>
         <source>Remove</source>
         <translation>Kaldır</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="86"/>
-        <location filename="../installer.cpp" line="114"/>
+        <location filename="../src/installer.cpp" line="160"/>
+        <location filename="../src/installer.cpp" line="194"/>
         <source>Install</source>
         <translation>Kur</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="92"/>
+        <location filename="../src/installer.cpp" line="166"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
         <translation>Aşağıdaki paketler kurulacaktır. Paketler hakkında bilgi edinmek için ‘Ayrıntıları Göster...’i tıklayın.</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="97"/>
+        <location filename="../src/installer.cpp" line="171"/>
         <source>File: %1</source>
         <translation>Dosya: %1</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="111"/>
+        <location filename="../src/installer.cpp" line="191"/>
         <source>Will install the following:</source>
         <translation>Aşağıdakiler kurulacak:</translation>
     </message>
     <message>
-        <location filename="../installer.cpp" line="123"/>
+        <location filename="../src/installer.cpp" line="205"/>
         <source>Installing selected package, please authenticate</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../installer.cpp" line="128"/>
+        <location filename="../src/installer.cpp" line="226"/>
+        <source>No privilege escalation tool found.
+Please install pkexec or sudo.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/installer.cpp" line="233"/>
+        <source>No terminal emulator found.
+Please install x-terminal-emulator.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/installer.cpp" line="240"/>
         <source>Press any key to close</source>
         <translation>Kapatmak için herhangi bir tuşa basın</translation>
+    </message>
+    <message>
+        <location filename="../src/installer.cpp" line="251"/>
+        <source>Failed to launch the terminal emulator.
+Please check that x-terminal-emulator is installed.</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="46"/>
+        <location filename="../src/main.cpp" line="54"/>
         <source>Program for installing Debian binary packages (deb files)</source>
         <translation>Debian binary paketlerini kurma programı (deb dosyaları)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="49"/>
+        <location filename="../src/main.cpp" line="57"/>
         <source>files...</source>
         <translation>dosyalar...</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="49"/>
+        <location filename="../src/main.cpp" line="57"/>
         <source>Name of .deb files to install</source>
         <translation>Kurulacak .deb dosyasının adı</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="50"/>
+        <location filename="../src/main.cpp" line="58"/>
         <source>[file...]</source>
         <translation>[dosya...]</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="72"/>
+        <location filename="../src/main.cpp" line="84"/>
         <source>Select .deb files to install</source>
         <translation>Kurulacak .deb dosyolarını seçin</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="73"/>
+        <location filename="../src/main.cpp" line="85"/>
         <source>Deb Files (*.deb)</source>
         <translation>Deb Dosyaları (*.deb)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="77"/>
+        <location filename="../src/main.cpp" line="89"/>
         <source>No .deb files were provided.</source>
         <translation>Hiç .deb dosyası sağlanmadı.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="84"/>
-        <location filename="../main.cpp" line="88"/>
-        <location filename="../main.cpp" line="96"/>
+        <location filename="../src/main.cpp" line="96"/>
+        <location filename="../src/main.cpp" line="100"/>
+        <location filename="../src/main.cpp" line="109"/>
         <source>Error</source>
         <translation>Hata</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="84"/>
+        <location filename="../src/main.cpp" line="96"/>
         <source>File %1 not found</source>
         <translation>%1 dosyası bulunamadı.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="89"/>
+        <location filename="../src/main.cpp" line="101"/>
         <source>File %1 is not a .deb file.</source>
         <translation>%1 dosyası .deb dosyası değil.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="96"/>
+        <location filename="../src/main.cpp" line="109"/>
         <source>You must run this program as normal user.</source>
         <translation>Bu programı normal kullanıcı olarak çalıştırmalısınız.</translation>
     </message>

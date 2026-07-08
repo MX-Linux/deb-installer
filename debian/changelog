@@ -1,3 +1,11 @@
+deb-installer (26.07) mx; urgency=medium
+
+  * The install confirmation dialog now shows the full package version
+    information including origin (e.g. local .deb vs. repository) and
+    architecture, so you can better identify which version will be installed.
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 08 Jul 2026 00:47:13 -0400
+
 deb-installer (26.06) mx; urgency=medium
 
   * The installer now automatically finds the programs it needs on your
