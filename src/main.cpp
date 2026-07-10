@@ -110,7 +110,7 @@ int main(int argc, char *argv[])
             } else if (fileInfo.canonicalFilePath().isEmpty()) {
                 QApplication::beep();
                 QMessageBox::critical(nullptr, QObject::tr("Error"),
-                                      QObject::tr("Could not resolve file %1.").arg(file));
+                                      QObject::tr("Could not resolve the real path of %1.").arg(file));
                 return EXIT_FAILURE;
             } else if (!file.endsWith(".deb")) {
                 QApplication::beep();

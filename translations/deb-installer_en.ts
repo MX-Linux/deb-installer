@@ -151,7 +151,7 @@ Please check that x-terminal-emulator is installed.</source>
     </message>
     <message>
         <location filename="../src/main.cpp" line="113"/>
-        <source>Could not resolve file %1.</source>
+        <source>Could not resolve the real path of %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
