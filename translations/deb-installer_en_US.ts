@@ -2,68 +2,68 @@
 <context>
     <name>Installer</name>
     <message>
-        <location filename="../src/installer.cpp" line="111"/>
-        <location filename="../src/installer.cpp" line="225"/>
-        <location filename="../src/installer.cpp" line="232"/>
-        <location filename="../src/installer.cpp" line="250"/>
+        <location filename="../src/installer.cpp" line="112"/>
+        <location filename="../src/installer.cpp" line="234"/>
+        <location filename="../src/installer.cpp" line="241"/>
+        <location filename="../src/installer.cpp" line="259"/>
         <source>Error</source>
         <translation>Current kernel doesn&apos;t support selected compression algorithm, please edit the configuration file and select a different algorithm.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="112"/>
+        <location filename="../src/installer.cpp" line="113"/>
         <source>Could not simulate the package installation.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="157"/>
+        <location filename="../src/installer.cpp" line="166"/>
         <source>Remove</source>
         <translation>Remove</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="160"/>
-        <location filename="../src/installer.cpp" line="194"/>
+        <location filename="../src/installer.cpp" line="169"/>
+        <location filename="../src/installer.cpp" line="203"/>
         <source>Install</source>
         <translation>Install</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="166"/>
+        <location filename="../src/installer.cpp" line="175"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
         <translation>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="171"/>
+        <location filename="../src/installer.cpp" line="180"/>
         <source>File: %1</source>
         <translation>File: %1</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="191"/>
+        <location filename="../src/installer.cpp" line="200"/>
         <source>Will install the following:</source>
         <translation>Will install the following:</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="205"/>
+        <location filename="../src/installer.cpp" line="214"/>
         <source>Installing selected package, please authenticate</source>
         <translation>Installing selected package, please authenticate</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="226"/>
+        <location filename="../src/installer.cpp" line="235"/>
         <source>No privilege escalation tool found.
 Please install pkexec or sudo.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="233"/>
+        <location filename="../src/installer.cpp" line="242"/>
         <source>No terminal emulator found.
 Please install x-terminal-emulator.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="240"/>
+        <location filename="../src/installer.cpp" line="249"/>
         <source>Press any key to close</source>
         <translation>Press any key to close</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="251"/>
+        <location filename="../src/installer.cpp" line="260"/>
         <source>Failed to launch the terminal emulator.
 Please check that x-terminal-emulator is installed.</source>
         <translation type="unfinished"/>

@@ -1,3 +1,15 @@
+deb-installer (26.07.1) mx; urgency=medium
+
+  * Selected package files are checked more carefully before installation,
+    with clear errors for missing, unreadable, or invalid files.
+  * Package installation failures are now reported in the installer instead of
+    only appearing in the terminal window.
+  * Improved security checks around privileged package installation commands.
+  * The installation terminal now stays open for the close prompt and handles
+    package paths more safely.
+
+ -- Adrian <adrian@mxlinux.org>  Fri, 10 Jul 2026 10:05:55 -0400
+
 deb-installer (26.07) mx; urgency=medium
 
   * The install confirmation dialog now shows the full package version

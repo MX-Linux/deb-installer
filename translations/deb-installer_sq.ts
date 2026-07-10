@@ -2,70 +2,70 @@
 <context>
     <name>Installer</name>
     <message>
-        <location filename="../src/installer.cpp" line="111"/>
-        <location filename="../src/installer.cpp" line="225"/>
-        <location filename="../src/installer.cpp" line="232"/>
-        <location filename="../src/installer.cpp" line="250"/>
+        <location filename="../src/installer.cpp" line="112"/>
+        <location filename="../src/installer.cpp" line="234"/>
+        <location filename="../src/installer.cpp" line="241"/>
+        <location filename="../src/installer.cpp" line="259"/>
         <source>Error</source>
         <translation>Gabim</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="112"/>
+        <location filename="../src/installer.cpp" line="113"/>
         <source>Could not simulate the package installation.</source>
         <translation>S’u simulua dot instalimi i paketës.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="157"/>
+        <location filename="../src/installer.cpp" line="166"/>
         <source>Remove</source>
         <translation>Hiqe</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="160"/>
-        <location filename="../src/installer.cpp" line="194"/>
+        <location filename="../src/installer.cpp" line="169"/>
+        <location filename="../src/installer.cpp" line="203"/>
         <source>Install</source>
         <translation>Instaloje</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="166"/>
+        <location filename="../src/installer.cpp" line="175"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
         <translation>Do të instalohen paketat vijuese. Për hollësi rreth paketave, klikoni mbi “Shfaq Hollësi…”.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="171"/>
+        <location filename="../src/installer.cpp" line="180"/>
         <source>File: %1</source>
         <translation>Kartelë: %1</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="191"/>
+        <location filename="../src/installer.cpp" line="200"/>
         <source>Will install the following:</source>
         <translation>Do të instalohet sa vijon:</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="205"/>
+        <location filename="../src/installer.cpp" line="214"/>
         <source>Installing selected package, please authenticate</source>
         <translation>Po instalohet paketa e përzgjedhur, ju lutemi, bëni mirëfilltësimin</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="226"/>
+        <location filename="../src/installer.cpp" line="235"/>
         <source>No privilege escalation tool found.
 Please install pkexec or sudo.</source>
         <translation>S’u gjet mjet përshkallëzimi privilegjesh.
 Ju lutemi, instaloni pkexec, ose sudo.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="233"/>
+        <location filename="../src/installer.cpp" line="242"/>
         <source>No terminal emulator found.
 Please install x-terminal-emulator.</source>
         <translation>S’u gjet emulues terminali.
 Ju lutemi, instaloni x-terminal-emulator.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="240"/>
+        <location filename="../src/installer.cpp" line="249"/>
         <source>Press any key to close</source>
         <translation>Që të mbyllet, shtypni çfarëdo tasti. </translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="251"/>
+        <location filename="../src/installer.cpp" line="260"/>
         <source>Failed to launch the terminal emulator.
 Please check that x-terminal-emulator is installed.</source>
         <translation>S’u arrit të niset emulues terminali.

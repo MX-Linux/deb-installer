@@ -2,70 +2,70 @@
 <context>
     <name>Installer</name>
     <message>
-        <location filename="../src/installer.cpp" line="111"/>
-        <location filename="../src/installer.cpp" line="225"/>
-        <location filename="../src/installer.cpp" line="232"/>
-        <location filename="../src/installer.cpp" line="250"/>
+        <location filename="../src/installer.cpp" line="112"/>
+        <location filename="../src/installer.cpp" line="234"/>
+        <location filename="../src/installer.cpp" line="241"/>
+        <location filename="../src/installer.cpp" line="259"/>
         <source>Error</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="112"/>
+        <location filename="../src/installer.cpp" line="113"/>
         <source>Could not simulate the package installation.</source>
         <translation>Eine Simulation der Paketinstallation konnte nicht durchgeführt werden.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="157"/>
+        <location filename="../src/installer.cpp" line="166"/>
         <source>Remove</source>
         <translation>Entfernen</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="160"/>
-        <location filename="../src/installer.cpp" line="194"/>
+        <location filename="../src/installer.cpp" line="169"/>
+        <location filename="../src/installer.cpp" line="203"/>
         <source>Install</source>
         <translation>Installieren</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="166"/>
+        <location filename="../src/installer.cpp" line="175"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
         <translation>Die folgenden Pakete werden installiert.
 Klicken Sie auf  &apos;Details anzeigen...&apos; für Informationen über die Pakete.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="171"/>
+        <location filename="../src/installer.cpp" line="180"/>
         <source>File: %1</source>
         <translation>Datei: %1</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="191"/>
+        <location filename="../src/installer.cpp" line="200"/>
         <source>Will install the following:</source>
         <translation>Wird das Folgende installieren:</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="205"/>
+        <location filename="../src/installer.cpp" line="214"/>
         <source>Installing selected package, please authenticate</source>
         <translation>zum Installieren des ausgewählten Pakets bitte authentifizieren</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="226"/>
+        <location filename="../src/installer.cpp" line="235"/>
         <source>No privilege escalation tool found.
 Please install pkexec or sudo.</source>
         <translation>Es konnte keine Möglichkeit zum Hochstufen der Zugriffsrechte gefunden werden. Bitte pkexec oder sudo installieren.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="233"/>
+        <location filename="../src/installer.cpp" line="242"/>
         <source>No terminal emulator found.
 Please install x-terminal-emulator.</source>
         <translation>Kein Terminalemulator auffindbar.
 Bitte x-terminal-emulator installieren.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="240"/>
+        <location filename="../src/installer.cpp" line="249"/>
         <source>Press any key to close</source>
         <translation>Schließen mit beliebiger Taste</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="251"/>
+        <location filename="../src/installer.cpp" line="260"/>
         <source>Failed to launch the terminal emulator.
 Please check that x-terminal-emulator is installed.</source>
         <translation>Der Terminalemulator konnte nicht gestartet werden.

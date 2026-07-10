@@ -2,70 +2,70 @@
 <context>
     <name>Installer</name>
     <message>
-        <location filename="../src/installer.cpp" line="111"/>
-        <location filename="../src/installer.cpp" line="225"/>
-        <location filename="../src/installer.cpp" line="232"/>
-        <location filename="../src/installer.cpp" line="250"/>
+        <location filename="../src/installer.cpp" line="112"/>
+        <location filename="../src/installer.cpp" line="234"/>
+        <location filename="../src/installer.cpp" line="241"/>
+        <location filename="../src/installer.cpp" line="259"/>
         <source>Error</source>
         <translation>Błąd</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="112"/>
+        <location filename="../src/installer.cpp" line="113"/>
         <source>Could not simulate the package installation.</source>
         <translation>Nie można symulować instalacji pakietu.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="157"/>
+        <location filename="../src/installer.cpp" line="166"/>
         <source>Remove</source>
         <translation>Usuń</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="160"/>
-        <location filename="../src/installer.cpp" line="194"/>
+        <location filename="../src/installer.cpp" line="169"/>
+        <location filename="../src/installer.cpp" line="203"/>
         <source>Install</source>
         <translation>Zainstaluj</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="166"/>
+        <location filename="../src/installer.cpp" line="175"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
         <translation>Zostaną zainstalowane następujące pakiety. Kliknij „Pokaż szczegóły...”, aby uzyskać informacje o pakietach.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="171"/>
+        <location filename="../src/installer.cpp" line="180"/>
         <source>File: %1</source>
         <translation>Plik: %1</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="191"/>
+        <location filename="../src/installer.cpp" line="200"/>
         <source>Will install the following:</source>
         <translation>Zainstaluje następujące:</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="205"/>
+        <location filename="../src/installer.cpp" line="214"/>
         <source>Installing selected package, please authenticate</source>
         <translation>Instalowanie wybranego pakietu, proszę uwierzytelnić</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="226"/>
+        <location filename="../src/installer.cpp" line="235"/>
         <source>No privilege escalation tool found.
 Please install pkexec or sudo.</source>
         <translation>Nie znaleziono narzędzia do eskalacji uprawnień.
 Zainstaluj pkexec lub sudo.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="233"/>
+        <location filename="../src/installer.cpp" line="242"/>
         <source>No terminal emulator found.
 Please install x-terminal-emulator.</source>
         <translation>Nie znaleziono emulatora terminala.
 Zainstaluj x-terminal-emulator.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="240"/>
+        <location filename="../src/installer.cpp" line="249"/>
         <source>Press any key to close</source>
         <translation>Naciśnij dowolny klawisz, aby zamknąć</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="251"/>
+        <location filename="../src/installer.cpp" line="260"/>
         <source>Failed to launch the terminal emulator.
 Please check that x-terminal-emulator is installed.</source>
         <translation>Nie udało się uruchomić emulatora terminala.

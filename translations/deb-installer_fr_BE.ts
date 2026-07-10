@@ -2,70 +2,70 @@
 <context>
     <name>Installer</name>
     <message>
-        <location filename="../src/installer.cpp" line="111"/>
-        <location filename="../src/installer.cpp" line="225"/>
-        <location filename="../src/installer.cpp" line="232"/>
-        <location filename="../src/installer.cpp" line="250"/>
+        <location filename="../src/installer.cpp" line="112"/>
+        <location filename="../src/installer.cpp" line="234"/>
+        <location filename="../src/installer.cpp" line="241"/>
+        <location filename="../src/installer.cpp" line="259"/>
         <source>Error</source>
         <translation>Erreur</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="112"/>
+        <location filename="../src/installer.cpp" line="113"/>
         <source>Could not simulate the package installation.</source>
         <translation>Impossible de simuler l’installation du paquet.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="157"/>
+        <location filename="../src/installer.cpp" line="166"/>
         <source>Remove</source>
         <translation>Supprimer</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="160"/>
-        <location filename="../src/installer.cpp" line="194"/>
+        <location filename="../src/installer.cpp" line="169"/>
+        <location filename="../src/installer.cpp" line="203"/>
         <source>Install</source>
         <translation>Installer</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="166"/>
+        <location filename="../src/installer.cpp" line="175"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
         <translation>Les paquets suivants seront installés. Cliquez sur « Afficher les détails … » pour obtenir des informations sur les paquets.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="171"/>
+        <location filename="../src/installer.cpp" line="180"/>
         <source>File: %1</source>
         <translation>Fichier: %1</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="191"/>
+        <location filename="../src/installer.cpp" line="200"/>
         <source>Will install the following:</source>
         <translation>Installera ce qui suit:</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="205"/>
+        <location filename="../src/installer.cpp" line="214"/>
         <source>Installing selected package, please authenticate</source>
         <translation>Installation du paquet sélectionné, veuillez vous authentifier</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="226"/>
+        <location filename="../src/installer.cpp" line="235"/>
         <source>No privilege escalation tool found.
 Please install pkexec or sudo.</source>
         <translation>Aucun outil d’élévation de privilèges trouvé.
 Veuillez installer pkexec ou sudo.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="233"/>
+        <location filename="../src/installer.cpp" line="242"/>
         <source>No terminal emulator found.
 Please install x-terminal-emulator.</source>
         <translation>Aucun émulateur de terminal trouvé.
 Veuillez installer x-terminal-emulator.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="240"/>
+        <location filename="../src/installer.cpp" line="249"/>
         <source>Press any key to close</source>
         <translation>Appuyez sur une touche pour fermer</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="251"/>
+        <location filename="../src/installer.cpp" line="260"/>
         <source>Failed to launch the terminal emulator.
 Please check that x-terminal-emulator is installed.</source>
         <translation>Impossible de lancer l’émulateur de terminal.
