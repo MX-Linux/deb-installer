@@ -25,6 +25,7 @@
 #include <QDebug>
 #include <QDir>
 #include <QFileDialog>
+#include <QFileInfo>
 #include <QIcon>
 #include <QLibraryInfo>
 #include <QLocale>
@@ -91,9 +92,25 @@ int main(int argc, char *argv[])
         }
         const auto args = parser.positionalArguments();
         for (const auto &file : args) {
-            if (!QFile::exists(file)) {
+            const QFileInfo fileInfo(file);
+            if (!fileInfo.exists()) {
                 QApplication::beep();
                 QMessageBox::critical(nullptr, QObject::tr("Error"), QObject::tr("File %1 not found").arg(file));
+                return EXIT_FAILURE;
+            } else if (!fileInfo.isFile()) {
+                QApplication::beep();
+                QMessageBox::critical(nullptr, QObject::tr("Error"),
+                                      QObject::tr("File %1 is not a regular file.").arg(file));
+                return EXIT_FAILURE;
+            } else if (!fileInfo.isReadable()) {
+                QApplication::beep();
+                QMessageBox::critical(nullptr, QObject::tr("Error"),
+                                      QObject::tr("File %1 is not readable.").arg(file));
+                return EXIT_FAILURE;
+            } else if (fileInfo.canonicalFilePath().isEmpty()) {
+                QApplication::beep();
+                QMessageBox::critical(nullptr, QObject::tr("Error"),
+                                      QObject::tr("Could not resolve file %1.").arg(file));
                 return EXIT_FAILURE;
             } else if (!file.endsWith(".deb")) {
                 QApplication::beep();
