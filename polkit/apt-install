@@ -5,12 +5,53 @@
 # (org.mxlinux.pkexec.debinstaller.apt) only needs to authorize this
 # specific script rather than granting blanket access to /usr/bin/apt.
 #
-# Only the "reinstall" subcommand is allowed, with the fixed options
-# that deb-installer needs. Additional arguments (the .deb file paths)
-# are forwarded verbatim.
+# Only local, absolute .deb file paths are accepted. Resolve each path before
+# invoking APT so symlink spellings and option-like arguments cannot broaden
+# this polkit action beyond installing a selected package file.
+
+if [ "$#" -eq 0 ]; then
+    printf '%s\n' 'apt-install: no package files were supplied' >&2
+    exit 2
+fi
+
+original_count=$#
+for package_path; do
+    case "$package_path" in
+        /*.deb) ;;
+        *)
+            printf 'apt-install: not an absolute .deb file: %s\n' "$package_path" >&2
+            exit 2
+            ;;
+    esac
+
+    canonical_path=$(readlink -f -- "$package_path") || {
+        printf 'apt-install: cannot resolve package file: %s\n' "$package_path" >&2
+        exit 2
+    }
+    case "$canonical_path" in
+        /*.deb) ;;
+        *)
+            printf 'apt-install: resolved path is not a .deb file: %s\n' "$package_path" >&2
+            exit 2
+            ;;
+    esac
+    if [ ! -f "$canonical_path" ]; then
+        printf 'apt-install: not a regular file: %s\n' "$package_path" >&2
+        exit 2
+    fi
+
+    set -- "$@" "$canonical_path"
+done
+
+# Drop the original user-supplied spellings, leaving only verified paths.
+while [ "$original_count" -gt 0 ]; do
+    shift
+    original_count=$((original_count - 1))
+done
 
 exec /usr/bin/apt \
     -o Acquire::AllowUnsizedPackages=true \
     -o APT::Sandbox::User=root \
     reinstall \
+    -- \
     "$@"
