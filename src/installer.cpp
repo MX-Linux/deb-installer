@@ -35,6 +35,7 @@
 #include <QSizePolicy>
 #include <QStandardPaths>
 #include <QTextEdit>
+#include <QTemporaryFile>
 
 #include <algorithm>
 #include <iterator>
@@ -246,9 +247,21 @@ void Installer::install(const QStringList &file_names)
         return;
     }
 
+    QTemporaryFile statusFile;
+    if (!statusFile.open()) {
+        QMessageBox::critical(nullptr, tr("Error"), tr("Could not create an installation status file."));
+        return;
+    }
+    const QString statusFilePath = statusFile.fileName();
+    statusFile.close();
+
+    // Status reporting requires a terminal launcher that waits for its child.
+    // Forking launchers can return before the installation writes this file.
     const QString script = adminCommand + quotedNames.join(' ')
-                           + QStringLiteral("; echo; read -n1 -srp ")
-                           + shellQuote(tr("Press any key to close"));
+                           + QStringLiteral("; aptStatus=$?; printf '%s\\n' \"$aptStatus\" > ")
+                           + shellQuote(statusFilePath) + QStringLiteral("; echo; read -n1 -srp ")
+                           + shellQuote(tr("Press any key to close"))
+                           + QStringLiteral(" || true; exit $aptStatus");
     QString terminalOutput;
     // Preserve the argument vector expected by terminal implementations while
     // avoiding an outer shell that parses paths or command text. The inner
@@ -257,13 +270,20 @@ void Installer::install(const QStringList &file_names)
             {QStringLiteral("-c"), QStringLiteral("exec \"$@\""), QStringLiteral("deb-installer"), terminalPath,
              QStringLiteral("-e"), QStringLiteral("/bin/bash"), QStringLiteral("-c"), script},
             terminalOutput);
-    // Only treat a genuine launch failure as an error. Do NOT use the run()
-    // return value here: the terminal stays open until the user presses a key,
-    // so a non-zero exit (window closed, Ctrl-C/Ctrl-D at the prompt) is normal
-    // and must not raise a spurious "failed to launch" dialog.
     if (cmd.error() == QProcess::FailedToStart) {
         QMessageBox::critical(nullptr, tr("Error"),
                               tr("Failed to launch the terminal emulator.\n"
                                  "Please check that x-terminal-emulator is installed."));
+        return;
+    }
+
+    if (!statusFile.open()) {
+        return;
+    }
+    bool statusOk = false;
+    const int aptStatus = QString::fromLatin1(statusFile.readAll()).trimmed().toInt(&statusOk);
+    if (statusOk && aptStatus != 0) {
+        QMessageBox::critical(nullptr, tr("Error"),
+                              tr("Package installation failed."));
     }
 }
