@@ -49,10 +49,11 @@ while [ "$original_count" -gt 0 ]; do
     original_count=$((original_count - 1))
 done
 
-exec /usr/bin/apt-get \
+# apt is deliberately used here because its output is shown interactively in
+# the terminal. The GUI preview uses apt-get because it parses that output.
+exec /usr/bin/apt \
     -o Acquire::AllowUnsizedPackages=true \
     -o APT::Sandbox::User=root \
-    -o Dpkg::Use-Pty=0 \
     install \
     -- \
     "$@"

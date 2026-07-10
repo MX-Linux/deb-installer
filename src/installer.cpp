@@ -220,7 +220,7 @@ void Installer::install(const QStringList &file_names)
     std::transform(file_names.cbegin(), file_names.cend(), std::back_inserter(quotedNames), shellQuote);
 
     const QString pkexecPath = QStandardPaths::findExecutable(QStringLiteral("pkexec"));
-    const QString aptGetPath = QStandardPaths::findExecutable(QStringLiteral("apt-get"));
+    const QString aptPath = QStandardPaths::findExecutable(QStringLiteral("apt"));
     const QString sudoPath = QStandardPaths::findExecutable(QStringLiteral("sudo"));
     const QString terminalPath = QStandardPaths::findExecutable(QStringLiteral("x-terminal-emulator"));
 
@@ -228,11 +228,11 @@ void Installer::install(const QStringList &file_names)
     if (!pkexecPath.isEmpty()) {
         adminCommand = shellQuote(pkexecPath) + QStringLiteral(" ")
                        + shellQuote(QStringLiteral("/usr/lib/deb-installer/apt-install")) + QStringLiteral(" ");
-    } else if (!sudoPath.isEmpty() && !aptGetPath.isEmpty()) {
+    } else if (!sudoPath.isEmpty() && !aptPath.isEmpty()) {
         adminCommand = shellQuote(sudoPath) + QStringLiteral(" -p ") + shellQuote(msg + QStringLiteral(": "))
-                       + QStringLiteral(" ") + shellQuote(aptGetPath)
+                       + QStringLiteral(" ") + shellQuote(aptPath)
                        + QStringLiteral(" -o Acquire::AllowUnsizedPackages=true "
-                                        "-o APT::Sandbox::User=root -o Dpkg::Use-Pty=0 install -- ");
+                                        "-o APT::Sandbox::User=root install -- ");
     } else {
         QMessageBox::critical(nullptr, tr("Error"),
                               tr("No privilege escalation tool found.\n"
