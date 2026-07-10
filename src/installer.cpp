@@ -100,7 +100,8 @@ bool Installer::confirmAction(const QStringList &names)
     env.insert("DEBIAN_FRONTEND", kdeFrontend ? "kde" : "gnome");
 
     QStringList aptArgs = {
-        "-s", "-V", "-o=Dpkg::Use-Pty=0", "install"
+        "-s", "-V", "-o=Dpkg::Use-Pty=0", "-o=Acquire::AllowUnsizedPackages=true",
+        "-o=APT::Sandbox::User=root", "install", "--"
     };
     aptArgs.append(names);
 
@@ -218,18 +219,18 @@ void Installer::install(const QStringList &file_names)
     std::transform(file_names.cbegin(), file_names.cend(), std::back_inserter(quotedNames), shellQuote);
 
     const QString pkexecPath = QStandardPaths::findExecutable(QStringLiteral("pkexec"));
-    const QString aptPath = QStandardPaths::findExecutable(QStringLiteral("apt"));
+    const QString aptGetPath = QStandardPaths::findExecutable(QStringLiteral("apt-get"));
     const QString sudoPath = QStandardPaths::findExecutable(QStringLiteral("sudo"));
     const QString terminalPath = QStandardPaths::findExecutable(QStringLiteral("x-terminal-emulator"));
 
     QString adminCommand;
     if (!pkexecPath.isEmpty()) {
         adminCommand = pkexecPath + QStringLiteral(" /usr/lib/deb-installer/apt-install ");
-    } else if (!sudoPath.isEmpty() && !aptPath.isEmpty()) {
+    } else if (!sudoPath.isEmpty() && !aptGetPath.isEmpty()) {
         adminCommand = sudoPath + QStringLiteral(" -p ") + shellQuote(msg + QStringLiteral(": "))
-                       + QStringLiteral(" ") + aptPath
+                       + QStringLiteral(" ") + aptGetPath
                        + QStringLiteral(" -o Acquire::AllowUnsizedPackages=true "
-                                        "-o APT::Sandbox::User=root reinstall ");
+                                        "-o APT::Sandbox::User=root -o Dpkg::Use-Pty=0 install -- ");
     } else {
         QMessageBox::critical(nullptr, tr("Error"),
                               tr("No privilege escalation tool found.\n"

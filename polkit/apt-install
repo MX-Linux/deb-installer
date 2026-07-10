@@ -49,9 +49,10 @@ while [ "$original_count" -gt 0 ]; do
     original_count=$((original_count - 1))
 done
 
-exec /usr/bin/apt \
+exec /usr/bin/apt-get \
     -o Acquire::AllowUnsizedPackages=true \
     -o APT::Sandbox::User=root \
-    reinstall \
+    -o Dpkg::Use-Pty=0 \
+    install \
     -- \
     "$@"
