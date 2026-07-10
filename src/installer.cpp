@@ -250,7 +250,9 @@ void Installer::install(const QStringList &file_names)
     QString terminalOutput;
     // Use shell-based invocation for x-terminal-emulator — the -e flag's
     // behaviour (single string vs. rest-of-args) varies across terminals.
-    cmd.run(terminalPath + " -e sh -c " + shellQuote(script), terminalOutput);
+    // Must be bash, not sh: the "read -n1 -srp" pause is a bash extension
+    // that fails under dash, closing the terminal before it can be read.
+    cmd.run(terminalPath + " -e bash -c " + shellQuote(script), terminalOutput);
     // Only treat a genuine launch failure as an error. Do NOT use the run()
     // return value here: the terminal stays open until the user presses a key,
     // so a non-zero exit (window closed, Ctrl-C/Ctrl-D at the prompt) is normal
