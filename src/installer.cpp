@@ -283,7 +283,7 @@ void Installer::install(const QStringList &file_names)
     bool statusOk = false;
     const int aptStatus = QString::fromLatin1(statusFile.readAll()).trimmed().toInt(&statusOk);
     if (statusOk && aptStatus != 0) {
-        QMessageBox::critical(nullptr, tr("Error"),
-                              tr("Package installation failed."));
+        QMessageBox::critical(nullptr, tr("Package installation failed"),
+                              tr("The package manager reported an error."));
     }
 }
