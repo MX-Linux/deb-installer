@@ -225,10 +225,11 @@ void Installer::install(const QStringList &file_names)
 
     QString adminCommand;
     if (!pkexecPath.isEmpty()) {
-        adminCommand = pkexecPath + QStringLiteral(" /usr/lib/deb-installer/apt-install ");
+        adminCommand = shellQuote(pkexecPath) + QStringLiteral(" ")
+                       + shellQuote(QStringLiteral("/usr/lib/deb-installer/apt-install")) + QStringLiteral(" ");
     } else if (!sudoPath.isEmpty() && !aptGetPath.isEmpty()) {
-        adminCommand = sudoPath + QStringLiteral(" -p ") + shellQuote(msg + QStringLiteral(": "))
-                       + QStringLiteral(" ") + aptGetPath
+        adminCommand = shellQuote(sudoPath) + QStringLiteral(" -p ") + shellQuote(msg + QStringLiteral(": "))
+                       + QStringLiteral(" ") + shellQuote(aptGetPath)
                        + QStringLiteral(" -o Acquire::AllowUnsizedPackages=true "
                                         "-o APT::Sandbox::User=root -o Dpkg::Use-Pty=0 install -- ");
     } else {
@@ -249,11 +250,13 @@ void Installer::install(const QStringList &file_names)
                            + QStringLiteral("; echo; read -n1 -srp ")
                            + shellQuote(tr("Press any key to close"));
     QString terminalOutput;
-    // Use shell-based invocation for x-terminal-emulator — the -e flag's
-    // behaviour (single string vs. rest-of-args) varies across terminals.
-    // Must be bash, not sh: the "read -n1 -srp" pause is a bash extension
-    // that fails under dash, closing the terminal before it can be read.
-    cmd.run(terminalPath + " -e bash -c " + shellQuote(script), terminalOutput);
+    // Preserve the argument vector expected by terminal implementations while
+    // avoiding an outer shell that parses paths or command text. The inner
+    // Bash is intentional: it executes the close prompt below.
+    cmd.run(QStringLiteral("/bin/bash"),
+            {QStringLiteral("-c"), QStringLiteral("exec \"$@\""), QStringLiteral("deb-installer"), terminalPath,
+             QStringLiteral("-e"), QStringLiteral("/bin/bash"), QStringLiteral("-c"), script},
+            terminalOutput);
     // Only treat a genuine launch failure as an error. Do NOT use the run()
     // return value here: the terminal stays open until the user presses a key,
     // so a non-zero exit (window closed, Ctrl-C/Ctrl-D at the prompt) is normal
