@@ -174,8 +174,8 @@ set_target_properties(deb-installer PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}
 )
 
-# Tests (optional, off by default)
-option(BUILD_TESTS "Build unit tests" OFF)
+# Tests (enabled by default; pass -DBUILD_TESTS=OFF to skip them)
+option(BUILD_TESTS "Build unit tests" ON)
 if(BUILD_TESTS)
     add_executable(deb-installer-tests
         tests/test_main.cpp
@@ -207,6 +207,9 @@ if(BUILD_TESTS)
     )
     enable_testing()
     add_test(NAME deb-installer-tests COMMAND deb-installer-tests)
+    add_test(NAME apt-install-wrapper-test
+        COMMAND ${CMAKE_SOURCE_DIR}/tests/test_apt_install.sh ${CMAKE_SOURCE_DIR}/polkit/apt-install
+    )
 endif()
 
 # Install target (required by Debian build system)
