@@ -1,5 +1,4 @@
 [Desktop Entry]
-Encoding=UTF-8
 # The desktop entry name will be displayed within the menu.
 Name=Deb Installer
 # # The desktop entry comment will be shown within the menu.
@@ -8,7 +7,7 @@ Exec=deb-installer %F
 Terminal=false
 Type=Application
 Icon=deb-installer
-Categories=System;MX-Software;
+Categories=System;X-MX-Software;
 NoDisplay=false
 MimeType=application/x-deb;application/vnd.debian.binary-package;
 StartupNotify=true
