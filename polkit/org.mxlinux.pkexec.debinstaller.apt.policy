@@ -9,7 +9,7 @@
   <vendor>MX Linux</vendor>
   <vendor_url>https://mxlinux.org</vendor_url>
   <action id="org.mxlinux.debinstaller.apt">
-	<message gettext-domain="mx-launcher-l10n">Deb Installer</message>
+	<message gettext-domain="deb-installer-desktop">Deb Installer</message>
 	<icon_name>deb-installer</icon_name>
     <description>Install deb packages</description>
     <defaults>

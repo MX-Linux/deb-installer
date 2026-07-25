@@ -8,8 +8,24 @@ trap 'rm -rf "$temp_dir"' EXIT HUP INT TERM
 
 # Substitute a harmless command so accepted inputs can be checked without
 # invoking APT. Rejected inputs exit before reaching this command.
+#
+# Fail closed if the production wrapper no longer spells the apt invocation
+# this way: the substitution below would then be a silent no-op, and the
+# "test" wrapper would exec the real /usr/bin/apt against the temporary
+# .deb files below instead of the harmless stand-in command.
+if ! grep -Fq 'exec /usr/bin/apt' "$wrapper"; then
+    echo "apt-install wrapper no longer spells the apt invocation as expected; refusing to run the substitution test" >&2
+    exit 1
+fi
+
 test_wrapper="$temp_dir/apt-install"
 sed "s|exec /usr/bin/apt|exec /usr/bin/printf '%s\\\\n'|" "$wrapper" > "$test_wrapper"
+
+if grep -Fq 'exec /usr/bin/apt' "$test_wrapper"; then
+    echo "apt substitution did not apply to the copy under test" >&2
+    exit 1
+fi
+
 chmod +x "$test_wrapper"
 
 valid_package=$(mktemp "$temp_dir/package.XXXXXX.deb")

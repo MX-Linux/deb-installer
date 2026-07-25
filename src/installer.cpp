@@ -36,6 +36,7 @@
 #include <QStandardPaths>
 #include <QTextEdit>
 #include <QTemporaryFile>
+#include <QThread>
 
 #include <algorithm>
 #include <iterator>
@@ -266,7 +267,8 @@ void Installer::install(const QStringList &file_names)
     // Preserve the argument vector expected by terminal implementations while
     // avoiding an outer shell that parses paths or command text. The inner
     // Bash is intentional: it executes the close prompt below.
-    cmd.run(QStringLiteral("/bin/bash"),
+    const bool terminalOk = cmd.run(
+            QStringLiteral("/bin/bash"),
             {QStringLiteral("-c"), QStringLiteral("exec \"$@\""), QStringLiteral("deb-installer"), terminalPath,
              QStringLiteral("-e"), QStringLiteral("/bin/bash"), QStringLiteral("-c"), script},
             terminalOutput);
@@ -277,13 +279,31 @@ void Installer::install(const QStringList &file_names)
         return;
     }
 
-    if (!statusFile.open()) {
-        return;
-    }
+    // The script writes the status file before prompting the user to close
+    // the terminal, so it is normally already there; poll briefly in case
+    // the write is still lagging behind the terminal process exiting.
     bool statusOk = false;
-    const int aptStatus = QString::fromLatin1(statusFile.readAll()).trimmed().toInt(&statusOk);
-    if (statusOk && aptStatus != 0) {
+    int aptStatus = -1;
+    for (int attempt = 0; attempt < 5 && !statusOk; ++attempt) {
+        if (attempt > 0) {
+            QThread::msleep(100);
+        }
+        if (statusFile.open()) {
+            const QString contents = QString::fromLatin1(statusFile.readAll()).trimmed();
+            statusFile.close();
+            aptStatus = contents.toInt(&statusOk);
+        }
+    }
+
+    if (statusOk) {
+        if (aptStatus != 0) {
+            QMessageBox::critical(nullptr, tr("Package installation failed"),
+                                  tr("The package manager reported an error."));
+        }
+    } else {
         QMessageBox::critical(nullptr, tr("Package installation failed"),
-                              tr("The package manager reported an error."));
+                              terminalOk ? tr("Could not determine whether the installation succeeded.")
+                                        : tr("The terminal closed unexpectedly before the installation "
+                                             "result could be confirmed."));
     }
 }
