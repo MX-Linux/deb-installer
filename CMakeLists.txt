@@ -1,5 +1,5 @@
 # **********************************************************************
-# * Copyright (C) 2022 MX Authors
+# * Copyright (C) 2022-2026 MX Authors
 # *
 # * Authors: Adrian
 # *          MX Linux <http://mxlinux.org>
