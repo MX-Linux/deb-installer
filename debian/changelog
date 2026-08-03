@@ -1,3 +1,9 @@
+deb-installer (26.08) mx; urgency=medium
+
+  * Packages that are already installed can be selected for reinstallation.
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 02 Aug 2026 21:45:51 -0400
+
 deb-installer (26.07.1) mx; urgency=medium
 
   * Selected package files are checked more carefully before installation,
