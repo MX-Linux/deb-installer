@@ -40,6 +40,10 @@ if ! printf '%s\n' "$output" | grep -Fqx -- '--'; then
     echo "APT argument separator was not passed" >&2
     exit 1
 fi
+if ! printf '%s\n' "$output" | grep -Fqx -- 'reinstall'; then
+    echo "APT reinstall command was not passed" >&2
+    exit 1
+fi
 
 rejects()
 {

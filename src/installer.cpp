@@ -103,7 +103,7 @@ bool Installer::confirmAction(const QStringList &names)
 
     QStringList aptArgs = {
         "-s", "-V", "-o=Dpkg::Use-Pty=0", "-o=Acquire::AllowUnsizedPackages=true",
-        "-o=APT::Sandbox::User=root", "install", "--"
+        "-o=APT::Sandbox::User=root", "reinstall", "--"
     };
     aptArgs.append(names);
 
@@ -233,7 +233,7 @@ void Installer::install(const QStringList &file_names)
         adminCommand = shellQuote(sudoPath) + QStringLiteral(" -p ") + shellQuote(msg + QStringLiteral(": "))
                        + QStringLiteral(" ") + shellQuote(aptPath)
                        + QStringLiteral(" -o Acquire::AllowUnsizedPackages=true "
-                                        "-o APT::Sandbox::User=root install -- ");
+                                        "-o APT::Sandbox::User=root reinstall -- ");
     } else {
         QMessageBox::critical(nullptr, tr("Error"),
                               tr("No privilege escalation tool found.\n"
