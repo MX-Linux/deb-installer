@@ -8,7 +8,7 @@ Homepage: https://mxlinux.org/
 
 Package: deb-installer
 Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}, pkexec | sudo, x-terminal-emulator
+Depends: ${misc:Depends}, ${shlibs:Depends}, pkexec | sudo, xterm | x-terminal-emulator
 Description: Simple tool to install downloaded Debian packages
  A lightweight graphical utility for installing local .deb packages.
  Designed for ease of use, it integrates with the desktop environment

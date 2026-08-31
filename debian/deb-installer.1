@@ -1,0 +1,34 @@
+.TH DEB-INSTALLER 1 "August 2026" "deb-installer 26.08" "User Commands"
+.SH NAME
+deb-installer \- install local Debian binary packages
+.SH SYNOPSIS
+.B deb-installer
+.RI [ options ]
+.RI [ file.deb ...]
+.SH DESCRIPTION
+.B deb-installer
+is a graphical utility for installing local Debian binary packages.
+It displays package information, asks for confirmation, and uses the system's
+privilege escalation mechanism to perform the installation.
+.PP
+When no package files are specified, a file selection dialog is displayed.
+The program must be run as a normal user, not as root.
+.SH OPTIONS
+.TP
+.BR \-h ", " \-\-help
+Display command-line help and exit.
+.TP
+.BR \-v ", " \-\-version
+Display version information and exit.
+.SH ARGUMENTS
+.TP
+.I file.deb
+One or more readable local Debian package files to install.
+.SH FILES
+.TP
+.I /usr/lib/deb-installer/apt-install
+Privileged package installation helper.
+.SH SEE ALSO
+.BR apt (8),
+.BR dpkg (1),
+.BR pkexec (1)
