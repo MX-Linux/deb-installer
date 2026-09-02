@@ -284,16 +284,19 @@ void Installer::install(const QStringList &file_names)
     // Some terminal emulators (e.g. xfce4-terminal) register as a D-Bus
     // session server: if one is already running, a new invocation just
     // forwards the request to it and returns immediately, well before the
-    // install script has even started. So terminalOk alone cannot tell us
-    // the install is done; poll for the status file over a long enough
-    // window to cover pkexec authentication plus the install itself,
-    // using an event loop rather than a blocking sleep so the GUI stays
-    // responsive.
+    // install script has even started. So when the launcher reports success
+    // we can't yet trust that the install is done; poll for the status file
+    // over a long enough window to cover pkexec authentication plus the
+    // install itself, using an event loop rather than a blocking sleep so
+    // the GUI stays responsive. But if the launcher itself failed (a
+    // non-forking terminal closed, rejected -e, or the script errored before
+    // ever reaching the status write), there is nothing left to wait for, so
+    // keep the original short grace period for that case.
     bool statusOk = false;
     int aptStatus = -1;
     QElapsedTimer elapsed;
     elapsed.start();
-    constexpr qint64 statusTimeoutMs = 5 * 60 * 1000;
+    const qint64 statusTimeoutMs = terminalOk ? 5 * 60 * 1000 : 500;
     constexpr int pollIntervalMs = 200;
     while (!statusOk && elapsed.elapsed() < statusTimeoutMs) {
         if (statusFile.open()) {
