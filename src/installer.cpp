@@ -23,6 +23,8 @@
 
 #include <QApplication>
 #include <QDebug>
+#include <QElapsedTimer>
+#include <QEventLoop>
 #include <QFileDialog>
 #include <QFileInfo>
 #include <QGridLayout>
@@ -36,7 +38,7 @@
 #include <QStandardPaths>
 #include <QTextEdit>
 #include <QTemporaryFile>
-#include <QThread>
+#include <QTimer>
 
 #include <algorithm>
 #include <iterator>
@@ -279,19 +281,32 @@ void Installer::install(const QStringList &file_names)
         return;
     }
 
-    // The script writes the status file before prompting the user to close
-    // the terminal, so it is normally already there; poll briefly in case
-    // the write is still lagging behind the terminal process exiting.
+    // Some terminal emulators (e.g. xfce4-terminal) register as a D-Bus
+    // session server: if one is already running, a new invocation just
+    // forwards the request to it and returns immediately, well before the
+    // install script has even started. So terminalOk alone cannot tell us
+    // the install is done; poll for the status file over a long enough
+    // window to cover pkexec authentication plus the install itself,
+    // using an event loop rather than a blocking sleep so the GUI stays
+    // responsive.
     bool statusOk = false;
     int aptStatus = -1;
-    for (int attempt = 0; attempt < 5 && !statusOk; ++attempt) {
-        if (attempt > 0) {
-            QThread::msleep(100);
-        }
+    QElapsedTimer elapsed;
+    elapsed.start();
+    constexpr qint64 statusTimeoutMs = 5 * 60 * 1000;
+    constexpr int pollIntervalMs = 200;
+    while (!statusOk && elapsed.elapsed() < statusTimeoutMs) {
         if (statusFile.open()) {
             const QString contents = QString::fromLatin1(statusFile.readAll()).trimmed();
             statusFile.close();
-            aptStatus = contents.toInt(&statusOk);
+            if (!contents.isEmpty()) {
+                aptStatus = contents.toInt(&statusOk);
+            }
+        }
+        if (!statusOk) {
+            QEventLoop waitLoop;
+            QTimer::singleShot(pollIntervalMs, &waitLoop, &QEventLoop::quit);
+            waitLoop.exec();
         }
     }
 
