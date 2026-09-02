@@ -2,86 +2,97 @@
 <context>
     <name>Installer</name>
     <message>
-        <location filename="../src/installer.cpp" line="114"/>
-        <location filename="../src/installer.cpp" line="237"/>
-        <location filename="../src/installer.cpp" line="244"/>
-        <location filename="../src/installer.cpp" line="252"/>
-        <location filename="../src/installer.cpp" line="274"/>
+        <location filename="../src/installer.cpp" line="115"/>
+        <location filename="../src/installer.cpp" line="238"/>
+        <location filename="../src/installer.cpp" line="245"/>
+        <location filename="../src/installer.cpp" line="253"/>
+        <location filename="../src/installer.cpp" line="276"/>
         <source>Error</source>
         <translation>Hiba</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="115"/>
+        <location filename="../src/installer.cpp" line="116"/>
         <source>Could not simulate the package installation.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="168"/>
+        <location filename="../src/installer.cpp" line="169"/>
         <source>Remove</source>
         <translation>Eltávolítás</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="171"/>
-        <location filename="../src/installer.cpp" line="205"/>
+        <location filename="../src/installer.cpp" line="172"/>
+        <location filename="../src/installer.cpp" line="206"/>
         <source>Install</source>
         <translation>Telepítés</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="177"/>
+        <location filename="../src/installer.cpp" line="178"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
         <translation>A következő csomagok lesznek telepítve. Kattintson a Részletek megjelenítésére a további információkhoz.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="182"/>
+        <location filename="../src/installer.cpp" line="183"/>
         <source>File: %1</source>
         <translation>Fájl: %1</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="202"/>
+        <location filename="../src/installer.cpp" line="203"/>
         <source>Will install the following:</source>
         <translation>A következőket telepíti:</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="216"/>
+        <location filename="../src/installer.cpp" line="217"/>
         <source>Installing selected package, please authenticate</source>
         <translation>A kiválasztott csomag telepítése, hitelesítse magát</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="238"/>
+        <location filename="../src/installer.cpp" line="239"/>
         <source>No privilege escalation tool found.
 Please install pkexec or sudo.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="245"/>
+        <location filename="../src/installer.cpp" line="246"/>
         <source>No terminal emulator found.
 Please install x-terminal-emulator.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="252"/>
+        <location filename="../src/installer.cpp" line="253"/>
         <source>Could not create an installation status file.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="263"/>
+        <location filename="../src/installer.cpp" line="264"/>
         <source>Press any key to close</source>
         <translation>Nyomjon meg egy billentyűt a bezáráshoz</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="275"/>
+        <location filename="../src/installer.cpp" line="277"/>
         <source>Failed to launch the terminal emulator.
 Please check that x-terminal-emulator is installed.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="286"/>
+        <location filename="../src/installer.cpp" line="300"/>
+        <location filename="../src/installer.cpp" line="304"/>
         <source>Package installation failed</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="287"/>
+        <location filename="../src/installer.cpp" line="301"/>
         <source>The package manager reported an error.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/installer.cpp" line="305"/>
+        <source>Could not determine whether the installation succeeded.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/installer.cpp" line="306"/>
+        <source>The terminal closed unexpectedly before the installation result could be confirmed.</source>
         <translation type="unfinished"/>
     </message>
 </context>

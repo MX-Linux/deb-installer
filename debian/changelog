@@ -1,3 +1,12 @@
+deb-installer (26.09) mx; urgency=medium
+
+  * Successful installations no longer get reported as failures when using a
+    terminal emulator that stays running in the background.
+  * Added a manual page describing how to use the installer from the command
+    line.
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 02 Sep 2026 16:43:01 -0400
+
 deb-installer (26.08) mx; urgency=medium
 
   * Packages that are already installed can be selected for reinstallation.
