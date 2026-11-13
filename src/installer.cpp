@@ -41,7 +41,9 @@
 #include <QTimer>
 
 #include <algorithm>
+#include <cerrno>
 #include <iterator>
+#include <sys/file.h>
 
 namespace {
 
@@ -49,6 +51,26 @@ QString shellQuote(QString value)
 {
     value.replace('\'', QStringLiteral("'\\''"));
     return QStringLiteral("'") + value + QStringLiteral("'");
+}
+
+bool readInstallationStatus(QTemporaryFile &file, int &status)
+{
+    if (!file.open()) {
+        return false;
+    }
+    const QByteArray contents = file.readAll();
+    file.close();
+    // A newline marks a complete write; don't accept a partially written code.
+    if (!contents.endsWith('\n')) {
+        return false;
+    }
+    bool ok = false;
+    const int value = contents.trimmed().toInt(&ok);
+    if (ok && value >= 0 && value <= 255) {
+        status = value;
+        return true;
+    }
+    return false;
 }
 
 }
@@ -258,9 +280,19 @@ void Installer::install(const QStringList &file_names)
     const QString statusFilePath = statusFile.fileName();
     statusFile.close();
 
-    // Status reporting requires a terminal launcher that waits for its child.
-    // Forking launchers can return before the installation writes this file.
-    const QString script = adminCommand + quotedNames.join(' ')
+    QTemporaryFile startupFile;
+    if (!startupFile.open()) {
+        QMessageBox::critical(nullptr, tr("Error"), tr("Could not create an installation status file."));
+        return;
+    }
+
+    // Bash holds the lock until it exits, even when the terminal launcher forks.
+    // Close fd 9 for the privileged command so services started by maintainer
+    // scripts cannot inherit the lock and keep the GUI waiting indefinitely.
+    const QString script = QStringLiteral("exec 9>>") + shellQuote(startupFile.fileName())
+                           + QStringLiteral(" || exit 1; flock -x 9 || exit 1; "
+                                            "printf 'started\\n' >&9 || exit 1; ")
+                           + adminCommand + quotedNames.join(' ') + QStringLiteral(" 9>&-")
                            + QStringLiteral("; aptStatus=$?; printf '%s\\n' \"$aptStatus\" > ")
                            + shellQuote(statusFilePath) + QStringLiteral("; echo; read -n1 -srp ")
                            + shellQuote(tr("Press any key to close"))
@@ -281,36 +313,44 @@ void Installer::install(const QStringList &file_names)
         return;
     }
 
-    // Some terminal emulators (e.g. xfce4-terminal) register as a D-Bus
-    // session server: if one is already running, a new invocation just
-    // forwards the request to it and returns immediately, well before the
-    // install script has even started. So when the launcher reports success
-    // we can't yet trust that the install is done; poll for the status file
-    // over a long enough window to cover pkexec authentication plus the
-    // install itself, using an event loop rather than a blocking sleep so
-    // the GUI stays responsive. But if the launcher itself failed (a
-    // non-forking terminal closed, rejected -e, or the script errored before
-    // ever reaching the status write), there is nothing left to wait for, so
-    // keep the original short grace period for that case.
+    // Only startup has a deadline. Authentication, downloads and configuration
+    // may take arbitrarily long once the terminal script holds the lock.
     bool statusOk = false;
+    bool interrupted = false;
     int aptStatus = -1;
     QElapsedTimer elapsed;
     elapsed.start();
-    const qint64 statusTimeoutMs = terminalOk ? 5 * 60 * 1000 : 500;
+    const qint64 startupTimeoutMs = terminalOk ? 30 * 1000 : 500;
     constexpr int pollIntervalMs = 200;
-    while (!statusOk && elapsed.elapsed() < statusTimeoutMs) {
-        if (statusFile.open()) {
-            const QString contents = QString::fromLatin1(statusFile.readAll()).trimmed();
-            statusFile.close();
-            if (!contents.isEmpty()) {
-                aptStatus = contents.toInt(&statusOk);
+    while (!(statusOk = readInstallationStatus(statusFile, aptStatus))) {
+        if (!startupFile.seek(0)) {
+            break;
+        }
+        const bool started = startupFile.readAll() == "started\n";
+        if (started) {
+            int lockResult;
+            do {
+                lockResult = ::flock(startupFile.handle(), LOCK_EX | LOCK_NB);
+            } while (lockResult != 0 && errno == EINTR);
+            if (lockResult == 0) {
+                // The script may have written its result between our first
+                // read and its exit (especially without a TTY for read -n1).
+                statusOk = readInstallationStatus(statusFile, aptStatus);
+                ::flock(startupFile.handle(), LOCK_UN);
+                interrupted = !statusOk;
+                break;
             }
+            if (errno != EWOULDBLOCK && errno != EAGAIN) {
+                break;
+            }
+        } else if (elapsed.elapsed() >= startupTimeoutMs) {
+            statusOk = readInstallationStatus(statusFile, aptStatus);
+            break;
         }
-        if (!statusOk) {
-            QEventLoop waitLoop;
-            QTimer::singleShot(pollIntervalMs, &waitLoop, &QEventLoop::quit);
-            waitLoop.exec();
-        }
+
+        QEventLoop waitLoop;
+        QTimer::singleShot(pollIntervalMs, &waitLoop, &QEventLoop::quit);
+        waitLoop.exec();
     }
 
     if (statusOk) {
@@ -318,10 +358,12 @@ void Installer::install(const QStringList &file_names)
             QMessageBox::critical(nullptr, tr("Package installation failed"),
                                   tr("The package manager reported an error."));
         }
+    } else if (interrupted) {
+        QMessageBox::warning(nullptr, tr("Installation interrupted"),
+                             tr("The installation was interrupted and its result is unknown.\n"
+                                "The package manager may still be running."));
     } else {
-        QMessageBox::critical(nullptr, tr("Package installation failed"),
-                              terminalOk ? tr("Could not determine whether the installation succeeded.")
-                                        : tr("The terminal closed unexpectedly before the installation "
-                                             "result could be confirmed."));
+        QMessageBox::warning(nullptr, tr("Installation result unknown"),
+                             tr("Could not determine whether the installation succeeded."));
     }
 }

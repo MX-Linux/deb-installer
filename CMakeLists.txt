@@ -211,6 +211,19 @@ if(BUILD_TESTS)
     add_test(NAME apt-install-wrapper-test
         COMMAND ${CMAKE_SOURCE_DIR}/tests/test_apt_install.sh ${CMAKE_SOURCE_DIR}/polkit/apt-install
     )
+    add_executable(deb-installer-installation-tests
+        tests/test_installation.cpp
+        src/cmd.cpp
+        src/installer.cpp
+    )
+    target_include_directories(deb-installer-installation-tests PRIVATE src)
+    target_link_libraries(deb-installer-installation-tests Qt6::Widgets)
+    target_compile_options(deb-installer-installation-tests PRIVATE -Wpedantic -Werror)
+    add_test(NAME installation-monitor-test COMMAND deb-installer-installation-tests)
+    set_tests_properties(installation-monitor-test PROPERTIES
+        ENVIRONMENT "QT_QPA_PLATFORM=offscreen"
+        TIMEOUT 60
+    )
 endif()
 
 # Install target (required by Debian build system)
