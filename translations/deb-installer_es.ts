@@ -2,99 +2,99 @@
 <context>
     <name>Installer</name>
     <message>
-        <location filename="../src/installer.cpp" line="115"/>
-        <location filename="../src/installer.cpp" line="238"/>
-        <location filename="../src/installer.cpp" line="245"/>
-        <location filename="../src/installer.cpp" line="253"/>
-        <location filename="../src/installer.cpp" line="276"/>
+        <location filename="../src/installer.cpp" line="117"/>
+        <location filename="../src/installer.cpp" line="240"/>
+        <location filename="../src/installer.cpp" line="247"/>
+        <location filename="../src/installer.cpp" line="255"/>
+        <location filename="../src/installer.cpp" line="278"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="116"/>
+        <location filename="../src/installer.cpp" line="118"/>
         <source>Could not simulate the package installation.</source>
         <translation>No se pudo simular la instalación del paquete.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="169"/>
+        <location filename="../src/installer.cpp" line="171"/>
         <source>Remove</source>
         <translation>Remover</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="172"/>
-        <location filename="../src/installer.cpp" line="206"/>
+        <location filename="../src/installer.cpp" line="174"/>
+        <location filename="../src/installer.cpp" line="208"/>
         <source>Install</source>
         <translation>Instalar</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="178"/>
+        <location filename="../src/installer.cpp" line="180"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
         <translation>Se instalarán los siguientes paquetes. Haga clic en &apos;Mostrar detalles...&apos; para obtener información acerca de los paquetes.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="183"/>
+        <location filename="../src/installer.cpp" line="185"/>
         <source>File: %1</source>
         <translation>Archivo: %1</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="203"/>
+        <location filename="../src/installer.cpp" line="205"/>
         <source>Will install the following:</source>
         <translation>Instalará lo siguiente:</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="217"/>
+        <location filename="../src/installer.cpp" line="219"/>
         <source>Installing selected package, please authenticate</source>
         <translation>Instalando el paquete seleccionado por favor autentifíquese</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="239"/>
+        <location filename="../src/installer.cpp" line="241"/>
         <source>No privilege escalation tool found.
 Please install pkexec or sudo.</source>
         <translation>No se encontró ninguna herramienta para escalar privilegios.
 Por favor, instale pkexec o sudo.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="246"/>
+        <location filename="../src/installer.cpp" line="248"/>
         <source>No terminal emulator found.
 Please install x-terminal-emulator.</source>
         <translation>No se encontró ningún emulador de terminal.
 Por favor, instale x-terminal-emulator.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="253"/>
+        <location filename="../src/installer.cpp" line="255"/>
         <source>Could not create an installation status file.</source>
         <translation>No se pudo crear un archivo de estado de la instalación.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="264"/>
+        <location filename="../src/installer.cpp" line="266"/>
         <source>Press any key to close</source>
         <translation>Pulse cualquier tecla para cerrar</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="277"/>
+        <location filename="../src/installer.cpp" line="279"/>
         <source>Failed to launch the terminal emulator.
 Please check that x-terminal-emulator is installed.</source>
         <translation>No se pudo iniciar el emulador de terminal.
 Compruebe que x-terminal-emulator esté instalado.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="300"/>
-        <location filename="../src/installer.cpp" line="304"/>
+        <location filename="../src/installer.cpp" line="318"/>
+        <location filename="../src/installer.cpp" line="322"/>
         <source>Package installation failed</source>
         <translation>La instalación del paquete ha fallado</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="301"/>
+        <location filename="../src/installer.cpp" line="319"/>
         <source>The package manager reported an error.</source>
         <translation>El gestor de paquetes ha detectado un error.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="305"/>
+        <location filename="../src/installer.cpp" line="323"/>
         <source>Could not determine whether the installation succeeded.</source>
         <translation>No se pudo determinar si la instalación se realizó correctamente.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="306"/>
+        <location filename="../src/installer.cpp" line="324"/>
         <source>The terminal closed unexpectedly before the installation result could be confirmed.</source>
         <translation>La terminal se cerró de forma inesperada antes de poder confirmar el resultado de la instalación.</translation>
     </message>

@@ -1,3 +1,13 @@
+deb-installer (26.11) mx; urgency=medium
+
+  * Installations taking longer than five minutes no longer get reported as
+    failures while they are still running.
+  * Closing the installation terminal before a result is available now reports
+    an interruption and warns that the package manager may still be running.
+  * Starting without a graphical session now shows a clear error message.
+
+ -- Adrian <adrian@mxlinux.org>  Fri, 13 Nov 2026 11:47:00 -0500
+
 deb-installer (26.09) mx; urgency=medium
 
   * Successful installations no longer get reported as failures when using a

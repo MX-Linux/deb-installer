@@ -2,99 +2,99 @@
 <context>
     <name>Installer</name>
     <message>
-        <location filename="../src/installer.cpp" line="115"/>
-        <location filename="../src/installer.cpp" line="238"/>
-        <location filename="../src/installer.cpp" line="245"/>
-        <location filename="../src/installer.cpp" line="253"/>
-        <location filename="../src/installer.cpp" line="276"/>
+        <location filename="../src/installer.cpp" line="117"/>
+        <location filename="../src/installer.cpp" line="240"/>
+        <location filename="../src/installer.cpp" line="247"/>
+        <location filename="../src/installer.cpp" line="255"/>
+        <location filename="../src/installer.cpp" line="278"/>
         <source>Error</source>
         <translation>Σφάλμα</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="116"/>
+        <location filename="../src/installer.cpp" line="118"/>
         <source>Could not simulate the package installation.</source>
         <translation>Δεν ήταν δυνατή η προσομοίωση εγκατάστασης του πακέτου.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="169"/>
+        <location filename="../src/installer.cpp" line="171"/>
         <source>Remove</source>
         <translation>Αφαίρεση</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="172"/>
-        <location filename="../src/installer.cpp" line="206"/>
+        <location filename="../src/installer.cpp" line="174"/>
+        <location filename="../src/installer.cpp" line="208"/>
         <source>Install</source>
         <translation>Εγκατάσταση</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="178"/>
+        <location filename="../src/installer.cpp" line="180"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
         <translation>Θα εγκατασταθούν τα ακόλουθα πακέτα. Κάντε κλικ στην επιλογή &quot;Εμφάνιση λεπτομερειών...&quot; για πληροφορίες σχετικά με τα πακέτα.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="183"/>
+        <location filename="../src/installer.cpp" line="185"/>
         <source>File: %1</source>
         <translation>Αρχείο: %1</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="203"/>
+        <location filename="../src/installer.cpp" line="205"/>
         <source>Will install the following:</source>
         <translation>Θα εγκατασταθούν τα εξής:</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="217"/>
+        <location filename="../src/installer.cpp" line="219"/>
         <source>Installing selected package, please authenticate</source>
         <translation>Γίνεται εγκατάσταση επιλεγμένου πακέτου, παρακαλώ πιστοποιήστε την ταυτότητά σας</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="239"/>
+        <location filename="../src/installer.cpp" line="241"/>
         <source>No privilege escalation tool found.
 Please install pkexec or sudo.</source>
         <translation>Δεν εντοπίστηκε εργαλείο απόκτησης δικαιωμάτων.
 Παρακαλώ εγκαταστήστε pkexec ή sudo.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="246"/>
+        <location filename="../src/installer.cpp" line="248"/>
         <source>No terminal emulator found.
 Please install x-terminal-emulator.</source>
         <translation>Δεν βρέθηκε τερματικό.
 Παρακαλώ εγκαταστήστε ένα x-τερματικό.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="253"/>
+        <location filename="../src/installer.cpp" line="255"/>
         <source>Could not create an installation status file.</source>
         <translation>Δεν ήταν δυνατή η δημιουργία του αρχείου εγκατάστασης.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="264"/>
+        <location filename="../src/installer.cpp" line="266"/>
         <source>Press any key to close</source>
         <translation>Πατήστε οποιοδήποτε πλήκτρο για να κλείσει</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="277"/>
+        <location filename="../src/installer.cpp" line="279"/>
         <source>Failed to launch the terminal emulator.
 Please check that x-terminal-emulator is installed.</source>
         <translation>Η εκκίνηση του τερματικού απέτυχε.
 Παρακαλώ βεβαιωθείτε ότι είναι εγκατεστημένο το x-τερματικό.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="300"/>
-        <location filename="../src/installer.cpp" line="304"/>
+        <location filename="../src/installer.cpp" line="318"/>
+        <location filename="../src/installer.cpp" line="322"/>
         <source>Package installation failed</source>
         <translation>Απέτυχε η εγκατάσταση του πακέτου</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="301"/>
+        <location filename="../src/installer.cpp" line="319"/>
         <source>The package manager reported an error.</source>
         <translation>Ο διαχειριστής πακέτων ανέφερε σφάλμα.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="305"/>
+        <location filename="../src/installer.cpp" line="323"/>
         <source>Could not determine whether the installation succeeded.</source>
         <translation>Δεν μπόρεσε να επιβεβαιωθεί αν η εγκατάσταση ολοκληρώθηκε με επιτυχία.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="306"/>
+        <location filename="../src/installer.cpp" line="324"/>
         <source>The terminal closed unexpectedly before the installation result could be confirmed.</source>
         <translation>Το τερματικό έκλεισε απότομα πριν επιβεβαιωθεί το αποτέλεσμα της εγκατάστασης.</translation>
     </message>

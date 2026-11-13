@@ -2,99 +2,99 @@
 <context>
     <name>Installer</name>
     <message>
-        <location filename="../src/installer.cpp" line="115"/>
-        <location filename="../src/installer.cpp" line="238"/>
-        <location filename="../src/installer.cpp" line="245"/>
-        <location filename="../src/installer.cpp" line="253"/>
-        <location filename="../src/installer.cpp" line="276"/>
+        <location filename="../src/installer.cpp" line="117"/>
+        <location filename="../src/installer.cpp" line="240"/>
+        <location filename="../src/installer.cpp" line="247"/>
+        <location filename="../src/installer.cpp" line="255"/>
+        <location filename="../src/installer.cpp" line="278"/>
         <source>Error</source>
         <translation>Ocorreu um erro</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="116"/>
+        <location filename="../src/installer.cpp" line="118"/>
         <source>Could not simulate the package installation.</source>
         <translation>Não foi possível simular a instalação do pacote.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="169"/>
+        <location filename="../src/installer.cpp" line="171"/>
         <source>Remove</source>
         <translation>Desinstalar</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="172"/>
-        <location filename="../src/installer.cpp" line="206"/>
+        <location filename="../src/installer.cpp" line="174"/>
+        <location filename="../src/installer.cpp" line="208"/>
         <source>Install</source>
         <translation>Instalar</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="178"/>
+        <location filename="../src/installer.cpp" line="180"/>
         <source>The following packages will be installed. Click &apos;Show Details...&apos; for information about the packages.</source>
         <translation>Clique no botão ‘Exibir os Detalhes...’ para obter mais informações sobre o(s) pacote(s) que será(ão) instalado(s) a seguir.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="183"/>
+        <location filename="../src/installer.cpp" line="185"/>
         <source>File: %1</source>
         <translation>Arquivo: %1</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="203"/>
+        <location filename="../src/installer.cpp" line="205"/>
         <source>Will install the following:</source>
         <translation>Será(ão) instalado(s) o(s) seguinte(s) pacote(s):</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="217"/>
+        <location filename="../src/installer.cpp" line="219"/>
         <source>Installing selected package, please authenticate</source>
         <translation>Por favor, insira a sua senha e pressione a tecla ‘Enter’ para continuar com a instalação do pacote que foi selecionado</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="239"/>
+        <location filename="../src/installer.cpp" line="241"/>
         <source>No privilege escalation tool found.
 Please install pkexec or sudo.</source>
         <translation>Não foi encontrada nenhuma ferramenta de escalonamento (dos privilégios das permissões do usuário) no sistema operacional.
 Por favor, instale o pacote ‘pkexec’ ou o pacote ‘sudo’.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="246"/>
+        <location filename="../src/installer.cpp" line="248"/>
         <source>No terminal emulator found.
 Please install x-terminal-emulator.</source>
         <translation>Não foi encontrado nenhum emulador de terminal no sistema operacional.
 Por favor, instale o pacote o ‘x-terminal-emulator’.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="253"/>
+        <location filename="../src/installer.cpp" line="255"/>
         <source>Could not create an installation status file.</source>
         <translation>Não foi possível criar o arquivo do estado do processo da instalação.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="264"/>
+        <location filename="../src/installer.cpp" line="266"/>
         <source>Press any key to close</source>
         <translation>Pressione qualquer tecla para fechar a janela do Emulador de Terminal</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="277"/>
+        <location filename="../src/installer.cpp" line="279"/>
         <source>Failed to launch the terminal emulator.
 Please check that x-terminal-emulator is installed.</source>
         <translation>Ocorreu uma falha ao iniciar o emulador de terminal.
 Por favor, verifique se o pacote o ‘x-terminal-emulator’ está instalado no sistema operacional.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="300"/>
-        <location filename="../src/installer.cpp" line="304"/>
+        <location filename="../src/installer.cpp" line="318"/>
+        <location filename="../src/installer.cpp" line="322"/>
         <source>Package installation failed</source>
         <translation>Ocorreu uma falha no processo de instalação do pacote</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="301"/>
+        <location filename="../src/installer.cpp" line="319"/>
         <source>The package manager reported an error.</source>
         <translation>O gerenciador de pacotes apresentou um erro.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="305"/>
+        <location filename="../src/installer.cpp" line="323"/>
         <source>Could not determine whether the installation succeeded.</source>
         <translation>Não foi possível determinar se a instalação do pacote foi bem-sucedida.</translation>
     </message>
     <message>
-        <location filename="../src/installer.cpp" line="306"/>
+        <location filename="../src/installer.cpp" line="324"/>
         <source>The terminal closed unexpectedly before the installation result could be confirmed.</source>
         <translation>O emulador de terminal foi fechado inesperadamente antes que o resultado da instalação do pacote pudesse ser confirmado.</translation>
     </message>
