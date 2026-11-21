@@ -33,29 +33,37 @@
 #include <QStandardPaths>
 #include <QTranslator>
 
+#include <memory>
+
 #include "installer.h"
 #include <unistd.h>
 
 int main(int argc, char *argv[])
 {
-    if (qEnvironmentVariableIsEmpty("DISPLAY") && qEnvironmentVariableIsEmpty("WAYLAND_DISPLAY")
-        && qEnvironmentVariableIsEmpty("QT_QPA_PLATFORM")) {
-        qWarning("deb-installer: no display available (DISPLAY and WAYLAND_DISPLAY are both unset); "
-                "a graphical session is required to run this program.");
-        return EXIT_FAILURE;
-    }
+    const QByteArray option = argc == 2 ? QByteArray(argv[1]) : QByteArray();
+    const bool informational = option == "-h" || option == "--help" || option == "--help-all"
+                               || option == "-v" || option == "--version";
+    std::unique_ptr<QCoreApplication> app;
+    if (informational) {
+        app = std::make_unique<QCoreApplication>(argc, argv);
+    } else {
+        if (qEnvironmentVariableIsEmpty("DISPLAY") && qEnvironmentVariableIsEmpty("WAYLAND_DISPLAY")
+            && qEnvironmentVariableIsEmpty("QT_QPA_PLATFORM")) {
+            qWarning("deb-installer: no display available (DISPLAY and WAYLAND_DISPLAY are both unset); "
+                    "a graphical session is required to run this program.");
+            return EXIT_FAILURE;
+        }
 
-    // Set Qt platform to XCB (X11) if not already set and we're in X11 environment
-    if (qEnvironmentVariableIsEmpty("QT_QPA_PLATFORM")) {
-        if (!qEnvironmentVariableIsEmpty("DISPLAY") && qEnvironmentVariableIsEmpty("WAYLAND_DISPLAY")) {
+        // Set Qt platform to XCB (X11) if not already set and we're in X11 environment
+        if (qEnvironmentVariableIsEmpty("QT_QPA_PLATFORM") && !qEnvironmentVariableIsEmpty("DISPLAY")
+            && qEnvironmentVariableIsEmpty("WAYLAND_DISPLAY")) {
             qputenv("QT_QPA_PLATFORM", "xcb");
         }
+
+        app = std::make_unique<QApplication>(argc, argv);
     }
 
-    QApplication app(argc, argv);
     QApplication::setOrganizationName("MX-Linux");
-    QApplication::setApplicationDisplayName("Deb Installer");
-    QApplication::setWindowIcon(QIcon::fromTheme(QApplication::applicationName()));
     QApplication::setApplicationVersion(VERSION);
 
     QCommandLineParser parser;
@@ -64,7 +72,10 @@ int main(int argc, char *argv[])
     parser.addVersionOption();
     parser.addPositionalArgument(QObject::tr("files..."), QObject::tr("Name of .deb files to install"),
                                  QObject::tr("[file...]"));
-    parser.process(app);
+    parser.process(*app);
+
+    QApplication::setApplicationDisplayName("Deb Installer");
+    QApplication::setWindowIcon(QIcon::fromTheme(QApplication::applicationName()));
 
     QTranslator qtTran;
     if (qtTran.load("qt_" + QLocale::system().name(), QLibraryInfo::path(QLibraryInfo::TranslationsPath))) {
@@ -127,7 +138,7 @@ int main(int argc, char *argv[])
             }
         }
         Installer installer(parser);
-        return app.exec();
+        return QApplication::exec();
     } else {
         QApplication::beep();
         QMessageBox::critical(nullptr, QObject::tr("Error"), QObject::tr("You must run this program as normal user."));
