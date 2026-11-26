@@ -115,6 +115,7 @@ target_link_libraries(deb-installer
     Qt6::Core
     Qt6::Gui
     Qt6::Widgets
+    acl
 )
 
 # Set compiler flags
@@ -188,6 +189,7 @@ if(BUILD_TESTS)
         Qt6::Core
         Qt6::Gui
         Qt6::Widgets
+        acl
     )
     target_compile_options(deb-installer-tests PRIVATE
         -Wpedantic
@@ -217,7 +219,7 @@ if(BUILD_TESTS)
         src/installer.cpp
     )
     target_include_directories(deb-installer-installation-tests PRIVATE src)
-    target_link_libraries(deb-installer-installation-tests Qt6::Widgets)
+    target_link_libraries(deb-installer-installation-tests Qt6::Widgets acl)
     target_compile_options(deb-installer-installation-tests PRIVATE -Wpedantic -Werror)
     add_test(NAME installation-monitor-test COMMAND deb-installer-installation-tests)
     add_test(NAME installation-snapshot-test COMMAND deb-installer-installation-tests --snapshot)

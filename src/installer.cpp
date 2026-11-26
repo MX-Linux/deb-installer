@@ -46,6 +46,7 @@
 #include <cerrno>
 #include <iterator>
 #include <utility>
+#include <sys/acl.h>
 #include <sys/file.h>
 
 namespace {
@@ -54,6 +55,33 @@ QString shellQuote(QString value)
 {
     value.replace('\'', QStringLiteral("'\\''"));
     return QStringLiteral("'") + value + QStringLiteral("'");
+}
+
+// Replace inherited access entries so only the owner and _apt can access the copy.
+bool setStagingAcl(const QString &path, const char *entries)
+{
+    acl_t acl = acl_from_text(entries);
+    if (!acl) {
+        return false;
+    }
+    const int result = acl_set_file(QFile::encodeName(path).constData(), ACL_TYPE_ACCESS, acl);
+    acl_free(acl);
+    return result == 0;
+}
+
+void grantAptAccess(const QString &stagingDir, const QStringList &files)
+{
+    constexpr auto directoryAcl = "u::rwx,u:_apt:--x,g::---,m::--x,o::---";
+    constexpr auto fileAcl = "u::rw-,u:_apt:r--,g::---,m::r--,o::---";
+    for (const auto &file : files) {
+        if (!setStagingAcl(file, fileAcl) || !setStagingAcl(QFileInfo(file).absolutePath(), directoryAcl)) {
+            qWarning() << "Could not grant _apt access to staged packages. APT will choose its fallback.";
+            return;
+        }
+    }
+    if (!setStagingAcl(stagingDir, directoryAcl)) {
+        qWarning() << "Could not grant _apt access to the staging directory. APT will choose its fallback.";
+    }
 }
 
 bool readInstallationStatus(QTemporaryFile &file, int &status)
@@ -95,8 +123,9 @@ Installer::Installer(const QCommandLineParser &arg_parser, QObject *parent)
             }
             stagedFiles.append(destination);
         }
-        if (stagedFiles.size() == file_arguments.size() && confirmAction(stagedFiles)) {
-            if (install(stagedFiles) == InstallResult::Unknown) {
+        if (stagedFiles.size() == file_arguments.size()) {
+            grantAptAccess(staging.path(), stagedFiles);
+            if (confirmAction(stagedFiles) && install(stagedFiles) == InstallResult::Unknown) {
                 // A detached package manager may still need these paths.
                 staging.setAutoRemove(false);
             }
@@ -142,7 +171,7 @@ bool Installer::confirmAction(const QStringList &names)
 
     QStringList aptArgs = {
         "-s", "-V", "-o=Dpkg::Use-Pty=0", "-o=Acquire::AllowUnsizedPackages=true",
-        "-o=APT::Sandbox::User=root", "reinstall", "--"
+        "reinstall", "--"
     };
     aptArgs.append(names);
 
