@@ -34,6 +34,7 @@ int testSnapshot(QTemporaryDir &commands, bool useSudo)
     const QByteArray simulate = R"SH(#!/bin/bash
 printf '%s\n' "${@: -2}" > "$REVIEW_PATHS"
 printf changed > "$REVIEW_ORIGINAL"
+printf '%s\n' 'Purg obsolete [2.0]' 'Inst sample (1.0+Remv1 local-deb [all])' 'Remv old [1.1]'
 )SH";
     const QByteArray inspect = R"SH(#!/bin/sh
 printf 'Package: '
@@ -79,7 +80,9 @@ touch "$REVIEW_SUCCESS"
             if (auto *ok = box->button(QMessageBox::Ok); ok && box->button(QMessageBox::Cancel)) {
                 const QString details = box->detailedText();
                 previewOk = details.contains(first) && details.contains(second)
-                            && details.contains("Package: first") && details.contains("Package: second");
+                            && details.contains("Package: first") && details.contains("Package: second")
+                            && details.contains("Install\nsample (1.0+Remv1 local-deb [all])\n")
+                            && details.contains("Remove\nold [1.1]\n") && details.contains("Purge\nobsolete [2.0]\n");
                 ok->click();
             } else {
                 box->reject();

@@ -187,9 +187,9 @@ bool Installer::confirmAction(const QStringList &names)
         return false;
     }
 
-    QString detailed_to_install;
-    QString detailed_removed_names;
-    QStringList detailed_installed_names;
+    QStringList installs;
+    QStringList removals;
+    QStringList purges;
 
     const QStringList aptLines = aptOutput.split('\n', Qt::SkipEmptyParts);
     static const QRegularExpression oldVerRe(R"(\[([^\]]+)\])");
@@ -200,7 +200,7 @@ bool Installer::confirmAction(const QStringList &names)
             continue;
         }
         const QString &action = fields.at(0);
-        if (action != "Inst" && action != "Remv") {
+        if (action != "Inst" && action != "Remv" && action != "Purg") {
             continue;
         }
         const QString &pkg = fields.at(1);
@@ -221,23 +221,14 @@ bool Installer::confirmAction(const QStringList &names)
                 newVer = " => " + newVer;
             }
         }
-        detailed_installed_names << pkg + ';' + oldVer + newVer + ';' + action;
-    }
-    detailed_installed_names.sort();
-
-    for (const auto &value : detailed_installed_names) {
-        if (value.contains("Remv")) {
-            detailed_removed_names += value.section(';', 0, 0) + ' ' + value.section(';', 1, 1) + '\n';
-        } else if (value.contains("Inst")) {
-            detailed_to_install += value.section(';', 0, 0) + ' ' + value.section(';', 1, 1) + '\n';
+        const QString entry = pkg + ' ' + oldVer + newVer;
+        if (action == "Inst") {
+            installs.append(entry);
+        } else if (action == "Remv") {
+            removals.append(entry);
+        } else {
+            purges.append(entry);
         }
-    }
-
-    if (!detailed_removed_names.isEmpty()) {
-        detailed_removed_names.prepend(tr("Remove") + '\n');
-    }
-    if (!detailed_to_install.isEmpty()) {
-        detailed_to_install.prepend(tr("Install") + '\n');
     }
 
     QMessageBox msgBox;
@@ -253,8 +244,15 @@ bool Installer::confirmAction(const QStringList &names)
         const int pkgIdx = dpkgInfo.indexOf(QStringLiteral("Package:"));
         detailed_text += (pkgIdx >= 0 ? dpkgInfo.mid(pkgIdx) : dpkgInfo) + "\n\n";
     }
-    detailed_text += detailed_to_install;
-    detailed_text += "\n" + detailed_removed_names;
+    const auto appendChanges = [&detailed_text](const QString &heading, QStringList &packages) {
+        if (!packages.isEmpty()) {
+            packages.sort();
+            detailed_text += heading + '\n' + packages.join('\n') + "\n\n";
+        }
+    };
+    appendChanges(tr("Install"), installs);
+    appendChanges(tr("Remove"), removals);
+    appendChanges(tr("Purge"), purges);
     msgBox.setDetailedText(detailed_text);
 
     // Limit detailed info box height to a reasonable maximum
@@ -266,7 +264,7 @@ bool Installer::confirmAction(const QStringList &names)
         detailedInfo->setMaximumHeight(maxHeight);
     }
 
-    msgBox.setInformativeText(!detailed_installed_names.isEmpty() || !detailed_removed_names.isEmpty()
+    msgBox.setInformativeText(!installs.isEmpty() || !removals.isEmpty() || !purges.isEmpty()
                                   ? file_arguments.join("\n") + '\n'
                                   : tr("Will install the following:") + '\n' + file_arguments.join("\n"));
 
