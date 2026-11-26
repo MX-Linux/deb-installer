@@ -1,0 +1,3 @@
+# Keep dpkg-source's standard exclusions when adding the release output directory.
+tar-ignore
+tar-ignore = debs
