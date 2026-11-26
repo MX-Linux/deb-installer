@@ -1,3 +1,19 @@
+deb-installer (26.11.1) mx; urgency=medium
+
+  * The installer uses the package copy you previewed even if the original
+    file changes before installation.
+  * The confirmation dialog shows which packages will be installed, removed,
+    or removed along with their configuration files.
+  * Desktop authentication now requests administrator approval for each
+    installation.
+  * APT can download dependencies with its usual restricted permissions even
+    when the selected package is in a private folder.
+  * Scripts can now tell whether installation succeeded, failed, or was
+    cancelled in the file picker or confirmation dialog.
+  * The --help and --version options now work without a graphical session.
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 25 Nov 2026 20:57:20 -0500
+
 deb-installer (26.11) mx; urgency=medium
 
   * Installations taking longer than five minutes no longer get reported as
