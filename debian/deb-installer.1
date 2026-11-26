@@ -24,6 +24,9 @@ Display version information and exit.
 .TP
 .I file.deb
 One or more readable local Debian package files to install.
+.SH EXIT STATUS
+Returns 0 on success, 1 on error or when the installation result is unknown,
+and 2 when the user cancels file selection or the confirmation dialog.
 .SH FILES
 .TP
 .I /usr/lib/deb-installer/apt-install

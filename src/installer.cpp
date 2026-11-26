@@ -30,7 +30,6 @@
 #include <QFileInfo>
 #include <QGridLayout>
 #include <QMessageBox>
-#include <QMetaObject>
 #include <QProcessEnvironment>
 #include <QPushButton>
 #include <QRegularExpression>
@@ -45,7 +44,6 @@
 #include <algorithm>
 #include <cerrno>
 #include <iterator>
-#include <utility>
 #include <sys/acl.h>
 #include <sys/file.h>
 
@@ -106,32 +104,39 @@ bool readInstallationStatus(QTemporaryFile &file, int &status)
 
 }
 
-Installer::Installer(const QCommandLineParser &arg_parser, QObject *parent)
-    : QObject(parent)
+Installer::ExitCode Installer::run(const QStringList &files)
 {
-    file_arguments = arg_parser.positionalArguments();
-    if (!file_arguments.isEmpty()) {
-        QTemporaryDir staging(QStringLiteral("/var/tmp/deb-installer-XXXXXX"));
-        QStringList stagedFiles;
-        for (const auto &source : std::as_const(file_arguments)) {
-            const QString subdir = QString::number(stagedFiles.size());
-            const QString destination = staging.filePath(subdir + '/' + QFileInfo(source).fileName());
-            QFile file(source);
-            if (!staging.isValid() || !QDir(staging.path()).mkdir(subdir) || !file.copy(destination)) {
-                QMessageBox::critical(nullptr, tr("Error"), tr("Could not stage %1 for installation.").arg(source));
-                break;
-            }
-            stagedFiles.append(destination);
-        }
-        if (stagedFiles.size() == file_arguments.size()) {
-            grantAptAccess(staging.path(), stagedFiles);
-            if (confirmAction(stagedFiles) && install(stagedFiles) == InstallResult::Unknown) {
-                // A detached package manager may still need these paths.
-                staging.setAutoRemove(false);
-            }
-        }
+    if (files.isEmpty()) {
+        return ExitCode::Cancelled;
     }
-    QMetaObject::invokeMethod(QApplication::instance(), "quit", Qt::QueuedConnection);
+    file_arguments = files;
+    QTemporaryDir staging(QStringLiteral("/var/tmp/deb-installer-XXXXXX"));
+    QStringList stagedFiles;
+    for (const auto &source : files) {
+        const QString subdir = QString::number(stagedFiles.size());
+        const QString destination = staging.filePath(subdir + '/' + QFileInfo(source).fileName());
+        QFile file(source);
+        if (!staging.isValid() || !QDir(staging.path()).mkdir(subdir) || !file.copy(destination)) {
+            QMessageBox::critical(nullptr, tr("Error"), tr("Could not stage %1 for installation.").arg(source));
+            return ExitCode::Failure;
+        }
+        stagedFiles.append(destination);
+    }
+    grantAptAccess(staging.path(), stagedFiles);
+    switch (confirmAction(stagedFiles)) {
+    case Confirmation::Cancelled:
+        return ExitCode::Cancelled;
+    case Confirmation::SimulationFailed:
+        return ExitCode::Failure;
+    case Confirmation::Accepted:
+        break;
+    }
+    const InstallResult result = install(stagedFiles);
+    if (result == InstallResult::Unknown) {
+        // A detached package manager may still need these paths.
+        staging.setAutoRemove(false);
+    }
+    return result == InstallResult::Success ? ExitCode::Success : ExitCode::Failure;
 }
 
 QStringList Installer::canonicalize(const QStringList &file_names)
@@ -144,7 +149,7 @@ QStringList Installer::canonicalize(const QStringList &file_names)
     return new_list;
 }
 
-bool Installer::confirmAction(const QStringList &names)
+Installer::Confirmation Installer::confirmAction(const QStringList &names)
 {
     // Detect debconf frontend — prefer desktop environment detection over dpkg
     QString de = qEnvironmentVariable("XDG_CURRENT_DESKTOP");
@@ -184,7 +189,7 @@ bool Installer::confirmAction(const QStringList &names)
         msgBox.setText(tr("Could not simulate the package installation."));
         msgBox.setDetailedText(aptOutput);
         msgBox.exec();
-        return false;
+        return Confirmation::SimulationFailed;
     }
 
     QStringList installs;
@@ -275,7 +280,7 @@ bool Installer::confirmAction(const QStringList &names)
         layout->addItem(new QSpacerItem(600, 0, QSizePolicy::Minimum, QSizePolicy::Expanding), 0, 1);
     }
     msgBox.exec();
-    return msgBox.clickedButton() == msgBox.button(QMessageBox::Ok);
+    return msgBox.clickedButton() == msgBox.button(QMessageBox::Ok) ? Confirmation::Accepted : Confirmation::Cancelled;
 }
 
 Installer::InstallResult Installer::install(const QStringList &file_names)

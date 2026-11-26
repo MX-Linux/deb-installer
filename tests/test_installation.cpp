@@ -1,8 +1,6 @@
 #include <QApplication>
-#include <QCommandLineParser>
 #include <QAbstractButton>
 #include <QElapsedTimer>
-#include <QEvent>
 #include <QFile>
 #include <QMessageBox>
 #include <QMetaObject>
@@ -73,6 +71,7 @@ touch "$REVIEW_SUCCESS"
     }
 
     bool previewOk = false;
+    bool cancel = false;
     QTimer confirm;
     QObject::connect(&confirm, &QTimer::timeout, [&] {
         auto *box = qobject_cast<QMessageBox *>(QApplication::activeModalWidget());
@@ -83,23 +82,38 @@ touch "$REVIEW_SUCCESS"
                             && details.contains("Package: first") && details.contains("Package: second")
                             && details.contains("Install\nsample (1.0+Remv1 local-deb [all])\n")
                             && details.contains("Remove\nold [1.1]\n") && details.contains("Purge\nobsolete [2.0]\n");
-                ok->click();
+                box->button(cancel ? QMessageBox::Cancel : QMessageBox::Ok)->click();
             } else {
                 box->reject();
             }
         }
     });
     confirm.start(10);
-    QCommandLineParser parser;
-    parser.process(QStringList {"deb-installer", first, second});
-    Installer installer(parser);
+    Installer installer;
+    const QStringList originals {first, second};
+    const auto result = installer.run(originals);
     QFile recorded(paths);
-    if (!previewOk || !QFile::exists(success) || !recorded.open(QIODevice::ReadOnly)) {
+    if (result != Installer::ExitCode::Success || !previewOk || !QFile::exists(success) || !recorded.open(QIODevice::ReadOnly)) {
         return 1;
     }
     const QStringList staged = QString::fromUtf8(recorded.readAll()).split('\n', Qt::SkipEmptyParts);
-    return staged.size() == 2 && staged[0] != staged[1] && !QFile::exists(staged[0])
-           && !QFile::exists(staged[1]) ? 0 : 1;
+    if (staged.size() != 2 || staged[0] == staged[1] || QFile::exists(staged[0]) || QFile::exists(staged[1])) {
+        return 1;
+    }
+    cancel = true;
+    if (installer.run(originals) != Installer::ExitCode::Cancelled) {
+        return 1;
+    }
+    cancel = false;
+    if (!writeExecutable(commands.filePath(useSudo ? "sudo" : "pkexec"), "#!/bin/sh\nexit 42\n")
+        || installer.run(originals) != Installer::ExitCode::Failure) {
+        return 1;
+    }
+    if (!writeExecutable(commands.filePath("apt-get"), "#!/bin/sh\nexit 100\n")
+        || installer.run(originals) != Installer::ExitCode::Failure) {
+        return 1;
+    }
+    return 0;
 }
 
 
@@ -161,12 +175,7 @@ exit 0
         return testSnapshot(commands, app.arguments().contains("--sudo-snapshot"));
     }
 
-    QCommandLineParser parser;
-    parser.process(QStringList {QStringLiteral("deb-installer-test")});
-    Installer installer(parser);
-    // The empty constructor queues quit; consume it before testing the slot.
-    QCoreApplication::sendPostedEvents(nullptr, QEvent::MetaCall);
-
+    Installer installer;
     QStringList titles;
     QStringList messages;
     QTimer dismissMessages;

@@ -106,7 +106,7 @@ int main(int argc, char *argv[])
         }
         if (parser.positionalArguments().isEmpty()) {
             qDebug().noquote() << QObject::tr("No .deb files were provided.");
-            return EXIT_FAILURE;
+            return static_cast<int>(Installer::ExitCode::Cancelled);
         }
         const auto args = parser.positionalArguments();
         for (const auto &file : args) {
@@ -137,8 +137,8 @@ int main(int argc, char *argv[])
                 return EXIT_FAILURE;
             }
         }
-        Installer installer(parser);
-        return QApplication::exec();
+        Installer installer;
+        return static_cast<int>(installer.run(args));
     } else {
         QApplication::beep();
         QMessageBox::critical(nullptr, QObject::tr("Error"), QObject::tr("You must run this program as normal user."));

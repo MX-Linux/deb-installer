@@ -21,7 +21,6 @@
  **********************************************************************/
 #pragma once
 
-#include <QCommandLineParser>
 #include <QObject>
 #include <QStringList>
 
@@ -32,7 +31,8 @@ class Installer : public QObject
     Q_OBJECT
 
 public:
-    explicit Installer(const QCommandLineParser &arg_parser = {}, QObject *parent = nullptr);
+    enum class ExitCode { Success = 0, Failure = 1, Cancelled = 2 };
+    [[nodiscard]] ExitCode run(const QStringList &files);
     [[nodiscard]] QStringList fileArguments() const { return file_arguments; }
     [[nodiscard]] static QStringList canonicalize(const QStringList &file_names);
 
@@ -40,9 +40,11 @@ private:
     QStringList file_arguments;
     Cmd cmd;
 
+    enum class Confirmation { Accepted, Cancelled, SimulationFailed };
     enum class InstallResult { Success, Failed, Unknown };
 
+    [[nodiscard]] Confirmation confirmAction(const QStringList &file_names);
+
 private slots:
-    [[nodiscard]] bool confirmAction(const QStringList &file_names);
     InstallResult install(const QStringList &file_names);
 };
