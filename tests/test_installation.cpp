@@ -22,7 +22,7 @@ bool writeExecutable(const QString &path, const QByteArray &contents)
            && file.setPermissions(QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner);
 }
 
-int testSnapshot(QTemporaryDir &commands)
+int testSnapshot(QTemporaryDir &commands, bool useSudo)
 {
     const QString first = commands.filePath("first/sample.deb");
     const QString second = commands.filePath("second/sample.deb");
@@ -40,6 +40,11 @@ printf 'Package: '
 cat "$2"
 )SH";
     const QByteArray install = R"SH(#!/bin/bash
+if [[ "$0" == */sudo ]]; then
+    [[ "$1" == -p ]] || exit 1
+    shift 2
+fi
+[[ "$1" == /usr/lib/deb-installer/apt-install ]] || exit 1
 mapfile -t staged < "$REVIEW_PATHS"
 [[ $# == 3 && "$2" == "${staged[0]}" && "$3" == "${staged[1]}" ]] || exit 1
 [[ "$(<"$2")" == first && "$(<"$3")" == second ]] || exit 1
@@ -52,8 +57,18 @@ touch "$REVIEW_SUCCESS"
     qputenv("REVIEW_SUCCESS", success.toLocal8Bit());
     if (!writeExecutable(commands.filePath("apt-get"), simulate)
         || !writeExecutable(commands.filePath("dpkg-deb"), inspect)
-        || !writeExecutable(commands.filePath("pkexec"), install)) {
+        || !writeExecutable(commands.filePath(useSudo ? "sudo" : "pkexec"), install)) {
         return 1;
+    }
+
+    if (useSudo) {
+        QFile::remove(commands.filePath("pkexec"));
+        for (const QString &tool : {QStringLiteral("cat"), QStringLiteral("flock"), QStringLiteral("touch")}) {
+            if (!QFile::link("/usr/bin/" + tool, commands.filePath(tool))) {
+                return 1;
+            }
+        }
+        qputenv("PATH", commands.path().toLocal8Bit());
     }
 
     bool previewOk = false;
@@ -139,8 +154,8 @@ exit 0
     }
     qputenv("PATH", commands.path().toLocal8Bit() + ":" + qgetenv("PATH"));
 
-    if (app.arguments().contains("--snapshot")) {
-        return testSnapshot(commands);
+    if (app.arguments().contains("--snapshot") || app.arguments().contains("--sudo-snapshot")) {
+        return testSnapshot(commands, app.arguments().contains("--sudo-snapshot"));
     }
 
     QCommandLineParser parser;

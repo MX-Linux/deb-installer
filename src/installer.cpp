@@ -260,25 +260,22 @@ Installer::InstallResult Installer::install(const QStringList &file_names)
     std::transform(file_names.cbegin(), file_names.cend(), std::back_inserter(quotedNames), shellQuote);
 
     const QString pkexecPath = QStandardPaths::findExecutable(QStringLiteral("pkexec"));
-    const QString aptPath = QStandardPaths::findExecutable(QStringLiteral("apt"));
     const QString sudoPath = QStandardPaths::findExecutable(QStringLiteral("sudo"));
     const QString terminalPath = QStandardPaths::findExecutable(QStringLiteral("x-terminal-emulator"));
 
     QString adminCommand;
     if (!pkexecPath.isEmpty()) {
-        adminCommand = shellQuote(pkexecPath) + QStringLiteral(" ")
-                       + shellQuote(QStringLiteral("/usr/lib/deb-installer/apt-install")) + QStringLiteral(" ");
-    } else if (!sudoPath.isEmpty() && !aptPath.isEmpty()) {
-        adminCommand = shellQuote(sudoPath) + QStringLiteral(" -p ") + shellQuote(msg + QStringLiteral(": "))
-                       + QStringLiteral(" ") + shellQuote(aptPath)
-                       + QStringLiteral(" -o Acquire::AllowUnsizedPackages=true "
-                                        "-o APT::Sandbox::User=root reinstall -- ");
+        adminCommand = shellQuote(pkexecPath);
+    } else if (!sudoPath.isEmpty()) {
+        adminCommand = shellQuote(sudoPath) + QStringLiteral(" -p ") + shellQuote(msg + QStringLiteral(": "));
     } else {
         QMessageBox::critical(nullptr, tr("Error"),
                               tr("No privilege escalation tool found.\n"
                                  "Please install pkexec or sudo."));
         return InstallResult::Failed;
     }
+
+    adminCommand += QStringLiteral(" /usr/lib/deb-installer/apt-install ");
 
     if (terminalPath.isEmpty()) {
         QMessageBox::critical(nullptr, tr("Error"),

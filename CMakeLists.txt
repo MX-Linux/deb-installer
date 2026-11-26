@@ -221,7 +221,8 @@ if(BUILD_TESTS)
     target_compile_options(deb-installer-installation-tests PRIVATE -Wpedantic -Werror)
     add_test(NAME installation-monitor-test COMMAND deb-installer-installation-tests)
     add_test(NAME installation-snapshot-test COMMAND deb-installer-installation-tests --snapshot)
-    set_tests_properties(installation-monitor-test installation-snapshot-test PROPERTIES
+    add_test(NAME sudo-installation-test COMMAND deb-installer-installation-tests --sudo-snapshot)
+    set_tests_properties(installation-monitor-test installation-snapshot-test sudo-installation-test PROPERTIES
         ENVIRONMENT "QT_QPA_PLATFORM=offscreen"
         TIMEOUT 60
     )

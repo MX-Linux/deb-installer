@@ -1,5 +1,5 @@
 #!/bin/sh
-# Wrapper for apt reinstall, used by deb-installer via pkexec.
+# Wrapper for apt reinstall, used by deb-installer via pkexec or sudo.
 #
 # This wrapper enforces fixed safe options so that the polkit policy
 # (org.mxlinux.pkexec.debinstaller.apt) only needs to authorize this
