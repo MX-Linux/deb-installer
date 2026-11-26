@@ -220,7 +220,8 @@ if(BUILD_TESTS)
     target_link_libraries(deb-installer-installation-tests Qt6::Widgets)
     target_compile_options(deb-installer-installation-tests PRIVATE -Wpedantic -Werror)
     add_test(NAME installation-monitor-test COMMAND deb-installer-installation-tests)
-    set_tests_properties(installation-monitor-test PROPERTIES
+    add_test(NAME installation-snapshot-test COMMAND deb-installer-installation-tests --snapshot)
+    set_tests_properties(installation-monitor-test installation-snapshot-test PROPERTIES
         ENVIRONMENT "QT_QPA_PLATFORM=offscreen"
         TIMEOUT 60
     )

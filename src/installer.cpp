@@ -25,7 +25,8 @@
 #include <QDebug>
 #include <QElapsedTimer>
 #include <QEventLoop>
-#include <QFileDialog>
+#include <QDir>
+#include <QFile>
 #include <QFileInfo>
 #include <QGridLayout>
 #include <QMessageBox>
@@ -37,12 +38,14 @@
 #include <QSizePolicy>
 #include <QStandardPaths>
 #include <QTextEdit>
+#include <QTemporaryDir>
 #include <QTemporaryFile>
 #include <QTimer>
 
 #include <algorithm>
 #include <cerrno>
 #include <iterator>
+#include <utility>
 #include <sys/file.h>
 
 namespace {
@@ -78,15 +81,27 @@ bool readInstallationStatus(QTemporaryFile &file, int &status)
 Installer::Installer(const QCommandLineParser &arg_parser, QObject *parent)
     : QObject(parent)
 {
-    QStringList file_names = canonicalize(arg_parser.positionalArguments());
-    file_arguments = file_names;
-    qDebug() << "file arguments is " << file_arguments;
-    if (file_names.isEmpty() || !confirmAction(file_names)) {
-        QMetaObject::invokeMethod(QApplication::instance(), "quit", Qt::QueuedConnection);
-        return;
+    file_arguments = arg_parser.positionalArguments();
+    if (!file_arguments.isEmpty()) {
+        QTemporaryDir staging(QStringLiteral("/var/tmp/deb-installer-XXXXXX"));
+        QStringList stagedFiles;
+        for (const auto &source : std::as_const(file_arguments)) {
+            const QString subdir = QString::number(stagedFiles.size());
+            const QString destination = staging.filePath(subdir + '/' + QFileInfo(source).fileName());
+            QFile file(source);
+            if (!staging.isValid() || !QDir(staging.path()).mkdir(subdir) || !file.copy(destination)) {
+                QMessageBox::critical(nullptr, tr("Error"), tr("Could not stage %1 for installation.").arg(source));
+                break;
+            }
+            stagedFiles.append(destination);
+        }
+        if (stagedFiles.size() == file_arguments.size() && confirmAction(stagedFiles)) {
+            if (install(stagedFiles) == InstallResult::Unknown) {
+                // A detached package manager may still need these paths.
+                staging.setAutoRemove(false);
+            }
+        }
     }
-
-    install(file_names);
     QMetaObject::invokeMethod(QApplication::instance(), "quit", Qt::QueuedConnection);
 }
 
@@ -203,9 +218,9 @@ bool Installer::confirmAction(const QStringList &names)
         + "</b>");
 
     QString detailed_text;
-    for (const auto &file_name : names) {
-        detailed_text += tr("File: %1").arg(file_name) + "\n\n";
-        const QString dpkgInfo = cmd.getCmdOut("dpkg-deb", {"--info", file_name});
+    for (qsizetype i = 0; i < names.size(); ++i) {
+        detailed_text += tr("File: %1").arg(file_arguments.at(i)) + "\n\n";
+        const QString dpkgInfo = cmd.getCmdOut("dpkg-deb", {"--info", names.at(i)});
         const int pkgIdx = dpkgInfo.indexOf(QStringLiteral("Package:"));
         detailed_text += (pkgIdx >= 0 ? dpkgInfo.mid(pkgIdx) : dpkgInfo) + "\n\n";
     }
@@ -236,7 +251,7 @@ bool Installer::confirmAction(const QStringList &names)
     return msgBox.clickedButton() == msgBox.button(QMessageBox::Ok);
 }
 
-void Installer::install(const QStringList &file_names)
+Installer::InstallResult Installer::install(const QStringList &file_names)
 {
     const QString msg {tr("Installing selected package, please authenticate")};
     // file names still need shell quoting for the x-terminal-emulator / sh -c invocation
@@ -262,20 +277,20 @@ void Installer::install(const QStringList &file_names)
         QMessageBox::critical(nullptr, tr("Error"),
                               tr("No privilege escalation tool found.\n"
                                  "Please install pkexec or sudo."));
-        return;
+        return InstallResult::Failed;
     }
 
     if (terminalPath.isEmpty()) {
         QMessageBox::critical(nullptr, tr("Error"),
                               tr("No terminal emulator found.\n"
                                  "Please install x-terminal-emulator."));
-        return;
+        return InstallResult::Failed;
     }
 
     QTemporaryFile statusFile;
     if (!statusFile.open()) {
         QMessageBox::critical(nullptr, tr("Error"), tr("Could not create an installation status file."));
-        return;
+        return InstallResult::Failed;
     }
     const QString statusFilePath = statusFile.fileName();
     statusFile.close();
@@ -283,7 +298,7 @@ void Installer::install(const QStringList &file_names)
     QTemporaryFile startupFile;
     if (!startupFile.open()) {
         QMessageBox::critical(nullptr, tr("Error"), tr("Could not create an installation status file."));
-        return;
+        return InstallResult::Failed;
     }
 
     // Bash holds the lock until it exits, even when the terminal launcher forks.
@@ -310,7 +325,7 @@ void Installer::install(const QStringList &file_names)
         QMessageBox::critical(nullptr, tr("Error"),
                               tr("Failed to launch the terminal emulator.\n"
                                  "Please check that x-terminal-emulator is installed."));
-        return;
+        return InstallResult::Failed;
     }
 
     // Only startup has a deadline. Authentication, downloads and configuration
@@ -357,7 +372,9 @@ void Installer::install(const QStringList &file_names)
         if (aptStatus != 0) {
             QMessageBox::critical(nullptr, tr("Package installation failed"),
                                   tr("The package manager reported an error."));
+            return InstallResult::Failed;
         }
+        return InstallResult::Success;
     } else if (interrupted) {
         QMessageBox::warning(nullptr, tr("Installation interrupted"),
                              tr("The installation was interrupted and its result is unknown.\n"
@@ -366,4 +383,5 @@ void Installer::install(const QStringList &file_names)
         QMessageBox::warning(nullptr, tr("Installation result unknown"),
                              tr("Could not determine whether the installation succeeded."));
     }
+    return InstallResult::Unknown;
 }

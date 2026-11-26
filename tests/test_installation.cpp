@@ -1,5 +1,6 @@
 #include <QApplication>
 #include <QCommandLineParser>
+#include <QAbstractButton>
 #include <QElapsedTimer>
 #include <QEvent>
 #include <QFile>
@@ -20,6 +21,69 @@ bool writeExecutable(const QString &path, const QByteArray &contents)
     return file.open(QIODevice::WriteOnly) && file.write(contents) == contents.size()
            && file.setPermissions(QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner);
 }
+
+int testSnapshot(QTemporaryDir &commands)
+{
+    const QString first = commands.filePath("first/sample.deb");
+    const QString second = commands.filePath("second/sample.deb");
+    if (!QDir(commands.path()).mkdir("first") || !QDir(commands.path()).mkdir("second")
+        || !writeExecutable(first, "first") || !writeExecutable(second, "second")) {
+        return 1;
+    }
+
+    const QByteArray simulate = R"SH(#!/bin/bash
+printf '%s\n' "${@: -2}" > "$REVIEW_PATHS"
+printf changed > "$REVIEW_ORIGINAL"
+)SH";
+    const QByteArray inspect = R"SH(#!/bin/sh
+printf 'Package: '
+cat "$2"
+)SH";
+    const QByteArray install = R"SH(#!/bin/bash
+mapfile -t staged < "$REVIEW_PATHS"
+[[ $# == 3 && "$2" == "${staged[0]}" && "$3" == "${staged[1]}" ]] || exit 1
+[[ "$(<"$2")" == first && "$(<"$3")" == second ]] || exit 1
+touch "$REVIEW_SUCCESS"
+)SH";
+    const QString paths = commands.filePath("paths");
+    const QString success = commands.filePath("success");
+    qputenv("REVIEW_ORIGINAL", first.toLocal8Bit());
+    qputenv("REVIEW_PATHS", paths.toLocal8Bit());
+    qputenv("REVIEW_SUCCESS", success.toLocal8Bit());
+    if (!writeExecutable(commands.filePath("apt-get"), simulate)
+        || !writeExecutable(commands.filePath("dpkg-deb"), inspect)
+        || !writeExecutable(commands.filePath("pkexec"), install)) {
+        return 1;
+    }
+
+    bool previewOk = false;
+    QTimer confirm;
+    QObject::connect(&confirm, &QTimer::timeout, [&] {
+        auto *box = qobject_cast<QMessageBox *>(QApplication::activeModalWidget());
+        if (box) {
+            if (auto *ok = box->button(QMessageBox::Ok); ok && box->button(QMessageBox::Cancel)) {
+                const QString details = box->detailedText();
+                previewOk = details.contains(first) && details.contains(second)
+                            && details.contains("Package: first") && details.contains("Package: second");
+                ok->click();
+            } else {
+                box->reject();
+            }
+        }
+    });
+    confirm.start(10);
+    QCommandLineParser parser;
+    parser.process(QStringList {"deb-installer", first, second});
+    Installer installer(parser);
+    QFile recorded(paths);
+    if (!previewOk || !QFile::exists(success) || !recorded.open(QIODevice::ReadOnly)) {
+        return 1;
+    }
+    const QStringList staged = QString::fromUtf8(recorded.readAll()).split('\n', Qt::SkipEmptyParts);
+    return staged.size() == 2 && staged[0] != staged[1] && !QFile::exists(staged[0])
+           && !QFile::exists(staged[1]) ? 0 : 1;
+}
+
 
 }
 
@@ -74,6 +138,10 @@ exit 0
         return 1;
     }
     qputenv("PATH", commands.path().toLocal8Bit() + ":" + qgetenv("PATH"));
+
+    if (app.arguments().contains("--snapshot")) {
+        return testSnapshot(commands);
+    }
 
     QCommandLineParser parser;
     parser.process(QStringList {QStringLiteral("deb-installer-test")});

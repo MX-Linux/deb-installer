@@ -40,7 +40,9 @@ private:
     QStringList file_arguments;
     Cmd cmd;
 
+    enum class InstallResult { Success, Failed, Unknown };
+
 private slots:
     [[nodiscard]] bool confirmAction(const QStringList &file_names);
-    void install(const QStringList &file_names);
+    InstallResult install(const QStringList &file_names);
 };
